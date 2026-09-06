@@ -83,7 +83,7 @@ body{
   line-height:1.68;
   -webkit-font-smoothing:antialiased;
 }
-.wrap{max-width:1000px;margin:0 auto;padding:0 32px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
 @media(max-width:640px){.wrap{padding:0 20px}.wrapper-pad{padding:0 20px}}
 
 h1,h2,h3,.serif{font-family:Lora,Georgia,"Times New Roman",serif;font-weight:500}
@@ -139,7 +139,7 @@ svg.logo{width:72px;height:44px;display:block;flex:none}
   font-size:clamp(2.1rem,5.4vw,3.7rem);line-height:1.08;letter-spacing:-.02em;
   margin:0 0 20px;max-width:17ch;text-wrap:balance;
 }
-.hero .sub{font-size:1.18rem;color:var(--muted);max-width:62ch;margin:0 0 26px}
+.hero .sub{font-size:1.18rem;color:var(--muted);max-width:66ch;margin:0 0 26px}
 .hero .sub b{color:var(--ink);font-weight:400}
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 .btn{max-width:100%}
@@ -167,7 +167,7 @@ section{padding:44px 0;border-bottom:1px solid var(--rule)}
 .sec-intro{font-size:1.06rem;color:var(--muted);max-width:70ch}
 
 /* ---- axiom ---- */
-.gap-head{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:48px;align-items:start;margin-top:14px}
+.gap-head{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:48px;align-items:start;margin-top:14px}
 @media(max-width:900px){.gap-head{grid-template-columns:1fr;gap:32px}}
 .axiom{margin:6px 0 0;padding:0 0 0 20px;border-left:2px solid var(--gold)}
 .axiom blockquote{
@@ -218,7 +218,7 @@ html[data-theme="dark"] table.gates tr.ours td{background:#20262B}
   border-left:3px solid var(--action);background:var(--surface);
 }
 @media(max-width:640px){.pace{padding:18px 20px}}
-.pace p{font-size:1rem;color:var(--muted);margin:0;max-width:none}
+.pace p{font-size:1rem;color:var(--muted);margin:0;max-width:92ch}
 .pace p b{color:var(--ink);font-weight:700}
 
 /* ---- pipeline ---- */
@@ -267,7 +267,7 @@ html[data-theme="dark"] table.gates tr.ours td{background:#20262B}
 .stage.ours .stage-buy{color:var(--action)}
 
 /* ---- proof ---- */
-.proof{display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:start}
+.proof{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:48px;align-items:start}
 @media(max-width:820px){.proof{grid-template-columns:1fr;gap:36px}}
 .stats{display:flex;flex-direction:column;border-top:1px solid var(--rule-strong)}
 .stat{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--rule)}
@@ -288,7 +288,7 @@ html[data-theme="dark"] table.gates tr.ours td{background:#20262B}
 .press p b{color:var(--ink);font-weight:700;font-size:.95rem}
 
 /* ---- why now ---- */
-.reasons{display:grid;grid-template-columns:1fr 1fr;gap:0 44px;margin-top:26px}
+.reasons{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 52px;margin-top:26px}
 @media(max-width:760px){.reasons{grid-template-columns:1fr}}
 .reason{padding:20px 0;border-top:1px solid var(--rule)}
 .reason h3{font-size:1rem;margin:0 0 5px;font-family:Arial,sans-serif;font-weight:700}
@@ -317,7 +317,7 @@ html[data-theme="dark"] table.gates tr.ours td{background:#20262B}
 .promise p{font-size:.88rem;color:var(--muted);margin:0}
 
 /* ---- two-up: principles + start here ---- */
-.twoup{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:38px}
+.twoup{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:52px;margin-top:38px}
 @media(max-width:820px){.twoup{grid-template-columns:1fr;gap:44px}}
 .sub-h{font-family:Lora,Georgia,serif;font-size:1.35rem;font-weight:500;margin:12px 0 18px;letter-spacing:-.012em}
 .principles{
@@ -356,7 +356,7 @@ html[data-theme="dark"] table.gates tr.ours td{background:#20262B}
 
 /* ---- founder ---- */
 .founder{
-  display:grid;grid-template-columns:230px 1fr;gap:40px;
+  display:grid;grid-template-columns:230px minmax(0,1fr);gap:44px;
   margin-top:28px;padding-top:22px;border-top:2px solid var(--gold);
 }
 @media(max-width:700px){.founder{grid-template-columns:1fr;gap:14px}}
@@ -469,7 +469,7 @@ footer{padding:30px 0 40px;font-size:.87rem;color:var(--muted)}
       <li class="stage">
         <span class="stage-n">01</span>
         <h3>Define</h3>
-        <p>What humane means, codified. The public version is the <a href="https://ai-for-people.org/"><b>AI Bill of Rights</b></a>: eleven rights drafted and signed by the people they protect, open for anyone to edit. We turn that into eight scorable principles with defined severity. The authority is theirs. We're the messengers.</p>
+        <p>What humane means, codified. The public version is the <a href="https://ai-for-people.org/" target="_blank" rel="noopener noreferrer"><b>AI Bill of Rights</b></a>: eleven rights drafted and signed by the people they protect, open for anyone to edit. We turn that into eight scorable principles with defined severity. The authority is theirs. We're the messengers.</p>
         <span class="stage-buy">Open and free</span>
       </li>
       <li class="stage">
@@ -506,11 +506,11 @@ footer{padding:30px 0 40px;font-size:.87rem;color:var(--muted)}
           <li>Be transparent and honest</li>
           <li>Design for equity and inclusion</li>
         </ol>
-        <p class="billnote">These eight are the scorable form of the <a href="https://ai-for-people.org/"><b>AI Bill of Rights</b></a>, where eleven rights are drafted, signed and argued over in public. HumaneBench turns that document into testable scores against real systems. Nothing here was decided in this office.</p>
+        <p class="billnote">These eight are the scorable form of the <a href="https://ai-for-people.org/" target="_blank" rel="noopener noreferrer"><b>AI Bill of Rights</b></a>, where eleven rights are drafted, signed and argued over in public. HumaneBench turns that document into testable scores against real systems. Nothing here was decided in this office.</p>
         <p class="linkrow">
-          <a href="https://ai-for-people.org/">Read and sign it</a>
-          <a href="https://github.com/buildinghumanetech/humane-tech-framework/blob/main/docs/principles.md">The principles in full</a>
-          <a href="https://github.com/buildinghumanetech/ai-bill-of-rights">Edit it on GitHub</a>
+          <a href="https://ai-for-people.org/" target="_blank" rel="noopener noreferrer">Read and sign it</a>
+          <a href="https://github.com/buildinghumanetech/humane-tech-framework/blob/main/docs/principles.md" target="_blank" rel="noopener noreferrer">The principles in full</a>
+          <a href="https://github.com/buildinghumanetech/ai-bill-of-rights" target="_blank" rel="noopener noreferrer">Edit it on GitHub</a>
         </p>
       </div>
       <div>
@@ -519,7 +519,7 @@ footer{padding:30px 0 40px;font-size:.87rem;color:var(--muted)}
         <div class="starts">
           <div class="start">
             <h4>Start with one transcript</h4>
-            <p>The <a href="https://github.com/buildinghumanetech/humanebench/blob/main/rubrics/rubric_v3.md">scoring rubric</a> is public. Point it at a single conversation, or at every conversation you have logged, and see where your product stops protecting the person in it.</p>
+            <p>The <a href="https://github.com/buildinghumanetech/humanebench/blob/main/rubrics/rubric_v3.md" target="_blank" rel="noopener noreferrer">scoring rubric</a> is public. Point it at a single conversation, or at every conversation you have logged, and see where your product stops protecting the person in it.</p>
           </div>
           <div class="start">
             <h4>CLI and Claude Skill <span class="soon">Forthcoming</span></h4>
@@ -527,8 +527,8 @@ footer{padding:30px 0 40px;font-size:.87rem;color:var(--muted)}
           </div>
         </div>
         <p class="linkrow">
-          <a href="https://github.com/buildinghumanetech/humanebench/blob/main/rubrics/rubric_v3.md">Rubric v3</a>
-          <a href="https://github.com/buildinghumanetech/humanebench">The repo</a>
+          <a href="https://github.com/buildinghumanetech/humanebench/blob/main/rubrics/rubric_v3.md" target="_blank" rel="noopener noreferrer">Rubric v3</a>
+          <a href="https://github.com/buildinghumanetech/humanebench" target="_blank" rel="noopener noreferrer">The repo</a>
           <a href="#contact">Or have us install the full gate</a>
         </p>
       </div>
@@ -559,7 +559,7 @@ footer{padding:30px 0 40px;font-size:.87rem;color:var(--muted)}
           <div class="stat"><b>67%</b><span>flipped to <em>actively harmful behavior</em> when simply told to disregard user wellbeing</span></div>
           <div class="stat"><b>4</b><span>models held their integrity under that pressure</span></div>
         </div>
-        <p style="margin-top:26px;font-size:.94rem;color:var(--muted)">Nearly every model failed to respect user attention when users showed signals of unhealthy engagement. Read the <a href="https://humanebench.ai/whitepaper" style="color:var(--gold)">whitepaper</a> or the <a href="https://github.com/buildinghumanetech/humanebench" style="color:var(--gold)">code</a>.</p>
+        <p style="margin-top:26px;font-size:.94rem;color:var(--muted)">Nearly every model failed to respect user attention when users showed signals of unhealthy engagement. Read the <a href="https://humanebench.ai/whitepaper" style="color:var(--gold)" target="_blank" rel="noopener noreferrer">whitepaper</a> or the <a href="https://github.com/buildinghumanetech/humanebench" style="color:var(--gold)" target="_blank" rel="noopener noreferrer">code</a>.</p>
       </div>
       <div>
         <p class="quote">Most benchmarks measure whether a model is capable. Ours measures how the model treats the user.</p>
@@ -581,27 +581,27 @@ footer{padding:30px 0 40px;font-size:.87rem;color:var(--muted)}
 
     <div class="reasons">
       <div class="reason">
-        <h3><a href="https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB243" rel="noopener">California SB 243</a></h3>
+        <h3><a href="https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB243" rel="noopener" target="_blank" rel="noopener noreferrer">California SB 243</a></h3>
         <p>In effect since January 1, 2026. Private right of action at the greater of actual damages or $1,000 per violation plus fees.</p>
       </div>
       <div class="reason">
-        <h3><a href="https://portal.ct.gov/ag/press-releases/2025-press-releases/letter-to-ai-software-companies" rel="noopener">42 state attorneys general</a></h3>
+        <h3><a href="https://portal.ct.gov/ag/press-releases/2025-press-releases/letter-to-ai-software-companies" rel="noopener" target="_blank" rel="noopener noreferrer">42 state attorneys general</a></h3>
         <p>Wrote to 13 companies on December 12, 2025 demanding safety testing, recall procedures and clear consumer warnings.</p>
       </div>
       <div class="reason">
-        <h3><a href="https://nebraskalegislature.gov/FloorDocs/109/PDF/Slip/LB525.pdf" rel="noopener">Nebraska LB 525</a></h3>
+        <h3><a href="https://nebraskalegislature.gov/FloorDocs/109/PDF/Slip/LB525.pdf" rel="noopener" target="_blank" rel="noopener noreferrer">Nebraska LB 525</a></h3>
         <p>Explicitly prohibits variable-reward mechanics designed to increase minor engagement. Anti-engagement design written into statute.</p>
       </div>
       <div class="reason">
-        <h3><a href="https://www.ftc.gov/news-events/news/press-releases/2025/09/ftc-launches-inquiry-ai-chatbots-acting-companions" rel="noopener">The FTC 6(b) study</a></h3>
+        <h3><a href="https://www.ftc.gov/news-events/news/press-releases/2025/09/ftc-launches-inquiry-ai-chatbots-acting-companions" rel="noopener" target="_blank" rel="noopener noreferrer">The FTC 6(b) study</a></h3>
         <p>Opened September 11, 2025. Its orders ask seven companies specifically how they monetize engagement.</p>
       </div>
       <div class="reason">
-        <h3><a href="https://www.nysenate.gov/legislation/laws/GBS/A47" rel="noopener">New York GBL Article 47</a></h3>
+        <h3><a href="https://www.nysenate.gov/legislation/laws/GBS/A47" rel="noopener" target="_blank" rel="noopener noreferrer">New York GBL Article 47</a></h3>
         <p>Companion operators have had to detect suicidal ideation signals and disclose AI status every three hours since November 5, 2025.</p>
       </div>
       <div class="reason">
-        <h3><a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline" rel="noopener">EU AI Act Article 50</a></h3>
+        <h3><a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline" rel="noopener" target="_blank" rel="noopener noreferrer">EU AI Act Article 50</a></h3>
         <p>Transparency obligations became enforceable on August 2, 2026 for every system placed on the EU market.</p>
       </div>
     </div>
@@ -624,8 +624,8 @@ footer{padding:30px 0 40px;font-size:.87rem;color:var(--muted)}
         <p>Erika and Yaoli Mao presented HumaneBench at MIT Media Lab's AHA Symposium, on the Benchmarking AI Impact panel, alongside OpenAI, Google Jigsaw and the Psychology of Technology Institute.</p>
         <p>The argument Erika made is the one this company is built on: <em>relationship generates obligation</em>. If your system interacts with people, it's already in a relationship with them, which means you're already in the obligation business, whether or not you decide to measure it.</p>
         <p class="linkrow">
-          <a href="https://www.youtube.com/watch?v=LgOE-uRs2IM">Watch the talk</a>
-          <a href="https://humanetech.substack.com/p/everyone-building-ai-chatbots-is">Read the write-up</a>
+          <a href="https://www.youtube.com/watch?v=LgOE-uRs2IM" target="_blank" rel="noopener noreferrer">Watch the talk</a>
+          <a href="https://humanetech.substack.com/p/everyone-building-ai-chatbots-is" target="_blank" rel="noopener noreferrer">Read the write-up</a>
         </p>
       </div>
     </div>
@@ -656,15 +656,15 @@ footer{padding:30px 0 40px;font-size:.87rem;color:var(--muted)}
       </div>
       <div class="foot-col">
         <strong>Open source</strong>
-        <a href="https://humanebench.ai">HumaneBench</a>
-        <a href="https://ai-for-people.org/">AI Bill of Rights</a>
-        <a href="https://github.com/buildinghumanetech/humanebench">GitHub</a>
+        <a href="https://humanebench.ai" target="_blank" rel="noopener noreferrer">HumaneBench</a>
+        <a href="https://ai-for-people.org/" target="_blank" rel="noopener noreferrer">AI Bill of Rights</a>
+        <a href="https://github.com/buildinghumanetech/humanebench" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
       <div class="foot-col">
         <strong>Comms</strong>
-        <a href="https://humanetech.substack.com">Substack</a>
-        <a href="https://humanebench.ai/#news">Talks &amp; podcasts</a>
-        <a href="https://humanebench.ai/#events">Events</a>
+        <a href="https://humanetech.substack.com" target="_blank" rel="noopener noreferrer">Substack</a>
+        <a href="https://humanebench.ai/#news" target="_blank" rel="noopener noreferrer">Talks &amp; podcasts</a>
+        <a href="https://humanebench.ai/#events" target="_blank" rel="noopener noreferrer">Events</a>
       </div>
     </div>
     <div class="colophon">
