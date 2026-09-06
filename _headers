@@ -8,5 +8,11 @@
 /index.html
   Cache-Control: public, max-age=0, must-revalidate
 
+/why-this-matters/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/why-this-matters/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+
 /og.png
   Cache-Control: public, max-age=3600
