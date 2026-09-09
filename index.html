@@ -26,6 +26,25 @@ html{-webkit-text-size-adjust:100%}
 body{margin:0;overflow-x:hidden}
 img{max-width:100%}
 [hidden]{display:none!important}
+
+/* Values as code */
+.vac-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:32px;align-items:start;margin-top:26px}
+.vac-code{border:1px solid var(--rule-strong);border-radius:10px;overflow:hidden;background:var(--gold-soft)}
+.vac-code figcaption{font:600 11px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--gold-ink);
+  padding:10px 14px;border-bottom:1px solid var(--rule-strong)}
+.vac-code pre{margin:0;padding:14px;overflow-x:auto;
+  font:400 12.5px/1.75 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink)}
+.vac-code .c{color:var(--gold-ink);opacity:.85}
+.vac-code .k{font-weight:600}
+.vac-split{display:grid;gap:18px}
+.vac-split .vac-item{border-left:3px solid var(--rule-strong);padding-left:16px}
+.vac-split .vac-item.ours{border-left-color:var(--gold)}
+.vac-split h4{margin:0 0 4px;font-size:1.02rem}
+.vac-split p{margin:0}
+.vac-line{margin-top:26px;padding-top:20px;border-top:1px solid var(--rule);
+  font-size:1.06rem;line-height:1.6}
+@media (max-width:820px){.vac-grid{grid-template-columns:1fr}}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -178,8 +197,9 @@ section{padding:44px 0;border-bottom:1px solid var(--rule)}
 @media(max-width:640px){section{padding:30px 0}}
 .sec-title{
   font-size:clamp(1.6rem,3.4vw,2.25rem);line-height:1.18;letter-spacing:-.015em;
-  margin:8px 0 16px;max-width:24ch;text-wrap:balance;
+  margin:8px 0 16px;max-width:26ch;text-wrap:balance;
 }
+.nb{white-space:nowrap}
 .sec-intro{font-size:1.06rem;color:var(--muted);max-width:70ch}
 
 /* ---- axiom ---- */
@@ -554,6 +574,7 @@ footer{padding:30px 0 40px;font-size:.87rem;color:var(--muted)}
     <div class="nav-links">
       <a href="#gate">The gap</a>
       <a href="#what">How it works</a>
+      <a href="#values">Values as code</a>
       <a href="#proof">HumaneBench</a>
       
       <a href="#about">About</a>
@@ -581,7 +602,7 @@ footer{padding:30px 0 40px;font-size:.87rem;color:var(--muted)}
 <section id="gate">
   <div class="wrap">
     <div class="label">The gap</div>
-    <h2 class="sec-title">You have a gate for every risk except the biggest one</h2>
+    <h2 class="sec-title">You have a gate for <span class="nb">every risk</span><br>except the biggest one</h2>
 
     <div class="gap-head">
       <div>
@@ -719,6 +740,59 @@ footer{padding:30px 0 40px;font-size:.87rem;color:var(--muted)}
         <div class="promise"><h3>Connected</h3><p>Closer to themselves and each other and the world.</p></div>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="values">
+  <div class="wrap">
+    <div class="label">Values as code</div>
+    <h2 class="sec-title">Your values, in a file<br>your pipeline enforces</h2>
+    <p class="sec-intro">Most companies have values on a wall and nothing that checks whether the code agrees. The eight principles say what humane means. They do not say what your number is. So you write your number down, in your repo, and the gate scores every change against it.</p>
+
+    <div class="vac-grid">
+      <figure class="vac-code">
+        <figcaption>humane-policy.toml &middot; committed to your repo</figcaption>
+<pre><span class="c">[attention]</span>
+<span class="c"># What we will not do to someone's day.</span>
+<span class="k">max_notifications_per_day</span>   = 3
+<span class="k">quiet_hours</span>                 = "22:00-08:00"
+<span class="k">mute_is_absolute</span>            = true
+<span class="k">streaks_or_loss_framing</span>     = false
+
+<span class="c">[memory]</span>
+<span class="c"># Not against memory. Against memory nobody controls.</span>
+<span class="k">allowed</span>                     = true
+<span class="k">disclosure_required</span>         = true
+<span class="k">user_can_export</span>             = true
+<span class="k">user_can_delete</span>             = true
+<span class="k">memory_may_imply_relationship</span> = false</pre>
+      </figure>
+
+      <div class="vac-split">
+        <div class="vac-item">
+          <h4>Society sets the principle</h4>
+          <p>Eleven rights drafted and signed in public, turned into eight scorable principles. Your team does not get to decide that respecting attention matters. Nobody in this office decided it either.</p>
+        </div>
+        <div class="vac-item ours">
+          <h4>You set the threshold</h4>
+          <p>Three notifications a day or five. Thirty days to purge deleted data or seven. A meditation app and a logistics tool should not have the same ceiling. What they should share is that a ceiling exists, is written down, and is reviewed like a schema migration.</p>
+        </div>
+        <div class="vac-item">
+          <h4>The gate enforces both</h4>
+          <p>Every pull request is scored against the principles and against your file. A change inside your stated limits passes. A change past them is flagged, citing your own words back to you.</p>
+        </div>
+        <div class="vac-item">
+          <h4>Changing the values is a pull request</h4>
+          <p>Loosening the cap for a quarter is a legitimate decision. Making it quietly, in a config nobody reviews, is not. Edit the policy and the gate scores that too, because it moves what your product may do to people, for every change that follows.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="vac-line">This is what a value is worth once it is executable: not a poster, not a principle deck, not a workshop everyone forgets. A number your build reads, in a file your team argues over, on the pull request where the decision is actually made.</p>
+    <p class="linkrow">
+      <a href="https://github.com/buildinghumanetech/humane-gate" target="_blank" rel="noopener noreferrer">See the gate on GitHub</a>
+      <a href="https://github.com/buildinghumanetech/humanebench/blob/main/rubrics/rubric_v3.md" target="_blank" rel="noopener noreferrer">The scoring rubric</a>
+    </p>
   </div>
 </section>
 
