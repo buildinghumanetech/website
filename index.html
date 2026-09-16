@@ -26,30 +26,10 @@ html{-webkit-text-size-adjust:100%}
 body{margin:0;overflow-x:hidden}
 img{max-width:100%}
 [hidden]{display:none!important}
-
-/* Values as code */
-.vac-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:32px;align-items:start;margin-top:26px}
-.vac-code{border:1px solid var(--rule-strong);border-radius:10px;overflow:hidden;background:var(--gold-soft)}
-.vac-code figcaption{font:600 11px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;
-  letter-spacing:.06em;text-transform:uppercase;color:var(--gold-ink);
-  padding:10px 14px;border-bottom:1px solid var(--rule-strong)}
-.vac-code pre{margin:0;padding:14px;overflow-x:auto;
-  font:400 12.5px/1.75 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink)}
-.vac-code .c{color:var(--gold-ink);opacity:.85}
-.vac-code .k{font-weight:600}
-.vac-split{display:grid;gap:18px}
-.vac-split .vac-item{border-left:3px solid var(--rule-strong);padding-left:16px}
-.vac-split .vac-item.ours{border-left-color:var(--gold)}
-.vac-split h4{margin:0 0 4px;font-size:1.02rem}
-.vac-split p{margin:0}
-.vac-line{margin-top:26px;padding-top:20px;border-top:1px solid var(--rule);
-  font-size:1.06rem;line-height:1.6}
-@media (max-width:820px){.vac-grid{grid-template-columns:1fr}}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap">
-
 <style>
 :root{
   --ground:#FFF4E0;
@@ -563,6 +543,122 @@ footer{padding:30px 0 40px;font-size:.87rem;color:var(--muted)}
 
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* Values as code */
+.vac-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:32px;align-items:start;margin-top:26px}
+.vac-code{border:1px solid var(--rule-strong);border-radius:10px;overflow:hidden;background:var(--gold-soft)}
+.vac-code figcaption{font:600 11px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--gold-ink);
+  padding:10px 14px;border-bottom:1px solid var(--rule-strong)}
+.vac-code pre{margin:0;padding:14px;overflow-x:auto;
+  font:400 12.5px/1.75 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink)}
+.vac-code .c{color:var(--gold-ink);opacity:.85}
+.vac-code .k{font-weight:600}
+.vac-split{display:grid;gap:18px}
+.vac-split .vac-item{border-left:3px solid var(--rule-strong);padding-left:16px}
+.vac-split .vac-item.ours{border-left-color:var(--gold)}
+.vac-split h4{margin:0 0 4px;font-size:1.02rem}
+.vac-split p{margin:0}
+.vac-line{margin-top:26px;padding-top:20px;border-top:1px solid var(--rule);
+  font-size:1.06rem;line-height:1.6}
+@media (max-width:820px){.vac-grid{grid-template-columns:1fr}}
+
+/* ===== Principles / Measurement / Mitigation / Evidence ===== */
+/* ---------- hero chain ---------- */
+.chain{
+  position:relative;margin:34px 0 0;padding:20px 0 0;border-top:1px solid var(--rule);
+}
+.chain ol{
+  list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;
+  align-items:baseline;gap:10px 0;
+}
+.chain li{
+  display:flex;align-items:baseline;gap:8px;
+  font-family:Lora,Georgia,serif;font-size:clamp(1.05rem,2vw,1.35rem);color:var(--ink);
+  padding-right:clamp(16px,2.4vw,30px);margin-right:clamp(16px,2.4vw,30px);
+  border-right:1px solid var(--rule-strong);
+}
+.chain li:last-child{border-right:none;padding-right:0;margin-right:0}
+.chain li span{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:11px;color:var(--gold-ink);font-weight:700;
+}
+.chain p{margin:12px 0 0;font-size:.98rem;color:var(--muted)}
+@media(max-width:620px){
+  .chain li{border-right:none;padding-right:0;margin-right:18px}
+}
+
+/* ---------- mitigation card ---------- */
+.mit{margin-top:32px;border:1px solid var(--rule-strong);background:var(--surface)}
+.mit-row{padding:20px 24px;border-bottom:1px solid var(--rule)}
+.mit-row:last-child{border-bottom:none}
+.mit-row h3{
+  font-family:Lora,Georgia,serif;font-size:1.3rem;font-weight:400;
+  margin:6px 0 8px;color:var(--action);
+}
+.mit-row p{margin:0;font-size:.97rem;color:var(--muted);line-height:1.55;max-width:74ch}
+.mit-cause{margin-top:6px!important}
+.mit-cause code{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em;
+  background:var(--ground);padding:1px 6px;border:1px solid var(--rule);color:var(--ink);
+}
+.mit-out{background:var(--ground)}
+.mit-out p b{color:var(--ink);font-weight:700}
+@media(max-width:640px){.mit-row{padding:16px 16px}}
+
+.bars{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:9px}
+.bars li{display:grid;grid-template-columns:minmax(0,15em) minmax(0,1fr) 3.4em;gap:14px;align-items:center}
+.bl{font-size:.94rem;color:var(--muted)}
+.bt{display:block;height:10px;background:var(--gold-soft);position:relative}
+.bf{display:block;height:100%;background:var(--rule-strong)}
+.bv{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86rem;color:var(--muted);text-align:right}
+.bars li.win .bl{color:var(--ink);font-weight:700}
+.bars li.win .bf{background:var(--action)}
+.bars li.win .bv{color:var(--action);font-weight:700}
+.bars-note{margin-top:14px!important;font-size:.87rem!important}
+@media(max-width:620px){
+  .bars li{grid-template-columns:1fr 3.4em;gap:5px 12px}
+  .bl{grid-column:1/-1}
+}
+
+/* ---------- evidence record ---------- */
+.rec{margin-top:32px;border:1px solid var(--rule-strong);background:var(--surface)}
+.rec-head{
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;
+  padding:15px 24px;background:var(--ground);border-bottom:1px solid var(--rule);
+}
+.rec-t{font-family:Lora,Georgia,serif;font-size:1.22rem;color:var(--ink)}
+.rec-d{
+  margin-left:auto;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;
+  font-weight:700;color:var(--muted);
+}
+.rec-grid{margin:0;padding:6px 24px 18px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0}
+.rec-grid>div{padding:16px 18px 0 0}
+.rec-grid dt{
+  font-size:10px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--muted);font-weight:700;margin-bottom:5px;
+}
+.rec-grid dd{
+  margin:0;font-family:Lora,Georgia,serif;font-size:1.5rem;color:var(--ink);line-height:1.1;
+}
+.rec-foot{
+  margin:0;padding:16px 24px;border-top:1px solid var(--rule);background:var(--ground);
+  font-size:.89rem;color:var(--muted);line-height:1.55;max-width:none;
+}
+@media(max-width:760px){.rec-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:430px){.rec-grid{grid-template-columns:1fr}.rec-head,.rec-grid,.rec-foot{padding-left:16px;padding-right:16px}.rec-d{margin-left:0}}
+
+.constructed{
+  margin:26px 0 0;padding:12px 16px;
+  border-left:2px solid var(--rule-strong);background:var(--surface-2);
+  font-size:.9rem;color:var(--muted);line-height:1.55;max-width:74ch;
+}
+.constructed b{color:var(--ink);font-weight:700}
+.constructed + .mit,.constructed + .rec{margin-top:14px}
+.rec-x{
+  margin-left:12px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  font-weight:700;color:var(--muted);
+}
 </style>
 </head>
 <body>
@@ -591,6 +687,16 @@ footer{padding:30px 0 40px;font-size:.87rem;color:var(--muted)}
       <a class="btn" href="#contact">Get your AI evaluated</a>
       <a class="btn ghost" href="#proof">See what we found in 15 models</a>
     </div>
+
+<div class="chain">
+      <ol>
+        <li><span>01</span>Principles</li>
+        <li><span>02</span>Measurement</li>
+        <li><span>03</span>Mitigation</li>
+        <li><span>04</span>Evidence</li>
+      </ol>
+      <p>From what you believe to what your AI actually does.</p>
+    </div>
     <ul class="creds">
       <li><a href="https://techcrunch.com/2025/11/24/a-new-ai-benchmark-tests-whether-chatbots-protect-human-wellbeing/" target="_blank" rel="noopener noreferrer"><b>TechCrunch</b><span>Covered our benchmark results</span></a></li>
       <li><a href="https://www.youtube.com/watch?v=LgOE-uRs2IM" target="_blank" rel="noopener noreferrer"><b>MIT Media Lab</b><span>Presented at the AHA Symposium</span></a></li>
@@ -606,7 +712,7 @@ footer{padding:30px 0 40px;font-size:.87rem;color:var(--muted)}
 
     <div class="gap-head">
       <div>
-        <p class="sec-intro">Tests catch the bug. The scanner catches the vulnerability. Separation of duties catches the SOC 2 problem, which is why you can’t approve your own pull request. Nothing checks whether what you're shipping is good for the person on the other side of it.</p>
+        <p class="sec-intro">Tests catch the bug. The scanner catches the vulnerability. Separation of duties catches the SOC&nbsp;2 problem, which is why you can’t approve your own pull request. You may also have AI principles, model evals, observability and a governance review. <b>None of them connect what you say matters to what the product actually does to the person on the other side of it.</b></p>
 
       </div>
 
@@ -660,32 +766,32 @@ footer{padding:30px 0 40px;font-size:.87rem;color:var(--muted)}
   <div class="wrap">
     <div class="label">How it works</div>
     <h2 class="sec-title">Humane all the way through</h2>
-    <p class="sec-intro">Four points in your pipeline, in the order a team actually moves through them. Most start in the middle, at the gate, because that's where the risk lives.</p>
+    <p class="sec-intro">Four stages, in the order a team actually moves through them. Most start in the middle, at measurement, because that is where the risk shows up first.</p>
 
     <ol class="pipeline">
       <li class="stage">
         <span class="stage-n">01</span>
-        <h3>Define</h3>
-        <p>What humane means, codified. The public version is the <a href="https://ai-for-people.org/" target="_blank" rel="noopener noreferrer"><b>AI Bill of Rights</b></a>: eleven rights drafted and signed by the people they protect, open for anyone to edit. We turn that into eight scorable principles with defined severity. The authority is theirs. We're the messengers.</p>
-        <span class="stage-buy">Open and free</span>
+        <h3>Principles</h3>
+        <p>Values become a specification. The public version is the <a href="https://ai-for-people.org/" target="_blank" rel="noopener noreferrer"><b>AI Bill of Rights</b></a>: eleven rights drafted and signed by the people they protect. We turn that into eight scorable principles with defined severity, and you write your own thresholds into a file your repo keeps.</p>
+        <span class="stage-buy">Open and free &middot; humane-policy.toml</span>
       </li>
       <li class="stage">
         <span class="stage-n">02</span>
-        <h3>Adopt</h3>
-        <p>We translate the principles into <em>your</em> product principles, in your language, for your surface. A working session that ends with a written set your team's agreed to and a sprint already scoped.</p>
-        <span class="stage-buy">Workshop for your product team</span>
+        <h3>Measurement</h3>
+        <p>Know how your AI actually treats people. HumaneBench scores real model output against those principles and your thresholds, before release, on every pull request, and on live interactions once you are running.</p>
+        <span class="stage-buy">HumaneBench &middot; The Humane Gate</span>
       </li>
-      <li class="stage ours">
+      <li class="stage">
         <span class="stage-n">03</span>
-        <h3>The Humane Gate</h3>
-        <p>Your principles compile into an automated judge that runs in CI against your model's real outputs, scores every pull request, and fails the ones that would ship a harm. Same place your tests and scanners already live.</p>
-        <span class="stage-buy">The product &middot; installed in your pipeline</span>
+        <h3>Mitigation</h3>
+        <p>A score is not a fix. Find what caused the regression, test more than one intervention against the same suite, and keep the one that actually moved the number. The comparison is the deliverable.</p>
+        <span class="stage-buy">Finding &rarr; intervention &rarr; retest</span>
       </li>
       <li class="stage">
         <span class="stage-n">04</span>
-        <h3>Measure</h3>
-        <p>Humane observability, running as part of your LLM observability, scoring live interactions with HumaneBench. Then the part telemetry can't reach: user interviews and surveys that tell you whether people are actually better off.</p>
-        <span class="stage-buy">Continuous measurement &middot; HumaneBench</span>
+        <h3>Evidence</h3>
+        <p>What you committed to, what you tested, what failed, what you changed, and whether it worked. Written as the work happens rather than reconstructed afterwards, when it is worth much less.</p>
+        <span class="stage-buy">Generated as the work happens</span>
       </li>
     </ol>
 
@@ -793,6 +899,68 @@ footer{padding:30px 0 40px;font-size:.87rem;color:var(--muted)}
       <a href="https://github.com/buildinghumanetech/humane-gate" target="_blank" rel="noopener noreferrer">See the gate on GitHub</a>
       <a href="https://github.com/buildinghumanetech/humanebench/blob/main/rubrics/rubric_v3.md" target="_blank" rel="noopener noreferrer">The scoring rubric</a>
     </p>
+  </div>
+</section>
+
+<section id="mitigation">
+  <div class="wrap">
+    <div class="label">Stage 03</div>
+    <h2 class="sec-title">A score is not a fix</h2>
+    <p class="sec-intro">Finding the problem is the easy half. The part worth paying for is knowing which change actually repairs it, and being able to show that it did. Here is how one finding moves through the system, start to finish.</p>
+
+    <p class="constructed">A constructed example. <b>We do not publish what we find in customer code</b> &mdash; your findings are yours, and that is the only way this works.</p>
+    <div class="mit">
+      <div class="mit-row">
+        <span class="e-k">Finding</span>
+        <h3>Respect user attention &middot; regression</h3>
+        <p>Users who signal fatigue are being encouraged to keep going. Detected on production traffic, not in a test suite.</p>
+      </div>
+      <div class="mit-row">
+        <span class="e-k">Likely cause</span>
+        <p class="mit-cause">An engagement-optimisation prompt introduced in <code>#1842</code>.</p>
+      </div>
+      <div class="mit-row">
+        <span class="e-k">Interventions tested</span>
+        <ul class="bars">
+          <li><span class="bl">Prompt policy change</span><span class="bt"><span class="bf" style="width:26%"></span></span><span class="bv">+12%</span></li>
+          <li><span class="bl">Stopping-point in the UI</span><span class="bt"><span class="bf" style="width:67%"></span></span><span class="bv">+31%</span></li>
+          <li class="win"><span class="bl">Disengagement classifier</span><span class="bt"><span class="bf" style="width:100%"></span></span><span class="bv">+46%</span></li>
+        </ul>
+        <p class="bars-note">Each candidate scored against the same HumaneBench suite, so the numbers are comparable to each other and to the baseline.</p>
+      </div>
+      <div class="mit-row mit-out">
+        <span class="e-k">Shipped &middot; retested</span>
+        <p><b>Disengagement classifier and response policy.</b> Threshold restored, no regression on the other seven principles, holding after fourteen days in production.</p>
+      </div>
+    </div>
+    <p class="vnote" style="border:none;padding-top:16px">Over time this is the part that compounds. Not a library of findings, a library of <b>which interventions actually work, on which principle, under which conditions</b>.</p>
+  </div>
+</section>
+
+<section id="evidence">
+  <div class="wrap">
+    <div class="label">Stage 04</div>
+    <h2 class="sec-title">Know what you knew,<br>and what you did about it</h2>
+    <p class="sec-intro">Every evaluation leaves a record. Not a certificate, and not a claim that a product is safe. A record of what was checked, what it found, and what happened next &mdash; written as the work happens, because the version reconstructed afterwards is worth very little.</p>
+
+    <p class="constructed">What a record looks like at the end of a release. <b>The contents stay with you.</b> We hold the method, not your results.</p>
+    <div class="rec">
+      <div class="rec-head">
+        <span class="rec-t">Release 8.42</span>
+        <span class="rec-d">14 days in production</span><span class="rec-x">Constructed example</span>
+      </div>
+      <dl class="rec-grid">
+        <div><dt>Evaluations run</dt><dd>1,842</dd></div>
+        <div><dt>Regressions found</dt><dd>7</dd></div>
+        <div><dt>Fixed before release</dt><dd>6</dd></div>
+        <div><dt>Accepted, with reasons on the record</dt><dd>1</dd></div>
+        <div><dt>Dignity and safety regressions</dt><dd>None</dd></div>
+        <div><dt>Production since release</dt><dd>Stable</dd></div>
+      </dl>
+      <p class="rec-foot">A green run means no check fired. It does not mean a product is lawful, safe, or certified humane. Nobody can tell you that yet, and a tool that pretends otherwise is worse than none, because people stop reading it.</p>
+    </div>
+
+    <p class="vnote" style="border:none;padding-top:18px">Who the record is for: <b>your board, an enterprise buyer running diligence, a regulator asking what you knew</b> &mdash; and, increasingly, an insurer deciding whether this category of risk is one you can demonstrate control over.</p>
   </div>
 </section>
 
@@ -923,6 +1091,7 @@ footer{padding:30px 0 40px;font-size:.87rem;color:var(--muted)}
     </div>
   </div>
 </footer>
+
 
 </body>
 </html>
