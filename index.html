@@ -672,6 +672,19 @@ footer{padding:30px 0 40px;font-size:.87rem;color:var(--muted)}
   margin:14px 0 0;font-family:inherit;font-size:12.5px;font-style:normal;
   letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--muted);
 }
+
+/* press logos */
+.creds .cred-mark{display:flex;align-items:flex-end;height:38px;margin-bottom:4px}
+.creds img.cred-logo{
+  display:block;width:auto;max-width:100%;
+  filter:grayscale(1);opacity:.7;transition:opacity .15s ease,filter .15s ease;
+}
+.creds a:hover img.cred-logo{opacity:1}
+@media (prefers-color-scheme: dark){
+  html:not([data-theme="light"]) .creds img.cred-logo{filter:grayscale(1) invert(1);opacity:.78}
+}
+html[data-theme="dark"] .creds img.cred-logo{filter:grayscale(1) invert(1);opacity:.78}
+@media(max-width:700px){.creds .cred-mark{height:34px}}
 </style>
 </head>
 <body>
@@ -711,9 +724,9 @@ footer{padding:30px 0 40px;font-size:.87rem;color:var(--muted)}
       <p>From what you believe to what your AI actually does.</p>
     </div>
     <ul class="creds">
-      <li><a href="https://techcrunch.com/2025/11/24/a-new-ai-benchmark-tests-whether-chatbots-protect-human-wellbeing/" target="_blank" rel="noopener noreferrer"><b>TechCrunch</b><span>Covered our benchmark results</span></a></li>
-      <li><a href="https://www.youtube.com/watch?v=LgOE-uRs2IM" target="_blank" rel="noopener noreferrer"><b>MIT Media Lab</b><span>Presented at the AHA Symposium</span></a></li>
-      <li><a href="https://sagroups.ieee.org/global-ais-flourishing/" target="_blank" rel="noopener noreferrer"><b>IEEE</b><span>We co-chair measurement for AI and Human Flourishing</span></a></li>
+      <li><a href="https://techcrunch.com/2025/11/24/a-new-ai-benchmark-tests-whether-chatbots-protect-human-wellbeing/" target="_blank" rel="noopener noreferrer"><span class="cred-mark"><img class="cred-logo" src="/logos/techcrunch.svg" alt="TechCrunch" height="30" loading="lazy"></span><span>Covered our benchmark results</span></a></li>
+      <li><a href="https://www.youtube.com/watch?v=LgOE-uRs2IM" target="_blank" rel="noopener noreferrer"><span class="cred-mark"><img class="cred-logo" src="/logos/mit-media-lab.png" alt="MIT Media Lab" height="34" loading="lazy"></span><span>Presented at the AHA Symposium</span></a></li>
+      <li><a href="https://sagroups.ieee.org/global-ais-flourishing/" target="_blank" rel="noopener noreferrer"><span class="cred-mark"><img class="cred-logo" src="/logos/ieee.png" alt="IEEE" height="26" loading="lazy"></span><span>We co-chair measurement for AI and Human Flourishing</span></a></li>
     </ul>
   </div>
 </header>
@@ -742,7 +755,7 @@ footer{padding:30px 0 40px;font-size:.87rem;color:var(--muted)}
       <a class="pt-img" href="/why-this-matters/" aria-label="Why this matters: shipped code volume against human review capacity">
         <svg class="vthumb" viewBox="48 4 436 244" role="img" aria-labelledby="vt-t vt-d" preserveAspectRatio="xMidYMid meet">
         <title id="vt-t">Shipped code volume outrunning human review capacity</title>
-        <desc id="vt-d">A steeply rising curve crosses a flat dashed line and pulls away from it; the widening area between them is shaded, and the curve runs off into a question mark.</desc>
+        <desc id="vt-d">A steeply rising line labelled Code shipped crosses a flat dashed line labelled Human review capacity and pulls away from it. The widening area between them is shaded and labelled Nobody read this.</desc>
         <path d="M218.1 223.6 L224.2 222.3 L230.4 220.8 L236.5 219.0 L242.7 217.0 L248.8 214.8 L255.0 212.3 L261.2 209.5 L267.3 206.6 L273.5 203.4 L279.6 200.1 L285.8 196.7 L291.9 193.4 L298.1 190.2 L304.2 187.9 L310.4 185.4 L316.6 182.4 L322.7 178.9 L328.9 175.0 L335.0 170.5 L341.2 165.5 L347.3 160.1 L353.5 154.3 L359.7 148.2 L365.8 141.9 L372.0 135.5 L378.1 129.2 L384.3 123.2 L390.4 117.8 L396.6 113.2 L402.8 107.6 L408.9 100.7 L415.1 92.9 L421.2 84.1 L427.4 74.8 L433.5 65.3 L439.7 56.0 L445.8 47.3 L452.0 40.0 L452.0 223.9 L218.1 223.9 Z" fill="var(--gold-soft)"/>
         <line x1="58" y1="236" x2="452" y2="236" stroke="var(--rule-strong)" stroke-width="1"/>
         <line x1="58" y1="223.9" x2="452" y2="223.9" stroke="var(--muted)" stroke-width="2.6" stroke-dasharray="8 6" stroke-linecap="round"/>
