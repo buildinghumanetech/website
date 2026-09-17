@@ -6,8 +6,7 @@
 <title>Building Humane Tech</title>
 <meta name="description" content="Building Humane Tech makes the humane gate for your pipeline. Ship code you won't regret.">
 <link rel="canonical" href="https://buildinghumanetech.com/">
-<meta name="theme-color" content="#FFF4E0" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#1A1712" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#FFF4E0">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://buildinghumanetech.com/">
 <meta property="og:title" content="Building Humane Tech">
@@ -20,1057 +19,383 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
 <style>
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;overflow-x:hidden}
+body{margin:0;overflow-x:hidden;background:#FFF4E0;color:#2D2D2D;font-family:Arial,"Helvetica Neue",Helvetica,sans-serif;font-size:17px;line-height:1.66;-webkit-font-smoothing:antialiased}
 img{max-width:100%}
 [hidden]{display:none!important}
-</style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap">
-<style>
-:root{
-  --ground:#FFF4E0;
-  --surface:#FFFFFF;
-  --surface-2:#FBEBD2;
-  --ink:#2D2D2D;
-  --muted:#6B6155;
-  --gold:#CA9239;
-  --gold-ink:#8C6015;
-  --gold-soft:#F7E6C6;
-  --rule:#EBDCC0;
-  --rule-strong:#D8C39D;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --ground:#1A1712;
-    --surface:#221E17;
-    --surface-2:#2A251C;
-    --ink:#EFE9DE;
-    --muted:#A79C8C;
-    --gold:#DFAE5C;
-    --gold-ink:#DFAE5C;
-    --gold-soft:#2E2618;
-    --rule:#332C22;
-    --rule-strong:#4A4033;
-  }
-}
-:root[data-theme="dark"]{
-  --ground:#1A1712;
-  --surface:#221E17;
-  --surface-2:#2A251C;
-  --ink:#EFE9DE;
-  --muted:#A79C8C;
-  --gold:#DFAE5C;
-  --gold-ink:#DFAE5C;
-  --gold-soft:#2E2618;
-  --rule:#332C22;
-  --rule-strong:#4A4033;
-}
-
-*{box-sizing:border-box}
-body{
-  background:var(--ground);
-  color:var(--ink);
-  font-family:Arial,"Helvetica Neue",Helvetica,sans-serif;
-  font-size:17px;
-  line-height:1.68;
-  -webkit-font-smoothing:antialiased;
-}
-.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
-@media(max-width:640px){.wrap{padding:0 20px}.wrapper-pad{padding:0 20px}}
-
-h1,h2,h3,.serif{font-family:Lora,Georgia,"Times New Roman",serif;font-weight:500}
-p{margin:0 0 1.15em;max-width:72ch;text-wrap:pretty}
-p:last-child{margin-bottom:0}
-a{color:inherit}
-/* action colour: Cerulean */
-body{--action:#146A93;--action-ink:#FFF4E0;--action-edge:#105678}
-
-.label{
-  font-size:12px;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--gold-ink);font-weight:700;
-}
-
-@media (prefers-color-scheme: dark){
-  html:not([data-theme="light"]) body{--action:#4FA8D8;--action-ink:#131009;--action-edge:#4390B9}
-}
-html[data-theme="dark"] body{--action:#4FA8D8;--action-ink:#131009;--action-edge:#4390B9}
-
-/* ---- nav ---- */
-nav{border-bottom:1px solid var(--rule)}
-.nav-inner{
-  display:flex;align-items:center;gap:14px 20px;
-  padding-top:14px;padding-bottom:14px;flex-wrap:wrap;
-}
-.brand{
-  --mark-h:clamp(46px,5vw,58px);
-  display:flex;align-items:center;gap:clamp(7px,.8vw,10px);
-  text-decoration:none;flex:none;color:var(--ink);
-}
-svg.mark{
-  height:var(--mark-h);
-  width:calc(var(--mark-h) * 0.4183);   /* 556 / 1330 */
-  display:block;flex:none;
-}
-.brandname{
-  font-family:Lora,Georgia,serif;font-size:clamp(11.5px,1.15vw,13.5px);
-  line-height:1.14;font-weight:600;letter-spacing:-.005em;
-  color:var(--ink);white-space:nowrap;
-}
-.nav-links{display:flex;gap:20px;align-items:center;font-size:14.5px;flex-wrap:wrap;margin-left:auto}
-.nav-cta{flex:none}
-@media(max-width:700px){
-  .nav-inner{gap:10px 12px}
-  .brand{order:1}
-  .nav-cta{order:2;margin-left:auto;padding:9px 16px;font-size:13px}
-  .nav-links{order:3;width:100%;margin-left:0;gap:6px 16px;font-size:13.5px}
-}
-.nav-links a{color:var(--muted);text-decoration:none;padding-bottom:2px;border-bottom:1px solid transparent}
-.nav-links a:hover{color:var(--ink);border-bottom-color:var(--gold)}
-.nav-links a.btn{color:var(--action-ink);padding:12px 24px;border:1px solid var(--action-edge);line-height:1.2}
-.nav-links a.btn:hover{color:var(--action)}
-.btn{
-  display:inline-block;background:var(--action);color:var(--action-ink);
-  padding:12px 24px;border-radius:2px;text-decoration:none;
-  font-size:14.5px;font-weight:700;letter-spacing:.01em;
-  border:1px solid var(--action-edge);transition:background .15s ease,color .15s ease,border-color .15s ease;
-}
-.btn:hover{background:transparent;color:var(--action)}
-.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--rule-strong);font-weight:400}
-.btn.ghost:hover{border-color:var(--action);color:var(--action)}
-
-/* ---- hero ---- */
-.hero{padding:54px 0 26px;border-bottom:1px solid var(--rule)}
-@media(max-width:640px){.hero{padding:30px 0 20px}}
-#gate{padding-top:30px}
-.hero h1{
-  font-size:clamp(2.1rem,5.4vw,3.7rem);line-height:1.08;letter-spacing:-.02em;
-  margin:0 0 20px;max-width:20ch;text-wrap:balance;
-}
-.hero .sub{font-size:1.18rem;color:var(--muted);max-width:66ch;margin:0 0 26px}
-.hero .sub b{color:var(--ink);font-weight:400}
-.hero-cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-.btn{max-width:100%}
-@media(max-width:400px){.hero-cta .btn{width:100%;text-align:center}}
-
-.creds{
-  list-style:none;margin:26px 0 0;padding:18px 0 0;border-top:1px solid var(--rule);
-  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;max-width:820px;
-}
-@media(max-width:700px){.creds{grid-template-columns:1fr;gap:18px;margin-top:38px}}
-.creds li{display:flex;flex-direction:column;gap:3px}
-.creds a{display:flex;flex-direction:column;gap:3px;text-decoration:none;color:inherit}
-.creds a b{border-bottom:1px solid transparent;align-self:flex-start;padding-bottom:1px}
-.creds a:hover b{border-bottom-color:var(--gold)}
-.creds a:hover span{color:var(--ink)}
-.creds b{
-  font-family:Lora,Georgia,serif;font-size:1.12rem;font-weight:600;
-  letter-spacing:-.01em;color:var(--ink);
-}
-.creds span{font-size:.85rem;color:var(--muted);line-height:1.4}
-
-/* ---- section base ---- */
-section{padding:44px 0;border-bottom:1px solid var(--rule)}
-@media(max-width:640px){section{padding:30px 0}}
-.sec-title{
-  font-size:clamp(1.6rem,3.4vw,2.25rem);line-height:1.18;letter-spacing:-.015em;
-  margin:8px 0 16px;max-width:26ch;text-wrap:balance;
-}
-.nb{white-space:nowrap}
-.sec-intro{font-size:1.06rem;color:var(--muted);max-width:70ch}
-
-/* ---- axiom ---- */
-.gap-head{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:48px;align-items:start;margin-top:14px}
-@media(max-width:900px){.gap-head{grid-template-columns:1fr;gap:32px}}
-.axiom{margin:6px 0 0;padding:0 0 0 20px;border-left:2px solid var(--gold)}
-.axiom blockquote{
-  font-family:Lora,Georgia,serif;font-size:1.3rem;
-  line-height:1.34;letter-spacing:-.01em;color:var(--ink);margin:0;text-wrap:pretty;
-}
-
-/* ---- gates table ---- */
-.gatewrap{overflow-x:auto;margin-top:28px;border:1px solid var(--rule);background:var(--surface)}
-table.gates{border-collapse:collapse;width:100%;min-width:620px;font-size:.95rem}
-table.gates th,table.gates td{padding:15px 20px;text-align:left;border-bottom:1px solid var(--rule);vertical-align:top}
-table.gates thead th{
-  font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
-  font-weight:700;background:var(--ground);border-bottom:1px solid var(--rule-strong);
-}
-table.gates td.g{font-family:Lora,Georgia,serif;font-size:1.1rem;white-space:nowrap}
-table.gates td{color:var(--muted)}
-table.gates tbody tr:last-child td{border-bottom:none}
-table.gates tr.ours td{background:var(--surface);color:var(--ink);font-weight:700}
-table.gates tr.ours td:first-child{box-shadow:inset 3px 0 0 var(--action)}
-table.gates tr.ours td.g{color:var(--action);font-weight:600}
-@media (prefers-color-scheme: dark){html:not([data-theme="light"]) table.gates tr.ours td{background:#20262B}}
-html[data-theme="dark"] table.gates tr.ours td{background:#20262B}
-@media(max-width:700px){
-  .gatewrap{overflow-x:visible;border:none;background:transparent;margin-top:22px}
-  table.gates{min-width:0;display:block;width:100%}
-  table.gates thead{display:none}
-  table.gates tbody{display:block}
-  table.gates tr{
-    display:block;border:1px solid var(--rule);background:var(--surface);
-    margin-bottom:12px;padding:13px 0;
-  }
-  table.gates tbody tr:last-child{margin-bottom:0}
-  table.gates td{display:block;border-bottom:none;padding:0 18px;white-space:normal}
-  table.gates td.g{
-    font-size:1.15rem;color:var(--ink);margin-bottom:10px;
-    padding-bottom:10px;border-bottom:1px solid var(--rule);
-  }
-  table.gates td+td{margin-top:12px}
-  table.gates td.g+td{margin-top:0}
-  table.gates td[data-label]::before{
-    content:attr(data-label);display:block;
-    font-size:10px;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--muted);font-weight:700;margin-bottom:4px;
-  }
-  table.gates tr.ours{border-left:3px solid var(--action)}
-  table.gates tr.ours td:first-child{box-shadow:none}
-  table.gates tr.ours td.g{border-bottom-color:var(--rule-strong)}
-}
-@media(max-width:700px) and (prefers-color-scheme: dark){
-  html:not([data-theme="light"]) table.gates tr.ours{background:#20262B}
-}
-@media(max-width:700px){
-  html[data-theme="dark"] table.gates tr.ours{background:#20262B}
-}
-
-/* ---- builder quote ---- */
-.builder{
-  margin-top:30px;padding:30px 34px;border:1px solid var(--rule-strong);
-  background:var(--surface);max-width:820px;
-}
-@media(max-width:640px){.builder{padding:24px 22px}}
-.builder-cap{
-  display:block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--gold-ink);font-weight:700;margin-bottom:14px;
-}
-.builder p{
-  font-family:Lora,Georgia,serif;font-size:1.2rem;line-height:1.5;
-  color:var(--ink);max-width:68ch;margin:0;
-}
-.builder p em{font-style:italic}
-.builder p.builder-a{
-  font-family:Arial,sans-serif;font-size:.97rem;color:var(--muted);
-  margin-top:20px;padding-top:18px;border-top:1px solid var(--rule);
-}
-
-/* ---- pace note ---- */
-.pace{
-  margin-top:26px;padding:24px 30px;
-  border-left:3px solid var(--action);background:var(--surface);
-}
-@media(max-width:640px){.pace{padding:18px 20px}}
-.pace p{font-size:1rem;color:var(--muted);margin:0;max-width:92ch}
-.pace p b{color:var(--ink);font-weight:700}
-
-/* ---- velocity figure ---- */
-.vfig{margin:22px 0 0;padding:22px 22px 18px;border:1px solid var(--rule);background:var(--surface)}
-@media(max-width:640px){.vfig{padding:16px 14px 14px}}
-.vchart{display:block;width:100%;max-width:560px;height:auto;margin:0 auto}
-.eras{
-  list-style:none;margin:18px 0 0;padding:16px 0 0;border-top:1px solid var(--rule);
-  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
-}
-.eras li{padding:0 16px;border-left:1px solid var(--rule)}
-.eras li:first-child{padding-left:0;border-left:none}
-.eras li:last-child{padding-right:0}
-.e-k{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:6px}
-.eras b{display:block;font-family:Lora,Georgia,serif;font-size:1.02rem;font-weight:400;color:var(--ink);margin-bottom:6px;line-height:1.25}
-.eras p{margin:0 0 9px;font-size:.85rem;color:var(--muted);line-height:1.45}
-.e-c{display:block;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:var(--muted)}
-.eras li.now .e-k,.eras li.now b{color:var(--action)}
-@media(max-width:820px){
-  .eras{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:20px}
-  .eras li{padding:0 14px;border-left:1px solid var(--rule)}
-  .eras li:nth-child(odd){padding-left:0;border-left:none}
-}
-@media(max-width:440px){
-  .eras{grid-template-columns:1fr;row-gap:0}
-  .eras li,.eras li:nth-child(odd){padding:13px 0 0;margin-top:13px;border-left:none;border-top:1px solid var(--rule)}
-  .eras li:first-child{padding-top:0;margin-top:0;border-top:none}
-}
-.vchart text{font-family:inherit}
-@media(max-width:620px){
-  .vchart .v-lab,.vchart .v-tick{font-size:17px}
-  .vchart .v-q{font-size:38px}
-}
-.vnote{margin:16px 0 0;padding-top:14px;border-top:1px solid var(--rule);font-size:.87rem;color:var(--muted);line-height:1.55}
-.vnote b{color:var(--ink);font-weight:700}
-.pace-more{margin:18px 0 0;font-size:.95rem}
-.pace-more a{color:var(--action);font-weight:700;text-decoration:none;border-bottom:1px solid var(--action)}
-.pace-more a:hover{border-bottom-color:transparent}
-
-/* ---- pace teaser (thumbnail + link out) ---- */
-.pace-teaser{
-  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,270px);
-  gap:34px;align-items:center;
-}
-.pt-copy p{margin:0}
-.pt-go{
-  display:inline-block;margin-top:16px;font-size:1.02rem;font-weight:700;
-  color:var(--action);text-decoration:none;
-  border-bottom:1px solid var(--action);padding-bottom:2px;
-}
-.pt-go:hover{border-bottom-color:transparent}
-.pt-img{display:block;text-decoration:none;opacity:.92;transition:opacity .15s ease}
-.pt-img:hover{opacity:1}
-.vthumb{display:block;width:100%;height:auto}
-@media(max-width:780px){
-  .pace-teaser{grid-template-columns:1fr;gap:18px}
-  .pt-img{max-width:320px}
-}
-
-/* ---- why this matters page ---- */
-.why-hero h1{font-size:clamp(2.1rem,5.4vw,3.7rem);line-height:1.08;letter-spacing:-.02em;margin:14px 0 20px;max-width:20ch;text-wrap:balance}
-.why-hero .label{margin-bottom:0}
-.body-p{font-size:1.05rem;color:var(--muted);line-height:1.62;max-width:72ch;margin:0 0 18px}
-.body-p b{color:var(--ink);font-weight:700}
-.body-p:last-child{margin-bottom:0}
-.promises.promises-3{grid-template-columns:repeat(3,minmax(0,1fr))}
-@media(max-width:820px){.promises.promises-3{grid-template-columns:1fr;gap:26px}}
-
-.pipeline-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;margin-top:34px;border:1px solid var(--rule);background:var(--surface)}
-.inst{padding:26px 28px;border-left:1px solid var(--rule)}
-.inst:first-child{border-left:none}
-.inst h3{font-family:Lora,Georgia,serif;font-size:1.5rem;font-weight:400;margin:8px 0 10px;color:var(--ink)}
-.inst.now h3,.inst.now .e-k{color:var(--action)}
-.inst.now{box-shadow:inset 3px 0 0 var(--action)}
-.inst-q{font-family:Lora,Georgia,serif;font-size:1.06rem;color:var(--ink);margin:0 0 18px;line-height:1.45}
-.inst-d{margin:0 0 16px;padding:0;border-top:1px solid var(--rule)}
-.inst-d>div{display:grid;grid-template-columns:minmax(0,10.5em) minmax(0,1fr);gap:14px;padding:9px 0;border-bottom:1px solid var(--rule)}
-.inst-d dt{font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);font-weight:700;padding-top:2px}
-.inst-d dd{margin:0;font-size:.94rem;color:var(--ink)}
-.inst-n{margin:0;font-size:.88rem;color:var(--muted);line-height:1.5}
-@media(max-width:760px){
-  .pipeline-2{grid-template-columns:1fr}
-  .inst{border-left:none;border-top:1px solid var(--rule);padding:22px 20px}
-  .inst:first-child{border-top:none}
-  .inst.now{box-shadow:inset 0 3px 0 var(--action)}
-  .inst-d>div{grid-template-columns:1fr;gap:3px}
-}
-
-.pr{margin-top:32px;border:1px solid var(--rule-strong);background:var(--surface)}
-.pr-head{
-  display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;
-  padding:14px 22px;border-bottom:1px solid var(--rule);background:var(--ground);
-}
-.pr-bot{
-  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;font-weight:700;
-  color:var(--action-ink);background:var(--action);padding:3px 8px;border-radius:2px;
-}
-.pr-t{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;color:var(--muted)}
-.pr-score{
-  margin-left:auto;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;
-  font-weight:700;color:#8C2F1B;
-}
-.pr-intent{padding:20px 22px;border-bottom:1px solid var(--rule)}
-.pr-intent p{margin:6px 0 0;font-family:Lora,Georgia,serif;font-size:1.06rem;color:var(--ink);line-height:1.45}
-.pr-intent p.pr-read{font-family:inherit;font-size:.92rem;color:var(--muted);margin-top:12px;line-height:1.55}
-.pr-foot{padding:18px 22px;border-top:1px solid var(--rule);background:var(--ground)}
-.pr-foot p{margin:0;font-size:.92rem;color:var(--muted);line-height:1.55}
-.pr-foot b{color:var(--ink)}
-.pr table.gates td.g{white-space:normal;font-size:1rem}
-@media(max-width:640px){.pr-head,.pr-intent,.pr-foot{padding-left:16px;padding-right:16px}.pr-score{margin-left:0;width:100%}}
-@media (prefers-color-scheme: dark){html:not([data-theme="light"]) .pr-score{color:#E08A72}}
-html[data-theme="dark"] .pr-score{color:#E08A72}
-
-/* ---- pipeline ---- */
-.pipeline{
-  list-style:none;margin:30px 0 0;padding:0;
-  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;
-  grid-template-rows:auto auto 1fr auto;
-  border:1px solid var(--rule);background:var(--surface);
-}
-@media(max-width:900px){.pipeline{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:600px){.pipeline{grid-template-columns:1fr}}
-.stage{
-  padding:26px 24px 28px;border-right:1px solid var(--rule);
-  display:grid;grid-template-rows:subgrid;grid-row:span 4;row-gap:9px;
-  border-top:3px solid transparent;
-}
-@supports not (grid-template-rows:subgrid){
-  .stage{display:flex;flex-direction:column;gap:9px}
-  .stage p{flex:1}
-  .stage-buy{min-height:3.1em}
-}
-.stage:last-child{border-right:none}
-@media(max-width:900px){
-  .stage:nth-child(2n){border-right:none}
-  .stage:nth-child(-n+2){border-bottom:1px solid var(--rule)}
-}
-@media(max-width:600px){
-  .stage{border-right:none;border-bottom:1px solid var(--rule)}
-  .stage:last-child{border-bottom:none}
-}
-.stage-n{
-  font-family:Lora,Georgia,serif;font-size:.95rem;color:var(--muted);
-  letter-spacing:.06em;font-variant-numeric:tabular-nums;
-}
-.stage h3{font-size:1.18rem;margin:0;letter-spacing:-.012em}
-.stage p{font-size:.93rem;color:var(--muted);margin:0}
-.stage p em{font-style:italic;color:var(--ink)}
-.stage-buy{
-  font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;font-weight:700;
-  color:var(--muted);align-self:start;margin-top:6px;padding-top:12px;
-  border-top:1px solid var(--rule);
-}
-.stage.ours{border-top:3px solid var(--action);background:var(--ground)}
-.stage.ours h3{color:var(--action)}
-.stage.ours .stage-n{color:var(--action)}
-.stage.ours .stage-buy{color:var(--action)}
-
-/* ---- proof ---- */
-.proof{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:48px;align-items:start}
-@media(max-width:820px){.proof{grid-template-columns:1fr;gap:36px}}
-.stats{display:flex;flex-direction:column;border-top:1px solid var(--rule-strong)}
-.stat{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--rule)}
-.stat b{
-  font-family:Lora,Georgia,serif;font-size:2.1rem;font-weight:500;color:var(--gold);
-  line-height:1;min-width:3.4ch;font-variant-numeric:tabular-nums;
-}
-.stat span{font-size:.94rem;color:var(--muted);line-height:1.45}
-.stat span em{color:var(--ink);font-style:normal}
-.quote{
-  font-family:Lora,Georgia,serif;font-size:1.28rem;line-height:1.44;font-style:italic;
-  border-left:2px solid var(--gold);padding-left:22px;margin:0 0 18px;max-width:34ch;
-}
-.cite{font-size:.85rem;color:var(--muted)}
-.press{margin-top:26px;padding-top:20px;border-top:1px solid var(--rule)}
-.press-cap{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink);font-weight:700;display:block;margin-bottom:10px}
-.press p{font-size:.9rem;color:var(--muted);line-height:1.5}
-.press p b{color:var(--ink);font-weight:700;font-size:.95rem}
-
-/* ---- why now ---- */
-.reasons{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 52px;margin-top:26px}
-@media(max-width:760px){.reasons{grid-template-columns:1fr}}
-.reason{padding:20px 0;border-top:1px solid var(--rule)}
-.reason h3{font-size:1rem;margin:0 0 5px;font-family:Arial,sans-serif;font-weight:700}
-.reason h3 a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule-strong);padding-bottom:1px}
-.reason h3 a:hover{color:var(--action);border-bottom-color:var(--action)}
-.reason h3 a::after{content:" \2197";color:var(--action);font-weight:400}
-.reason p{font-size:.92rem;color:var(--muted);margin:0}
-
-/* ---- engagements ---- */
-.eng{display:flex;flex-direction:column;margin-top:40px}
-.eng-item{
-  display:grid;grid-template-columns:200px 1fr;gap:36px;
-  padding:28px 0;border-top:1px solid var(--rule);
-}
-.eng-item:last-child{border-bottom:1px solid var(--rule)}
-@media(max-width:760px){.eng-item{grid-template-columns:1fr;gap:8px}}
-.eng-item h3{font-size:1.3rem;margin:0;letter-spacing:-.01em}
-.eng-item .for{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:7px;font-family:Arial,sans-serif;font-weight:700}
-.eng-item p{margin:0;color:var(--muted);font-size:.97rem}
-
-/* ---- promises strip ---- */
-.promises{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:36px}
-@media(max-width:760px){.promises{grid-template-columns:repeat(2,1fr);gap:24px}}
-.promise{border-top:2px solid var(--gold);padding-top:14px}
-.promise h3{font-size:1.05rem;margin:0 0 5px}
-.promise p{font-size:.88rem;color:var(--muted);margin:0}
-
-/* ---- two-up: principles + start here ---- */
-.twoup{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:52px;margin-top:38px}
-@media(max-width:820px){.twoup{grid-template-columns:1fr;gap:44px}}
-.sub-h{font-family:Lora,Georgia,serif;font-size:1.35rem;font-weight:500;margin:12px 0 18px;letter-spacing:-.012em}
-.principles{
-  list-style:none;counter-reset:pr;margin:0;padding:0;
-  display:flex;flex-direction:column;
-}
-.principles li{
-  counter-increment:pr;display:grid;grid-template-columns:30px 1fr;gap:12px;
-  padding:9px 0;border-top:1px solid var(--rule);font-size:.93rem;color:var(--muted);
-}
-.principles li::before{
-  content:counter(pr,decimal-leading-zero);
-  font-family:Lora,Georgia,serif;color:var(--gold-ink);font-size:.85rem;
-  font-variant-numeric:tabular-nums;
-}
-.billnote{font-size:.9rem;color:var(--muted);margin-top:18px}
-.billnote b{color:var(--ink);font-weight:700}
-.billnote a,.stage a,.start p a{color:var(--action);text-decoration:none;border-bottom:1px solid var(--rule-strong)}
-.billnote a:hover,.stage a:hover,.start p a:hover{border-bottom-color:var(--action)}
-.linkrow{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:18px;font-size:.88rem}
-.linkrow a{color:var(--action);text-decoration:none;border-bottom:1px solid var(--rule-strong);padding-bottom:1px}
-.linkrow a:hover{border-bottom-color:var(--action)}
-.starts{display:flex;flex-direction:column;gap:16px}
-.start{border:1px solid var(--rule);background:var(--surface);padding:18px 20px}
-.start h4{margin:0 0 6px;font-family:Arial,sans-serif;font-size:.98rem;font-weight:700;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.soon{
-  font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;
-  color:var(--gold-ink);border:1px solid var(--gold);border-radius:2px;padding:2px 7px;
-}
-.start p{margin:0;font-size:.9rem;color:var(--muted)}
-.start code{
-  display:inline-block;margin-top:11px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
-  font-size:.82rem;background:var(--ground);border:1px solid var(--rule);
-  padding:5px 9px;border-radius:2px;color:var(--ink);
-}
-
-/* ---- founder ---- */
-.founder{
-  display:grid;grid-template-columns:230px minmax(0,1fr);gap:44px;
-  margin-top:28px;padding-top:22px;border-top:2px solid var(--gold);
-}
-@media(max-width:700px){.founder{grid-template-columns:1fr;gap:14px}}
-.founder h3{font-size:1.4rem;margin:0;letter-spacing:-.015em}
-.founder .role{font-size:.8rem;letter-spacing:.11em;text-transform:uppercase;color:var(--gold-ink);margin-top:8px;font-weight:700}
-.founder p{font-size:.98rem;color:var(--muted);margin:0 0 1em}
-.founder p:last-child{margin-bottom:0}
-.founder p em{color:var(--ink);font-style:normal}
-
-/* ---- closing cta ---- */
-.close{background:var(--surface);border:1px solid var(--rule-strong);padding:34px 36px;margin:0 0 8px}
-@media(max-width:640px){.close{padding:34px 26px}}
-.close h2{font-size:clamp(1.5rem,3.2vw,2.05rem);line-height:1.2;margin:0 0 18px;max-width:22ch;letter-spacing:-.015em}
-.close p{font-size:1.05rem;color:var(--muted);max-width:64ch}
-.close .hero-cta{margin-top:28px}
-
-/* ---- footer ---- */
-footer{padding:30px 0 40px;font-size:.87rem;color:var(--muted)}
-.foot-rows{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap}
-.foot-col{display:flex;flex-direction:column;gap:8px}
-.foot-col strong{color:var(--ink);font-size:.8rem;letter-spacing:.11em;text-transform:uppercase;font-weight:700}
-.foot-col a{color:var(--muted);text-decoration:none}
-.foot-col a:hover{color:var(--gold)}
-.colophon{margin-top:38px;padding-top:20px;border-top:1px solid var(--rule);font-size:.8rem}
-
-:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
-
-/* Values as code */
-.vac-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:32px;align-items:start;margin-top:26px}
-.vac-code{border:1px solid var(--rule-strong);border-radius:10px;overflow:hidden;background:var(--gold-soft)}
-.vac-code figcaption{font:600 11px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;
-  letter-spacing:.06em;text-transform:uppercase;color:var(--gold-ink);
-  padding:10px 14px;border-bottom:1px solid var(--rule-strong)}
-.vac-code pre{margin:0;padding:14px;overflow-x:auto;
-  font:400 12.5px/1.75 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink)}
-.vac-code .c{color:var(--gold-ink);opacity:.85}
-.vac-code .k{font-weight:600}
-.vac-split{display:grid;gap:18px}
-.vac-split .vac-item{border-left:3px solid var(--rule-strong);padding-left:16px}
-.vac-split .vac-item.ours{border-left-color:var(--gold)}
-.vac-split h4{margin:0 0 4px;font-size:1.02rem}
-.vac-split p{margin:0}
-.vac-line{margin-top:26px;padding-top:20px;border-top:1px solid var(--rule);
-  font-size:1.06rem;line-height:1.6}
-@media (max-width:820px){.vac-grid{grid-template-columns:1fr}}
-
-/* ===== Principles / Measurement / Mitigation / Evidence ===== */
-/* ---------- hero chain ---------- */
-.chain{
-  position:relative;margin:34px 0 0;padding:20px 0 0;border-top:1px solid var(--rule);
-}
-.chain ol{
-  list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;
-  align-items:baseline;gap:10px 0;
-}
-.chain li{
-  display:flex;align-items:baseline;gap:8px;
-  font-family:Lora,Georgia,serif;font-size:clamp(1.05rem,2vw,1.35rem);color:var(--ink);
-  padding-right:clamp(16px,2.4vw,30px);margin-right:clamp(16px,2.4vw,30px);
-  border-right:1px solid var(--rule-strong);
-}
-.chain li:last-child{border-right:none;padding-right:0;margin-right:0}
-.chain li span{
-  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
-  font-size:11px;color:var(--gold-ink);font-weight:700;
-}
-.chain p{margin:12px 0 0;font-size:.98rem;color:var(--muted)}
-@media(max-width:620px){
-  .chain li{border-right:none;padding-right:0;margin-right:18px}
-}
-
-/* ---------- mitigation card ---------- */
-.mit{margin-top:32px;border:1px solid var(--rule-strong);background:var(--surface)}
-.mit-row{padding:20px 24px;border-bottom:1px solid var(--rule)}
-.mit-row:last-child{border-bottom:none}
-.mit-row h3{
-  font-family:Lora,Georgia,serif;font-size:1.3rem;font-weight:400;
-  margin:6px 0 8px;color:var(--action);
-}
-.mit-row p{margin:0;font-size:.97rem;color:var(--muted);line-height:1.55;max-width:74ch}
-.mit-cause{margin-top:6px!important}
-.mit-cause code{
-  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em;
-  background:var(--ground);padding:1px 6px;border:1px solid var(--rule);color:var(--ink);
-}
-.mit-out{background:var(--ground)}
-.mit-out p b{color:var(--ink);font-weight:700}
-@media(max-width:640px){.mit-row{padding:16px 16px}}
-
-.bars{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:9px}
-.bars li{display:grid;grid-template-columns:minmax(0,15em) minmax(0,1fr) 3.4em;gap:14px;align-items:center}
-.bl{font-size:.94rem;color:var(--muted)}
-.bt{display:block;height:10px;background:var(--gold-soft);position:relative}
-.bf{display:block;height:100%;background:var(--rule-strong)}
-.bv{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86rem;color:var(--muted);text-align:right}
-.bars li.win .bl{color:var(--ink);font-weight:700}
-.bars li.win .bf{background:var(--action)}
-.bars li.win .bv{color:var(--action);font-weight:700}
-.bars-note{margin-top:14px!important;font-size:.87rem!important}
-@media(max-width:620px){
-  .bars li{grid-template-columns:1fr 3.4em;gap:5px 12px}
-  .bl{grid-column:1/-1}
-}
-
-/* ---------- evidence record ---------- */
-.rec{margin-top:32px;border:1px solid var(--rule-strong);background:var(--surface)}
-.rec-head{
-  display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;
-  padding:15px 24px;background:var(--ground);border-bottom:1px solid var(--rule);
-}
-.rec-t{font-family:Lora,Georgia,serif;font-size:1.22rem;color:var(--ink)}
-.rec-d{
-  margin-left:auto;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;
-  font-weight:700;color:var(--muted);
-}
-.rec-grid{margin:0;padding:6px 24px 18px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0}
-.rec-grid>div{padding:16px 18px 0 0}
-.rec-grid dt{
-  font-size:10px;letter-spacing:.13em;text-transform:uppercase;
-  color:var(--muted);font-weight:700;margin-bottom:5px;
-}
-.rec-grid dd{
-  margin:0;font-family:Lora,Georgia,serif;font-size:1.5rem;color:var(--ink);line-height:1.1;
-}
-.rec-foot{
-  margin:0;padding:16px 24px;border-top:1px solid var(--rule);background:var(--ground);
-  font-size:.89rem;color:var(--muted);line-height:1.55;max-width:none;
-}
-@media(max-width:760px){.rec-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:430px){.rec-grid{grid-template-columns:1fr}.rec-head,.rec-grid,.rec-foot{padding-left:16px;padding-right:16px}.rec-d{margin-left:0}}
-
-.constructed{
-  margin:26px 0 0;padding:12px 16px;
-  border-left:2px solid var(--rule-strong);background:var(--surface-2);
-  font-size:.9rem;color:var(--muted);line-height:1.55;max-width:74ch;
-}
-.constructed b{color:var(--ink);font-weight:700}
-.constructed + .mit,.constructed + .rec{margin-top:14px}
-.rec-x{
-  margin-left:12px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;
-  font-weight:700;color:var(--muted);
-}
-
-/* chain items are links */
-.chain li a{
-  display:flex;align-items:baseline;gap:8px;color:inherit;text-decoration:none;
-  border-bottom:1px solid transparent;padding-bottom:2px;
-}
-.chain li a:hover{color:var(--action);border-bottom-color:var(--action)}
-.chain li a:hover span{color:var(--action)}
-/* who said it */
-.builder p.builder-attr{
-  margin:14px 0 0;font-family:inherit;font-size:12.5px;font-style:normal;
-  letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--muted);
-}
-
-/* press logos */
-.creds .cred-mark{display:flex;align-items:flex-end;height:38px;margin-bottom:4px}
-.creds img.cred-logo{
-  display:block;width:auto;max-width:100%;
-  filter:grayscale(1);opacity:.7;transition:opacity .15s ease,filter .15s ease;
-}
-.creds a:hover img.cred-logo{opacity:1}
-@media (prefers-color-scheme: dark){
-  html:not([data-theme="light"]) .creds img.cred-logo{filter:grayscale(1) invert(1);opacity:.78}
-}
-html[data-theme="dark"] .creds img.cred-logo{filter:grayscale(1) invert(1);opacity:.78}
-@media(max-width:700px){.creds .cred-mark{height:34px}}
+a{color:#5539EC;text-decoration:none}
+a:hover{text-decoration:underline}
+p{text-wrap:pretty}
+.btn-p:hover{background:#3F27C0;text-decoration:none}
+.btn-g:hover{border-color:#5539EC;color:#5539EC;text-decoration:none}
+.nl:hover,.cred:hover{color:#2D2D2D;text-decoration:none}
+.acc:hover{background:#FFFBF2}
+:focus-visible{outline:2px solid #CA9239;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
 
 
-<nav>
-  <div class="wrap nav-inner">
-    <a class="brand" href="#top" aria-label="Building Humane Tech home"><svg class="mark" viewBox="-14 -16 556 1330" role="img" aria-hidden="true" focusable="false" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M280.901,1296.645c-7.059,-1.606 -13.171,-5.134 -15.771,-9.104c-2.567,-3.916 -4.961,-11.887 -10.979,-36.547c-3.029,-12.41 -6.899,-27.398 -8.6,-33.306c-3.705,-12.868 -3.427,-15.303 1.916,-16.787c2.166,-0.603 14.985,-1.038 30.329,-1.032c14.617,0.005 37.858,-0.529 51.648,-1.188c13.789,-0.66 26.283,-0.89 27.762,-0.515c1.481,0.375 2.965,1.546 3.3,2.601c1.211,3.817 -20.037,74.156 -24.854,82.276c-3.737,6.299 -9.423,10.341 -17.84,12.683c-7.917,2.203 -28.963,2.726 -36.909,0.918l0,-0.001Zm-207.69,-3.518c-14.139,-1.055 -61.468,-10.566 -66.663,-13.395c-2.192,-1.194 -4.554,-3.296 -5.25,-4.673c-0.981,-1.939 -1.271,-17.237 -1.282,-67.84l-0.015,-65.337l1.99,-11.638c2.539,-14.848 6.024,-28.576 10.612,-41.792c4.741,-13.658 18.048,-42.924 26.509,-58.303c7.073,-12.856 27.454,-41.481 30.194,-42.407c0.887,-0.298 9.099,-8.996 18.251,-19.326c17.463,-19.71 25.184,-26.963 32.83,-30.838c6.51,-3.299 50.67,-20.852 75.674,-30.08c11.583,-4.275 26.476,-10.382 33.095,-13.571c6.619,-3.19 20.158,-8.611 30.086,-12.048c9.928,-3.437 24.982,-8.682 33.451,-11.655c16.671,-5.852 23.704,-7.57 37.97,-9.275c11.32,-1.353 33.399,-8.995 47.026,-16.276c11.327,-6.052 23.632,-10.079 28.227,-9.237c1.834,0.335 4.324,1.856 5.682,3.47c4.07,4.837 4.09,7.702 0.114,19.106c-3.62,10.418 -7.301,16.944 -11.046,19.582c-1.12,0.79 -11.752,8.522 -23.625,17.182c-29.333,21.396 -27.427,20.226 -46.853,28.766c-23.849,10.484 -33.151,16.391 -49.364,31.352c-7.428,6.854 -14.874,13.167 -16.547,14.028c-1.674,0.861 -6.202,3.691 -10.063,6.288c-3.861,2.598 -8.95,5.706 -11.31,6.907c-4.911,2.502 -9.549,6.528 -31.597,27.444c-8.706,8.259 -16.549,16.408 -17.429,18.11c-1.163,2.251 -1.572,5.706 -1.501,12.672c0.142,14.284 2.215,86.102 3.086,107.357c1.45,35.323 1.274,65.902 -0.441,75.717c-1.868,10.699 -7.474,27.998 -10.989,33.904c-1.376,2.314 -6.457,8.943 -11.291,14.735c-10.133,12.141 -15.318,15.368 -30.851,19.2l-9.026,2.226l-24.57,0.227c-13.514,0.114 -29.309,-0.142 -35.1,-0.569l0.015,-0.013Zm205.587,-415.7c0,-0.284 -0.227,-0.503 -0.503,-0.503c-0.284,0 -0.5,0.227 -0.5,0.503c0,0.284 0.227,0.503 0.5,0.503c0.284,0 0.503,-0.227 0.503,-0.503Zm-1.14,302.322c-52.213,-2.772 -51.481,-2.613 -56.372,-12.279c-5.547,-10.964 -4.133,-19.899 3.87,-24.444c4.535,-2.576 6.379,-2.863 31.077,-4.853c38.041,-3.064 64.328,-7.197 77.067,-12.116c4.92,-1.899 12.609,-4.385 17.086,-5.522c13.894,-3.528 55.073,-22.558 65.303,-30.178c3.309,-2.465 14.366,-11.406 24.57,-19.868c19.764,-16.39 25.128,-19.653 30.614,-18.624c4.543,0.853 9.066,6.279 11.119,13.339c2.436,8.384 1.37,26.517 -1.817,30.84c-10.52,14.28 -25.685,31.116 -35.806,39.754c-12.008,10.248 -20.142,14.977 -28.878,16.793c-2.866,0.594 -10.312,3.301 -16.547,6.012c-27.741,12.064 -27.189,11.896 -56.66,17.205c-15.336,2.763 -28.787,5.171 -29.89,5.351c-1.103,0.171 -16.735,-0.455 -34.736,-1.41l0.001,0.001Zm108.447,-17.508c0,-0.284 -0.227,-0.5 -0.503,-0.5c-0.284,0 -0.5,0.227 -0.5,0.5c0,0.284 0.227,0.503 0.5,0.503c0.284,0 0.503,-0.227 0.503,-0.503Zm93.935,-68.362c-0.367,-0.367 -0.969,-0.367 -1.336,0c-0.367,0.367 -0.057,0.668 0.668,0.668c0.736,0 1.038,-0.301 0.668,-0.668Zm-233.835,18.338c-7.82,-1.507 -21.12,-6.717 -25.065,-9.821c-3.645,-2.867 -6.7,-9.397 -6.777,-14.486c-0.114,-8.353 9.228,-18.789 19.148,-21.365c2.018,-0.523 11.585,-1.427 21.262,-2.004c18.565,-1.112 32.126,-3.127 51.102,-7.601c11.628,-2.74 25.372,-8.472 58.166,-24.254c18.274,-8.794 18.302,-8.81 28.582,-16.181c20.507,-14.705 36.871,-29.525 50.925,-46.123c6.484,-7.657 10.637,-10.847 16.468,-12.649c3.953,-1.222 10.307,1.328 15.562,6.242c9.741,9.111 12.617,19.61 9.268,33.831c-0.995,4.23 -2.442,8.322 -3.213,9.093c-0.77,0.77 -1.035,1.401 -0.588,1.401c0.446,0 -7.305,8.135 -17.228,18.077c-12.532,12.556 -20.81,18.33 -24.718,22.053c-5.519,5.257 -2.541,3.198 -13.282,13.524c-0.705,2.104 -24.224,19.118 -33.694,24.372c-7.593,4.214 -44.373,18.679 -55.535,21.842c-7.697,2.18 -12.335,2.726 -29.207,3.431c-46.048,1.925 -53.983,2.004 -61.175,0.617l0,0.001Zm197.063,-68.315c0,-0.284 -0.227,-0.503 -0.503,-0.503c-0.284,0 -0.503,0.227 -0.503,0.503c0,0.284 0.227,0.5 0.503,0.5c0.284,0 0.503,-0.227 0.503,-0.5Zm36.103,-36.103c0,-0.284 -0.227,-0.5 -0.503,-0.5c-0.284,0 -0.503,0.227 -0.503,0.5c0,0.284 0.227,0.503 0.503,0.503c0.284,0 0.503,-0.227 0.503,-0.503Zm-230.217,31.126c-8.481,-1.541 -10.957,-2.942 -13.071,-7.396c-2.357,-4.967 -1.106,-9.521 5.146,-18.716c7.715,-11.349 7.985,-11.624 18.12,-18.452c10.031,-6.759 18.044,-10.016 38.48,-15.643c17.117,-4.713 28.125,-10.212 49.262,-24.608c18.63,-12.688 30.663,-22.543 38.888,-31.846c15.152,-17.139 22.815,-32.434 26.653,-53.2c1.68,-9.087 1.873,-9.601 4.886,-12.948c2.76,-3.065 8.728,-2.971 18.445,0.29c18.216,6.115 28.675,18.827 28.691,34.87c0.008,10.358 -1.899,27.105 -3.413,29.918c-0.785,1.458 -13.835,15.808 -29.004,31.888c-35.078,37.187 -47.185,47.188 -71.691,59.22c-27.917,13.707 -38.779,17.97 -59.111,23.204l-18.983,4.886l-13.109,-0.085c-7.21,-0.057 -16.295,-0.671 -20.189,-1.376l-0,-0.005Zm-17.065,-183.287c-3.211,-6.069 -3.866,-8.306 -3.898,-13.312c-0.028,-5.186 -0.756,-7.472 -5.239,-16.547c-5.507,-11.15 -15.473,-24.449 -24.01,-32.04c-2.686,-2.388 -7.818,-5.662 -11.404,-7.273c-3.585,-1.612 -11.821,-5.482 -18.301,-8.601l-11.783,-5.672l0.566,-2.041c0.407,-1.464 0.301,-1.657 -0.372,-0.685c-0.731,1.055 -1.51,0.608 -3.507,-2.01c-2.669,-3.498 -4.71,-8.002 -4.71,-10.386c0,-2.755 4.518,-6.617 8.885,-7.595c3.06,-0.685 16.152,-0.387 43.625,1.001c21.589,1.089 47.376,2.26 57.304,2.604c9.928,0.344 23.995,1.026 31.26,1.518c7.905,0.534 18.777,0.52 27.077,-0.028c34.063,-2.283 47.064,-3.031 79.055,-4.55c36.286,-1.723 43.615,-1.467 46.716,1.635c3.033,3.033 2.49,7.935 -1.336,12.088c-5.434,5.897 -31.153,24.259 -42.681,30.472c-9.493,5.116 -17.379,14.824 -23.807,29.308c-0.057,0.142 -5.264,1.296 -11.564,2.581c-8.259,1.683 -15.791,4.174 -26.999,8.928c-24.879,10.552 -46.242,17.018 -73.711,22.307c-13.238,2.55 -24.797,4.852 -25.687,5.117c-1.185,0.353 -2.652,-1.473 -5.478,-6.812l-0.001,-0.005Zm-52.574,-75.49c0,-0.284 -0.227,-0.503 -0.503,-0.503c-0.284,0 -0.503,0.227 -0.503,0.503c0,0.284 0.227,0.5 0.503,0.5c0.284,0 0.503,-0.227 0.503,-0.5Zm79.728,-53.341c-16.457,-3.754 -41.01,-10.016 -50.228,-12.811c-6.436,-1.95 -11.946,-3.195 -13.941,-3.547c-1.211,-0.227 -4.745,-1.265 -7.809,-2.809c-16.58,-10.202 -30.198,-20.965 -32.189,-24.252c-0.841,-1.387 -6.132,-7.262 -11.759,-13.053c-12.441,-12.805 -23.715,-27.677 -32.608,-40.232c-8.28,-11.69 -11.918,-20.13 -16.337,-31.273c-15.823,-37.331 -22.444,-75.045 -20.106,-114.526c2.516,-42.502 8.12,-61.86 36.242,-125.218c14.57,-32.824 19.553,-38.612 25.974,-48.128c0,0 2.964,-5.201 4.718,-7.575c1.637,-2.217 3.401,-4.33 5.424,-6.202c1.72,-1.592 4.403,-1.569 3.237,3.868c-1.524,7.103 -0.887,19.393 -0.887,19.393c3.761,23.186 10.947,36.988 22.643,60.336c10.625,21.21 15.882,30.191 31.023,52.998c13.228,19.925 16.753,26.719 19.093,36.803c1.467,6.318 1.413,27.028 -0.114,47.802c-0.694,9.366 -0.981,21.1 -0.64,26.074c0.824,12.067 6.236,49.033 8.737,59.69c7.049,30.044 24.927,74.53 41.178,102.467c4.647,7.988 5.386,15.381 1.888,18.879c-1.964,1.964 -8.083,2.561 -13.539,1.316l0,-0.001Zm54.964,-2.786c-4.289,-1.865 -6.92,-7.299 -9.904,-20.454c-8.015,-35.333 -7.76,-70.92 0.694,-96.788c8.584,-26.269 23.525,-45.97 73.108,-96.401c13.015,-13.238 26.488,-27.805 29.941,-32.372c16.599,-21.958 27.58,-44.302 39.044,-79.447c6.5,-19.928 7.929,-28.392 8.633,-51.146c1.134,-36.661 4.095,-66.189 6.636,-66.189c1.492,0 7.82,9.821 16.995,26.378c11.054,19.948 16.662,32.327 25.534,56.358c3.665,9.928 10.03,27.081 14.144,38.117l5.851,20.472l2.817,21.147c1.211,21.923 0.227,60.197 -2.223,86.883c-3.484,37.882 -17.373,73.029 -41.891,106.01c-8.841,11.892 -27.368,31.205 -38.81,40.454c-20.52,16.824 -44.469,28.717 -67.927,40.594c-5.255,1.91 -29.86,7.781 -46.4,7.779c-8.915,-0.001 -14.05,-0.441 -16.239,-1.393l-0.002,-0.001Zm-55.263,-108.092c-1.754,-2.907 -4.048,-11.808 -5.621,-21.812c-1.319,-8.384 -3.819,-67.144 -4.545,-106.805c-0.887,-48.402 -0.972,-49.018 -8.398,-60.674c-2.283,-3.585 -10.076,-15.093 -17.314,-25.573c-27.444,-39.735 -37.616,-60.209 -41.103,-82.737c-1.618,-10.443 -1.222,-38.616 0.719,-51.648c1.382,-9.26 15.069,-42.424 27.112,-65.688c35.144,-67.893 42.67,-83.664 51.488,-107.913c7.926,-21.796 11.492,-39.831 12.967,-65.583c0.696,-12.128 2.394,-25.213 3.508,-27.015c0.574,-0.93 2.112,-0.563 6.169,1.475c5.951,2.988 22.483,18.742 48.523,46.237c17.557,18.538 24.824,27.441 35.086,42.986c35.553,53.854 52.812,107.654 52.922,164.972c0.028,15.174 -0.469,20.944 -3.682,42.622c-4.255,28.717 -6.808,40.348 -12.65,57.637c-8.986,26.594 -21.778,52.696 -40.435,82.507c-6.302,10.07 -15.408,25.304 -20.234,33.854c-8.292,14.688 -21.033,36.714 -24.318,42.039c-0.824,1.333 -4.044,5.17 -7.157,8.524c-6.994,7.536 -12.556,17.109 -23.717,40.827c-12.232,25.993 -15.96,35.147 -18.632,45.751l-2.337,9.277l-3.193,0c-2.53,0 -3.601,-0.677 -5.16,-3.259l0.001,-0.001Z"></path></svg><span class="brandname">Building<br>Humane<br>Tech</span></a>
-    <div class="nav-links">
-      <a href="#gate">The gap</a>
-      <a href="#what">How it works</a>
-      <a href="#values">Values as code</a>
-      <a href="#proof">HumaneBench</a>
-      
-      <a href="#about">About</a>
+<div style="background:#FFF4E0">
+
+<nav style="border-bottom:1px solid #EBDCC0">
+  <div style="max-width:1120px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;gap:14px 24px;flex-wrap:wrap">
+    <a href="#top" style="display:flex;align-items:center;gap:10px;color:#2D2D2D;text-decoration:none;flex:none">
+      <img src="bht-logo-tech-black.svg" alt="Building Humane Tech" style="height:46px;width:auto;display:block" />
+    </a>
+    <div style="display:flex;gap:6px 22px;align-items:center;font-size:14.5px;flex-wrap:wrap;margin-left:auto">
+      <a href="#gap" style="color:#6B6155" class="nl">The gap</a>
+      <a href="#system" style="color:#6B6155" class="nl">The platform</a>
+      <a href="#why" style="color:#6B6155" class="nl">Why now</a>
+      <a href="#about" style="color:#6B6155" class="nl">About</a>
     </div>
-    <a class="btn nav-cta" href="#contact">Talk to us</a>
+    <a href="#contact" style="flex:none;background:#5539EC;color:#FFF4E0;padding:11px 22px;border-radius:8px;white-space:nowrap;font-size:14.5px;font-weight:700" class="btn-p">Talk to us</a>
   </div>
 </nav>
 
-<header class="hero">
-  <div class="wrap">
-    <h1>Ship code you<br>will not regret</h1>
-    <p class="sub">Your pipeline already blocks bugs and security holes and SOC&nbsp;2 violations. We add the gate for harm. <b>You should not have to invent humane AI from scratch.</b> The principles are public and research-backed. Your thresholds are yours. We make both testable.</p>
-    <div class="hero-cta">
-      <a class="btn" href="#contact">Get your AI evaluated</a>
-      <a class="btn ghost" href="#proof">See what we found in 15 models</a>
-    </div>
-
-<div class="chain">
-      <ol>
-        <li><a href="#values"><span>01</span>Principles</a></li>
-        <li><a href="#proof"><span>02</span>Measurement</a></li>
-        <li><a href="#mitigation"><span>03</span>Mitigation</a></li>
-        <li><a href="#evidence"><span>04</span>Evidence</a></li>
-      </ol>
-      <p>From what you believe to what your AI actually does.</p>
-    </div>
-    <ul class="creds">
-      <li><a href="https://techcrunch.com/2025/11/24/a-new-ai-benchmark-tests-whether-chatbots-protect-human-wellbeing/" target="_blank" rel="noopener noreferrer"><span class="cred-mark"><img class="cred-logo" src="/logos/techcrunch.svg" alt="TechCrunch" height="30" loading="lazy"></span><span>Covered our benchmark results</span></a></li>
-      <li><a href="https://www.youtube.com/watch?v=LgOE-uRs2IM" target="_blank" rel="noopener noreferrer"><span class="cred-mark"><img class="cred-logo" src="/logos/mit-media-lab.png" alt="MIT Media Lab" height="34" loading="lazy"></span><span>Presented at the AHA Symposium</span></a></li>
-      <li><a href="https://sagroups.ieee.org/global-ais-flourishing/" target="_blank" rel="noopener noreferrer"><span class="cred-mark"><img class="cred-logo" src="/logos/ieee.png" alt="IEEE" height="26" loading="lazy"></span><span>We co-chair measurement for AI and Human Flourishing</span></a></li>
-    </ul>
+<header id="top" style="max-width:1120px;margin:0 auto;padding:64px 32px 44px">
+  <h1 style="font-family:Lora,Georgia,serif;font-weight:600;font-size:clamp(2.2rem,5.6vw,3.9rem);line-height:1.06;letter-spacing:-.022em;margin:0 0 22px;max-width:18ch;text-wrap:balance">Ship code you will not regret</h1>
+  <p style="font-size:1.18rem;color:#6B6155;max-width:60ch;margin:0 0 30px">Your pipeline already blocks bugs and security holes and SOC 2 violations. We add the gate for harm.</p>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+    <a href="https://github.com/buildinghumanetech/humanebench" target="_blank" rel="noopener noreferrer" style="background:#5539EC;color:#FFF4E0;padding:13px 26px;border-radius:8px;white-space:nowrap;font-size:15px;font-weight:700" class="btn-p">Run the eval</a>
+    <a href="#contact" style="padding:13px 26px;border-radius:8px;white-space:nowrap;font-size:15px;color:#2D2D2D;border:1px solid #D8C39D" class="btn-g">Talk to us</a>
   </div>
+
+  <ul style="list-style:none;margin:44px 0 0;padding:26px 0 0;border-top:1px solid #EBDCC0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:26px;max-width:860px">
+    <li>
+      <a href="https://techcrunch.com/2025/11/24/a-new-ai-benchmark-tests-whether-chatbots-protect-human-wellbeing/" target="_blank" rel="noopener noreferrer" style="display:flex;flex-direction:column;gap:8px;color:#6B6155" class="cred">
+        <span style="display:flex;align-items:flex-end;height:34px"><img src="logos/techcrunch.svg" alt="TechCrunch" style="height:28px;width:auto;filter:grayscale(1);opacity:.75" /></span>
+        <span style="font-size:.85rem;line-height:1.4">Covered our benchmark results</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=LgOE-uRs2IM" target="_blank" rel="noopener noreferrer" style="display:flex;flex-direction:column;gap:8px;color:#6B6155" class="cred">
+        <span style="display:flex;align-items:flex-end;height:34px"><img src="logos/mit-media-lab.png" alt="MIT Media Lab" style="height:32px;width:auto;filter:grayscale(1);opacity:.75" /></span>
+        <span style="font-size:.85rem;line-height:1.4">Presented at the AHA Symposium</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://sagroups.ieee.org/global-ais-flourishing/" target="_blank" rel="noopener noreferrer" style="display:flex;flex-direction:column;gap:8px;color:#6B6155" class="cred">
+        <span style="display:flex;align-items:flex-end;height:34px"><img src="logos/ieee.png" alt="IEEE" style="height:24px;width:auto;filter:grayscale(1);opacity:.75" /></span>
+        <span style="font-size:.85rem;line-height:1.4">We co-chair measurement for AI and Human Flourishing</span>
+      </a>
+    </li>
+  </ul>
 </header>
 
-<section id="gate">
-  <div class="wrap">
-    <div class="label">The gap</div>
-    <h2 class="sec-title">You have a gate for <span class="nb">every risk</span><br>except the biggest one</h2>
+<section id="gap" style="border-top:1px solid #EBDCC0">
+  <div style="max-width:1120px;margin:0 auto;padding:52px 32px">
+    <div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8C6015;font-weight:700">The gap</div>
+    <h2 style="font-family:Lora,Georgia,serif;font-weight:500;font-size:clamp(1.6rem,3.4vw,2.3rem);line-height:1.16;letter-spacing:-.015em;margin:10px 0 18px;max-width:26ch;text-wrap:balance">You have a gate for every risk except the biggest one</h2>
 
-    <div class="gap-head">
-      <div>
-        <p class="sec-intro">Tests catch the bug. The scanner catches the vulnerability. Separation of duties catches the SOC&nbsp;2 problem, which is why you can’t approve your own pull request. You may also have AI principles, model evals, observability and a governance review. <b>None of them connect what you say matters to what the product actually does to the person on the other side of it.</b></p>
-
-      </div>
-
-      <figure class="axiom">
-        <blockquote>Every line of code is a liability.<br>Some lines of code are an asset.</blockquote>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:44px;align-items:start">
+      <p style="font-size:1.05rem;color:#6B6155;margin:0;max-width:66ch">Tests catch the bug. The scanner catches the vulnerability. Your own policies state your intention. <b style="color:#2D2D2D">None of them connect your values to your code.</b></p>
+      <figure style="margin:0;padding:2px 0 2px 20px;border-left:2px solid #CA9239">
+        <blockquote style="font-family:Lora,Georgia,serif;font-size:1.3rem;line-height:1.34;letter-spacing:-.01em;color:#2D2D2D;margin:0">Every line of code is a liability.<br />Some lines of code are an asset.</blockquote>
       </figure>
     </div>
 
-    <div class="pace pace-teaser">
-      <div class="pt-copy">
-        <p><b>And the volume has changed.</b> Code review was built for the pace of humans writing code. Agents write most of the diff now, faster than any reviewer can read it. Every gate you already trust is automated for that reason. This one has to be too.</p>
-        <a class="pt-go" href="/why-this-matters/">Why this matters &rarr;</a>
+    <div style="margin-top:30px;border:1px solid #EBDCC0;border-radius:8px;background:#fff;overflow:hidden">
+      <div style="display:grid;grid-template-columns:minmax(110px,1fr) minmax(200px,2fr) minmax(180px,2fr);padding:13px 22px;background:#FFF4E0;border-bottom:1px solid #D8C39D;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#6B6155;font-weight:700;gap:18px">
+        <div>Gate</div><div>What runs</div><div>What it catches</div>
       </div>
-      <a class="pt-img" href="/why-this-matters/" aria-label="Why this matters: shipped code volume against human review capacity">
-        <svg class="vthumb" viewBox="48 4 436 244" role="img" aria-labelledby="vt-t vt-d" preserveAspectRatio="xMidYMid meet">
-        <title id="vt-t">Shipped code volume outrunning human review capacity</title>
-        <desc id="vt-d">A steeply rising line labelled Code shipped crosses a flat dashed line labelled Human review capacity and pulls away from it. The widening area between them is shaded and labelled Nobody read this.</desc>
-        <path d="M218.1 223.6 L224.2 222.3 L230.4 220.8 L236.5 219.0 L242.7 217.0 L248.8 214.8 L255.0 212.3 L261.2 209.5 L267.3 206.6 L273.5 203.4 L279.6 200.1 L285.8 196.7 L291.9 193.4 L298.1 190.2 L304.2 187.9 L310.4 185.4 L316.6 182.4 L322.7 178.9 L328.9 175.0 L335.0 170.5 L341.2 165.5 L347.3 160.1 L353.5 154.3 L359.7 148.2 L365.8 141.9 L372.0 135.5 L378.1 129.2 L384.3 123.2 L390.4 117.8 L396.6 113.2 L402.8 107.6 L408.9 100.7 L415.1 92.9 L421.2 84.1 L427.4 74.8 L433.5 65.3 L439.7 56.0 L445.8 47.3 L452.0 40.0 L452.0 223.9 L218.1 223.9 Z" fill="var(--gold-soft)"/>
-        <line x1="58" y1="236" x2="452" y2="236" stroke="var(--rule-strong)" stroke-width="1"/>
-        <line x1="58" y1="223.9" x2="452" y2="223.9" stroke="var(--muted)" stroke-width="2.6" stroke-dasharray="8 6" stroke-linecap="round"/>
-        <path d="M58.0 235.5 L64.2 235.4 L70.3 235.3 L76.5 235.2 L82.6 235.1 L88.8 235.0 L94.9 234.9 L101.1 234.8 L107.2 234.7 L113.4 234.5 L119.6 234.2 L125.7 234.0 L131.9 233.6 L138.0 233.3 L144.2 232.8 L150.3 232.3 L156.5 231.7 L162.7 231.0 L168.8 230.3 L175.0 229.5 L181.1 228.7 L187.3 227.8 L193.4 227.0 L199.6 226.3 L205.8 225.6 L211.9 224.7 L218.1 223.6 L224.2 222.3 L230.4 220.8 L236.5 219.0 L242.7 217.0 L248.8 214.8 L255.0 212.3 L261.2 209.5 L267.3 206.6 L273.5 203.4 L279.6 200.1 L285.8 196.7 L291.9 193.4 L298.1 190.2 L304.2 187.9 L310.4 185.4 L316.6 182.4 L322.7 178.9 L328.9 175.0 L335.0 170.5 L341.2 165.5 L347.3 160.1 L353.5 154.3 L359.7 148.2 L365.8 141.9 L372.0 135.5 L378.1 129.2 L384.3 123.2 L390.4 117.8 L396.6 113.2 L402.8 107.6 L408.9 100.7 L415.1 92.9 L421.2 84.1 L427.4 74.8 L433.5 65.3 L439.7 56.0 L445.8 47.3 L452.0 40.0" fill="none" stroke="var(--action)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="86" cy="235.1" r="5" fill="var(--action)" stroke="var(--surface)" stroke-width="2"/><circle cx="196" cy="226.7" r="5" fill="var(--action)" stroke="var(--surface)" stroke-width="2"/><circle cx="300" cy="189.3" r="5" fill="var(--action)" stroke="var(--surface)" stroke-width="2"/><circle cx="392" cy="116.5" r="5" fill="var(--action)" stroke="var(--surface)" stroke-width="2"/>
-        <text class="v-lab" x="63" y="196" font-size="18" fill="var(--muted)" font-weight="700">Human review capacity</text>
-        <text class="v-lab" x="330" y="122" font-size="18" fill="var(--action)" font-weight="700" text-anchor="end">Code shipped</text>
-        <text class="v-gap" x="452" y="212" font-size="18" fill="var(--gold-ink)" font-weight="700" text-anchor="end">Nobody read this</text>
+      <div style="display:grid;grid-template-columns:minmax(110px,1fr) minmax(200px,2fr) minmax(180px,2fr);padding:15px 22px;border-bottom:1px solid #EBDCC0;gap:18px;font-size:.95rem;color:#6B6155">
+        <div style="font-family:Lora,Georgia,serif;font-size:1.1rem;color:#2D2D2D">Quality</div><div>Tests, linters, code review</div><div>Bugs and regressions</div>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(110px,1fr) minmax(200px,2fr) minmax(180px,2fr);padding:15px 22px;border-bottom:1px solid #EBDCC0;gap:18px;font-size:.95rem;color:#6B6155">
+        <div style="font-family:Lora,Georgia,serif;font-size:1.1rem;color:#2D2D2D">Security</div><div>SAST, dependency and secret scanning</div><div>Vulnerabilities</div>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(110px,1fr) minmax(200px,2fr) minmax(180px,2fr);padding:15px 22px;border-bottom:1px solid #EBDCC0;gap:18px;font-size:.95rem;color:#6B6155">
+        <div style="font-family:Lora,Georgia,serif;font-size:1.1rem;color:#2D2D2D">Compliance</div><div>Separation of duties, audit trail</div><div>SOC 2 findings</div>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(110px,1fr) minmax(200px,2fr) minmax(180px,2fr);padding:15px 22px;gap:18px;font-size:.95rem;color:#2D2D2D;font-weight:700;background:#F3F0FE;box-shadow:inset 3px 0 0 #5539EC">
+        <div style="font-family:Lora,Georgia,serif;font-size:1.1rem;color:#5539EC;font-weight:600">Humane</div><div>A HumaneBench judge on the pull request</div><div>Harm to the people using it</div>
+      </div>
+    </div>
+
+    <div style="margin-top:26px;padding:24px 28px;border-left:3px solid #5539EC;background:#fff;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px;align-items:center">
+      <div>
+        <p style="font-size:1rem;color:#6B6155;margin:0"><b style="color:#2D2D2D">The volume has changed.</b> Code review was built for the pace of humans writing code. Agents write most of the diff now, faster than any reviewer can read it. Every gate you already trust is automated for that reason. This one has to be too.</p>
+        <a href="/why-this-matters/" style="display:inline-block;margin-top:16px;font-weight:700">Why this matters →</a>
+      </div>
+      <a href="/why-this-matters/" aria-label="Why this matters: shipped code volume against human review capacity" style="display:block">
+        <svg viewBox="48 4 436 244" role="img" aria-label="Shipped code volume outrunning human review capacity" preserveAspectRatio="xMidYMid meet" style="display:block;width:100%;height:auto">
+          <path d="M218.1 223.6 L248.8 214.8 L279.6 200.1 L310.4 185.4 L341.2 165.5 L372.0 135.5 L402.8 107.6 L433.5 65.3 L452.0 40.0 L452.0 223.9 L218.1 223.9 Z" fill="#F0E6FB"></path>
+          <line x1="58" y1="236" x2="452" y2="236" stroke="#D8C39D" stroke-width="1"></line>
+          <line x1="58" y1="223.9" x2="452" y2="223.9" stroke="#6B6155" stroke-width="2.6" stroke-dasharray="8 6" stroke-linecap="round"></line>
+          <path d="M58.0 235.5 L88.8 235.0 L119.6 234.2 L150.3 232.3 L181.1 228.7 L211.9 224.7 L242.7 217.0 L273.5 203.4 L304.2 187.9 L335.0 170.5 L365.8 141.9 L396.6 113.2 L427.4 74.8 L452.0 40.0" fill="none" stroke="#5539EC" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"></path>
+          <text x="63" y="196" font-size="18" fill="#6B6155" font-weight="700">Human review capacity</text>
+          <text x="330" y="122" font-size="18" fill="#5539EC" font-weight="700" text-anchor="end">Code shipped</text>
+          <text x="446" y="178" font-size="22" fill="#C0392B" font-weight="700" text-anchor="end">Your risk</text>
+          <text x="446" y="204" font-size="22" fill="#C0392B" font-weight="700" text-anchor="end">area</text>
         </svg>
       </a>
     </div>
-
-    <div class="gatewrap">
-      <table class="gates">
-        <thead>
-          <tr><th>Gate</th><th>What runs</th><th>What it catches</th></tr>
-        </thead>
-        <tbody>
-          <tr><td class="g">Quality</td><td data-label="What runs">Tests, linters, code review</td><td data-label="What it catches">Bugs and regressions</td></tr>
-          <tr><td class="g">Security</td><td data-label="What runs">SAST, dependency and secret scanning</td><td data-label="What it catches">Vulnerabilities</td></tr>
-          <tr><td class="g">Compliance</td><td data-label="What runs">Separation of duties, audit trail</td><td data-label="What it catches">SOC 2 findings</td></tr>
-          <tr class="ours"><td class="g">Humane</td><td data-label="What runs">A HumaneBench judge on the pull request</td><td data-label="What it catches">Harm to the people using it</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="builder">
-      <span class="builder-cap">What product builders keep telling us</span>
-      <p>&ldquo;I want to ship something engaging <em>and</em> good for my users. I don't want to find out two years from now that it caused an addiction or worse. But I also don't know what &lsquo;good&rsquo; means in this case, and I don't want to be in the business of deciding it.&rdquo;</p>
-      <p class="builder-attr">CEO of an AI company</p>
-      <p class="builder-a">You don't have to define humane. That's our job. Yours is to merge or not merge.</p>
-    </div>
   </div>
 </section>
 
-<section id="what">
-  <div class="wrap">
-    <div class="label">How it works</div>
-    <h2 class="sec-title">Humane all the way through</h2>
-    <p class="sec-intro">Four stages, in the order a team actually moves through them. Most start in the middle, at measurement, because that is where the risk shows up first.</p>
+<section id="system" style="border-top:1px solid #EBDCC0">
+  <div style="max-width:1120px;margin:0 auto;padding:52px 32px">
+    <div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8C6015;font-weight:700">The platform</div>
+    <h2 style="font-family:Lora,Georgia,serif;font-weight:500;font-size:clamp(1.6rem,3.4vw,2.3rem);line-height:1.16;letter-spacing:-.015em;margin:10px 0 14px;max-width:26ch;text-wrap:balance">HumaneOS</h2>
+    <p style="font-size:1.05rem;color:#6B6155;max-width:64ch;margin:0 0 34px">The layer between what you say your product should do and what it actually does.</p>
 
-    <ol class="pipeline">
-      <li class="stage">
-        <span class="stage-n">01</span>
-        <h3>Principles</h3>
-        <p>Values become a specification. The public version is the <a href="https://ai-for-people.org/" target="_blank" rel="noopener noreferrer"><b>AI Bill of Rights</b></a>: eleven rights drafted and signed by the people they protect. We turn that into eight scorable principles with defined severity, and you write your own thresholds into a file your repo keeps.</p>
-        <span class="stage-buy">Open and free &middot; humane-policy.toml</span>
-      </li>
-      <li class="stage">
-        <span class="stage-n">02</span>
-        <h3>Measurement</h3>
-        <p>Know how your AI actually treats people. HumaneBench scores real model output against those principles and your thresholds, before release, on every pull request, and on live interactions once you are running.</p>
-        <span class="stage-buy">HumaneBench &middot; The Humane Gate</span>
-      </li>
-      <li class="stage">
-        <span class="stage-n">03</span>
-        <h3>Mitigation</h3>
-        <p>A score is not a fix. Find what caused the regression, test more than one intervention against the same suite, and keep the one that actually moved the number. The comparison is the deliverable.</p>
-        <span class="stage-buy">Finding &rarr; intervention &rarr; retest</span>
-      </li>
-      <li class="stage">
-        <span class="stage-n">04</span>
-        <h3>Evidence</h3>
-        <p>What you committed to, what you tested, what failed, what you changed, and whether it worked. Written as the work happens rather than reconstructed afterwards, when it is worth much less.</p>
-        <span class="stage-buy">Generated as the work happens</span>
-      </li>
-    </ol>
+    <div style="border:1px solid #D8C39D;border-radius:8px;background:#fff;overflow:hidden">
 
-    <div class="twoup">
-      <div>
-        <div class="label">Stage 01 &middot; what gets codified</div>
-        <h3 class="sub-h">The eight principles</h3>
-        <ol class="principles">
-          <li>Respect user attention</li>
-          <li>Enable meaningful choices</li>
-          <li>Enhance human capabilities</li>
-          <li>Protect dignity and safety</li>
-          <li>Foster healthy relationships</li>
-          <li>Prioritize long-term well-being</li>
-          <li>Be transparent and honest</li>
-          <li>Design for equity and inclusion</li>
-        </ol>
-        <p class="billnote">These eight are the scorable form of the <a href="https://ai-for-people.org/" target="_blank" rel="noopener noreferrer"><b>AI Bill of Rights</b></a>, where eleven rights are drafted, signed and argued over in public. HumaneBench turns that document into testable scores against real systems. Nothing here was decided in this office.</p>
-        <p class="linkrow">
-          <a href="https://ai-for-people.org/" target="_blank" rel="noopener noreferrer">Read and sign it</a>
-          <a href="https://github.com/buildinghumanetech/humane-tech-framework/blob/main/docs/principles.md" target="_blank" rel="noopener noreferrer">The principles in full</a>
-          <a href="https://github.com/buildinghumanetech/ai-bill-of-rights" target="_blank" rel="noopener noreferrer">Edit it on GitHub</a>
-        </p>
-      </div>
-      <div>
-        <div class="label">Stage 04 &middot; start measuring today</div>
-        <h3 class="sub-h">Run the rubric yourself</h3>
-        <div class="starts">
-          <div class="start">
-            <h4>Start with one transcript</h4>
-            <p>The <a href="https://github.com/buildinghumanetech/humanebench/blob/main/rubrics/rubric_v3.md" target="_blank" rel="noopener noreferrer">scoring rubric</a> is public. Point it at a single conversation, or at every conversation you have logged, and see where your product stops protecting the person in it.</p>
-          </div>
-          <div class="start">
-            <h4>CLI and Claude Skill <span class="soon">Forthcoming</span></h4>
-            <p>The same rubric as a command in your terminal, and as a skill that scores a diff without you leaving the editor.</p>
+      <div style="border-bottom:1px solid #EBDCC0">
+        <button class="acc" data-i="0" aria-expanded="true" style="width:100%;display:grid;grid-template-columns:56px minmax(0,1fr) 32px;align-items:baseline;gap:16px;text-align:left;background:none;border:none;padding:24px 26px;cursor:pointer;font:inherit;color:inherit">
+          <span style="font-family:Lora,Georgia,serif;font-size:.95rem;color:#8C6015;font-variant-numeric:tabular-nums">01</span>
+          <span>
+            <span style="display:block;font-family:Lora,Georgia,serif;font-size:1.45rem;letter-spacing:-.012em;color:#2D2D2D;margin-bottom:4px">Principles</span>
+            <span style="display:block;font-size:.97rem;color:#6B6155">What humane means, written down where your build can read it.</span>
+          </span>
+          <span class="ind" style="font-size:1.5rem;color:#5539EC;line-height:1;text-align:right">−</span>
+        </button>
+        <div class="panel" data-i="0">
+          <div style="padding:4px 26px 30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px;align-items:start">
+            <div>
+              <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8C6015;font-weight:700;margin-bottom:14px">The standard</div>
+              <p style="font-size:1.02rem;color:#6B6155;margin:0"><a href="https://humanebench.ai" target="_blank" rel="noopener noreferrer">HumaneBench</a>: eight principles, published, and validated against human raters. Alongside them the <a href="https://ai-for-people.org/" target="_blank" rel="noopener noreferrer">AI Bill of Rights</a>, drafted and signed by the people they protect.</p>
+            </div>
+              <div>
+                <p style="font-size:1rem;color:#6B6155;margin:0 0 20px;max-width:56ch"><a href="https://humanebench.ai" target="_blank" rel="noopener noreferrer">HumaneBench</a> evaluates whether AI systems protect human wellbeing. Open source, ensemble-judged, validated against human scoring.</p>
+                <div style="border-top:1px solid #D8C39D">
+                  <div style="display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:baseline;padding:16px 0;border-bottom:1px solid #EBDCC0">
+                    <b style="font-family:Lora,Georgia,serif;font-size:2rem;font-weight:500;color:#8C6015;line-height:1;min-width:3.4ch">15</b>
+                    <span style="font-size:.94rem;color:#6B6155">leading models evaluated across <em style="font-style:normal;color:#2D2D2D">788 scenarios</em> and three test conditions</span>
+                  </div>
+                  <div style="display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:baseline;padding:16px 0;border-bottom:1px solid #EBDCC0">
+                    <b style="font-family:Lora,Georgia,serif;font-size:2rem;font-weight:500;color:#8C6015;line-height:1;min-width:3.4ch">67%</b>
+                    <span style="font-size:.94rem;color:#6B6155">flipped to <em style="font-style:normal;color:#2D2D2D">actively harmful behavior</em> when simply told to disregard user wellbeing</span>
+                  </div>
+                  <div style="display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:baseline;padding:16px 0;border-bottom:1px solid #EBDCC0">
+                    <b style="font-family:Lora,Georgia,serif;font-size:2rem;font-weight:500;color:#8C6015;line-height:1;min-width:3.4ch">4</b>
+                    <span style="font-size:.94rem;color:#6B6155">models held their integrity under that pressure</span>
+                  </div>
+                </div>
+                <div style="display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:18px;font-size:.9rem">
+                  <a href="https://humanebench.ai/whitepaper" target="_blank" rel="noopener noreferrer">Whitepaper</a>
+                  <a href="https://github.com/buildinghumanetech/humanebench" target="_blank" rel="noopener noreferrer">HumaneBench on GitHub</a>
+                </div>
+              </div>
           </div>
         </div>
-        <p class="linkrow">
-          <a href="https://github.com/buildinghumanetech/humanebench/blob/main/rubrics/rubric_v3.md" target="_blank" rel="noopener noreferrer">Rubric v3</a>
-          <a href="https://github.com/buildinghumanetech/humanebench" target="_blank" rel="noopener noreferrer">The repo</a>
-          <a href="#contact">Or have us install the full gate</a>
-        </p>
       </div>
-    </div>
 
-    <div style="margin-top:38px">
-      <div class="label">What users should feel</div>
-      <div class="promises">
-        <div class="promise"><h3>Cared for</h3><p>Their needs sit at the center of the experience.</p></div>
-        <div class="promise"><h3>Present</h3><p>More present in body and mind rather than less.</p></div>
-        <div class="promise"><h3>Fulfilled</h3><p>Satisfied with the experience and the outcome.</p></div>
-        <div class="promise"><h3>Connected</h3><p>Closer to themselves and each other and the world.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
+      <div style="border-bottom:1px solid #EBDCC0">
+        <button class="acc" data-i="1" aria-expanded="false" style="width:100%;display:grid;grid-template-columns:56px minmax(0,1fr) 32px;align-items:baseline;gap:16px;text-align:left;background:none;border:none;padding:24px 26px;cursor:pointer;font:inherit;color:inherit">
+          <span style="font-family:Lora,Georgia,serif;font-size:.95rem;color:#8C6015;font-variant-numeric:tabular-nums">02</span>
+          <span>
+            <span style="display:block;font-family:Lora,Georgia,serif;font-size:1.45rem;letter-spacing:-.012em;color:#2D2D2D;margin-bottom:4px">Measurement</span>
+            <span style="display:block;font-size:.97rem;color:#6B6155">Run the eval against your model, and move upstream to check your PRs.</span>
+          </span>
+          <span class="ind" style="font-size:1.5rem;color:#5539EC;line-height:1;text-align:right">+</span>
+        </button>
+        <div class="panel" data-i="1" hidden>
+          <div style="padding:4px 26px 30px">
+            <div>
+              <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8C6015;font-weight:700;margin-bottom:6px">On live traffic</div>
+              <p style="font-size:.95rem;color:#6B6155;margin:0 0 16px;max-width:64ch">Scores land in the dashboard your team already watches, broken out by principle and severity.</p>
+              <img src="assets/humanebench-dashboard.jpg" alt="HumaneBench dashboard: score level distribution, issues by principle, and issues over time" style="display:block;width:100%;height:auto;border:1px solid #D8C39D;border-radius:8px" />
+              <div style="margin-top:16px;font-size:.9rem">
+                <a href="https://github.com/buildinghumanetech/humanebench/blob/main/rubrics/rubric_v3.md" target="_blank" rel="noopener noreferrer" style="font-weight:700">Install HumaneBench →</a>
+              </div>
+            </div>
+            <div style="margin-top:34px;padding-top:28px;border-top:1px solid #EBDCC0">
+                <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8C6015;font-weight:700;margin-bottom:14px">On every pull request</div>
+                <p style="font-size:.95rem;color:#6B6155;margin:-4px 0 14px">Move upstream to understand impact before you merge.</p>
+                <div style="border:1px solid #D8C39D;border-radius:8px;overflow:hidden;background:#fff">
+                  <div style="padding:13px 18px;background:#FFF4E0;border-bottom:1px solid #EBDCC0;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+                    <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;font-weight:700;color:#FFF4E0;background:#5539EC;padding:3px 8px;border-radius:4px">github-actions</span>
+                    <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;color:#6B6155">pr-5-soft-delete · #5</span>
+                  </div>
+                  <div style="padding:18px 18px 4px">
+                    <div style="font-family:Lora,Georgia,serif;font-size:1.15rem;color:#2D2D2D;margin-bottom:14px">HumaneBench · <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85em;background:#FBEBD2;padding:2px 7px;border-radius:4px">advisory</span></div>
+                    <div style="display:flex;align-items:center;gap:9px;padding-bottom:10px;border-bottom:1px solid #EBDCC0;margin-bottom:14px">
+                      <span style="width:12px;height:12px;border-radius:999px;background:#CA9239;display:inline-block"></span>
+                      <b style="font-size:1rem;color:#2D2D2D">Discuss</b>
+                    </div>
+                    <p style="font-size:.93rem;color:#6B6155;margin:0 0 12px">This change converts account deletion from a real deletion into a soft flag and removes all purge logic, meaning data is now retained indefinitely and analytics can query deleted accounts. This directly contradicts the team’s own written policy.</p>
+                    <p style="font-size:.93rem;color:#6B6155;margin:0 0 16px">This touches something the team named as a floor in <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86em;background:#FBEBD2;padding:1px 6px;border-radius:4px">humane-policy.toml</span>. Worth a conversation before it ships. It is not blocked and this check cannot block it.</p>
+                    <div style="display:flex;align-items:center;gap:9px;padding-top:14px;border-top:1px solid #EBDCC0;margin-bottom:10px">
+                      <span style="width:12px;height:12px;border-radius:999px;background:#CA9239;display:inline-block"></span>
+                      <b style="font-size:.97rem;color:#2D2D2D">Permitted, and below the floor</b>
+                    </div>
+                    <p style="font-size:.93rem;color:#6B6155;margin:0 0 18px"><b style="color:#2D2D2D">Analytics now reads all accounts including deleted ones.</b> <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86em;background:#FBEBD2;padding:1px 6px;border-radius:4px">Protect Dignity &amp; Safety</span> is named as a floor, so a policy document does not settle it. Either the document or the floor is wrong, and that is a decision for a person.</p>
+                  </div>
+                  <p style="margin:0;padding:14px 18px;border-top:1px solid #EBDCC0;background:#FFF4E0;font-size:.85rem;color:#6B6155">Constructed example. The gate advises; a person decides.</p>
+                </div>
+                <div style="margin-top:16px;font-size:.9rem">
+                  <a href="https://github.com/buildinghumanetech/humane-gate" target="_blank" rel="noopener noreferrer" style="font-weight:700">Install HumaneGate →</a>
+                </div>
+            </div>
+            <div style="margin-top:34px;padding-top:28px;border-top:1px solid #EBDCC0;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;align-items:start">
+              <div>
+                <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8C6015;font-weight:700;margin-bottom:14px">Your thresholds</div>
+                <p style="font-size:.95rem;color:#6B6155;margin:0 0 12px">The principles define what humane means. A meditation app and a logistics tool should not have the same ceiling on notifications. What they should share is that a ceiling exists, is written down, and gets reviewed like any other change.</p>
+                <p style="font-size:.95rem;color:#6B6155;margin:0">Loosen it for a quarter and that is a pull request, not a quiet edit in a config nobody reads.</p>
+              </div>
+              <figure style="margin:0;border:1px solid #D8C39D;border-radius:8px;overflow:hidden;background:#FBEBD2">
+                <figcaption style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#8C6015;font-weight:600;padding:10px 14px;border-bottom:1px solid #D8C39D">humane-policy.toml · committed to your repo</figcaption>
+                <pre style="margin:0;padding:14px;overflow-x:auto;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;line-height:1.75;color:#2D2D2D"><span style="color:#8C6015">[attention]</span>
+max_notifications_per_day = 3
+quiet_hours               = "22:00-08:00"
+mute_is_absolute          = true
+streaks_or_loss_framing   = false
 
-<section id="values">
-  <div class="wrap">
-    <div class="label">Stage 01 &middot; Principles</div>
-    <h2 class="sec-title">Your values, in a file<br>your pipeline enforces</h2>
-    <p class="sec-intro">Most companies have values on a wall and nothing that checks whether the code agrees. The eight principles say what humane means. They do not say what your number is. So you write your number down, in your repo, and the gate scores every change against it.</p>
-
-    <div class="vac-grid">
-      <figure class="vac-code">
-        <figcaption>humane-policy.toml &middot; committed to your repo</figcaption>
-<pre><span class="c">[attention]</span>
-<span class="c"># What we will not do to someone's day.</span>
-<span class="k">max_notifications_per_day</span>   = 3
-<span class="k">quiet_hours</span>                 = "22:00-08:00"
-<span class="k">mute_is_absolute</span>            = true
-<span class="k">streaks_or_loss_framing</span>     = false
-
-<span class="c">[memory]</span>
-<span class="c"># Not against memory. Against memory nobody controls.</span>
-<span class="k">allowed</span>                     = true
-<span class="k">disclosure_required</span>         = true
-<span class="k">user_can_export</span>             = true
-<span class="k">user_can_delete</span>             = true
-<span class="k">memory_may_imply_relationship</span> = false</pre>
-      </figure>
-
-      <div class="vac-split">
-        <div class="vac-item">
-          <h4>Society sets the principle</h4>
-          <p>Eleven rights drafted and signed in public, turned into eight scorable principles. Your team does not get to decide that respecting attention matters. Nobody in this office decided it either.</p>
+<span style="color:#8C6015">[memory]</span>
+allowed                   = true
+disclosure_required       = true
+user_can_export           = true
+user_can_delete           = true</pre>
+              </figure>
+            </div>
+          </div>
         </div>
-        <div class="vac-item ours">
-          <h4>You set the threshold</h4>
-          <p>Three notifications a day or five. Thirty days to purge deleted data or seven. A meditation app and a logistics tool should not have the same ceiling. What they should share is that a ceiling exists, is written down, and is reviewed like a schema migration.</p>
+      </div>
+
+      <div style="border-bottom:1px solid #EBDCC0">
+        <button class="acc" data-i="2" aria-expanded="false" style="width:100%;display:grid;grid-template-columns:56px minmax(0,1fr) 32px;align-items:baseline;gap:16px;text-align:left;background:none;border:none;padding:24px 26px;cursor:pointer;font:inherit;color:inherit">
+          <span style="font-family:Lora,Georgia,serif;font-size:.95rem;color:#8C6015;font-variant-numeric:tabular-nums">03</span>
+          <span>
+            <span style="display:block;font-family:Lora,Georgia,serif;font-size:1.45rem;letter-spacing:-.012em;color:#2D2D2D;margin-bottom:4px">Mitigation</span>
+            <span style="display:block;font-size:.97rem;color:#6B6155">A score is not a fix. Find the cause, test interventions, keep what moved the number.</span>
+          </span>
+          <span class="ind" style="font-size:1.5rem;color:#5539EC;line-height:1;text-align:right">+</span>
+        </button>
+        <div class="panel" data-i="2" hidden>
+          <div style="padding:4px 26px 30px;max-width:860px">
+            <p style="font-size:1rem;color:#6B6155;margin:0 0 18px;max-width:64ch">Finding the problem is hard. Knowing which change actually repairs it is harder. Here’s how one finding moves through the system, start to finish.</p>
+            <div style="border:1px solid #D8C39D;border-radius:8px;overflow:hidden;background:#fff">
+              <div style="padding:20px 22px;border-bottom:1px solid #EBDCC0">
+                <span style="display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#6B6155;font-weight:700;margin-bottom:6px">Finding</span>
+                <h4 style="font-family:Lora,Georgia,serif;font-size:1.25rem;font-weight:400;margin:0 0 8px;color:#5539EC">Respect user attention · regression</h4>
+                <p style="margin:0;font-size:.96rem;color:#6B6155">Users who signal fatigue are being encouraged to keep going. Detected on production traffic, not in a test suite.</p>
+              </div>
+              <div style="padding:20px 22px;border-bottom:1px solid #EBDCC0">
+                <span style="display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#6B6155;font-weight:700;margin-bottom:6px">Likely cause</span>
+                <p style="margin:0;font-size:.96rem;color:#6B6155">An engagement-optimisation prompt introduced in <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em;background:#FBEBD2;padding:1px 6px;border-radius:4px">#1842</span>.</p>
+              </div>
+              <div style="padding:20px 22px;border-bottom:1px solid #EBDCC0">
+                <span style="display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#6B6155;font-weight:700;margin-bottom:12px">Interventions tested</span>
+                <div style="display:flex;flex-direction:column;gap:10px">
+                  <div style="display:grid;grid-template-columns:minmax(0,15em) minmax(0,1fr) 3.4em;gap:14px;align-items:center">
+                    <span style="font-size:.94rem;color:#6B6155">Prompt policy change</span>
+                    <span style="display:block;height:10px;background:#F0E6FB;border-radius:4px"><span style="display:block;height:100%;width:26%;background:#D8C39D;border-radius:4px"></span></span>
+                    <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86rem;color:#6B6155;text-align:right">+12%</span>
+                  </div>
+                  <div style="display:grid;grid-template-columns:minmax(0,15em) minmax(0,1fr) 3.4em;gap:14px;align-items:center">
+                    <span style="font-size:.94rem;color:#6B6155">Stopping-point in the UI</span>
+                    <span style="display:block;height:10px;background:#F0E6FB;border-radius:4px"><span style="display:block;height:100%;width:67%;background:#D8C39D;border-radius:4px"></span></span>
+                    <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86rem;color:#6B6155;text-align:right">+31%</span>
+                  </div>
+                  <div style="display:grid;grid-template-columns:minmax(0,15em) minmax(0,1fr) 3.4em;gap:14px;align-items:center">
+                    <span style="font-size:.94rem;color:#2D2D2D;font-weight:700">Disengagement classifier</span>
+                    <span style="display:block;height:10px;background:#F0E6FB;border-radius:4px"><span style="display:block;height:100%;width:100%;background:#5539EC;border-radius:4px"></span></span>
+                    <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86rem;color:#5539EC;font-weight:700;text-align:right">+46%</span>
+                  </div>
+                </div>
+                <p style="margin:14px 0 0;font-size:.87rem;color:#6B6155">Each candidate scored against the same HumaneBench suite, so the numbers are comparable to each other and to the baseline.</p>
+              </div>
+              <div style="padding:20px 22px;background:#FFF4E0">
+                <span style="display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#6B6155;font-weight:700;margin-bottom:6px">Shipped · retested</span>
+                <p style="margin:0;font-size:.96rem;color:#6B6155"><b style="color:#2D2D2D">Disengagement classifier and response policy.</b> Threshold restored, no regression on the other seven principles, holding after fourteen days in production.</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="vac-item">
-          <h4>The gate enforces both</h4>
-          <p>Every pull request is scored against the principles and against your file. A change inside your stated limits passes. A change past them is flagged, citing your own words back to you.</p>
-        </div>
-        <div class="vac-item">
-          <h4>Changing the values is a pull request</h4>
-          <p>Loosening the cap for a quarter is a legitimate decision. Making it quietly, in a config nobody reviews, is not. Edit the policy and the gate scores that too, because it moves what your product may do to people, for every change that follows.</p>
-        </div>
       </div>
-    </div>
 
-    <p class="vac-line">This is what a value is worth once it is executable: not a poster, not a principle deck, not a workshop everyone forgets. A number your build reads, in a file your team argues over, on the pull request where the decision is actually made.</p>
-    <p class="linkrow">
-      <a href="https://github.com/buildinghumanetech/humane-gate" target="_blank" rel="noopener noreferrer">See the gate on GitHub</a>
-      <a href="https://github.com/buildinghumanetech/humanebench/blob/main/rubrics/rubric_v3.md" target="_blank" rel="noopener noreferrer">The scoring rubric</a>
-    </p>
-  </div>
-</section>
-
-<section id="mitigation">
-  <div class="wrap">
-    <div class="label">Stage 03 &middot; Mitigation</div>
-    <h2 class="sec-title">A score is not a fix</h2>
-    <p class="sec-intro">Finding the problem is the easy half. The part worth paying for is knowing which change actually repairs it, and being able to show that it did. Here is how one finding moves through the system, start to finish.</p>
-
-    <p class="constructed">A constructed example. <b>We do not publish what we find in customer code</b> &mdash; your findings are yours, and that is the only way this works.</p>
-    <div class="mit">
-      <div class="mit-row">
-        <span class="e-k">Finding</span>
-        <h3>Respect user attention &middot; regression</h3>
-        <p>Users who signal fatigue are being encouraged to keep going. Detected on production traffic, not in a test suite.</p>
-      </div>
-      <div class="mit-row">
-        <span class="e-k">Likely cause</span>
-        <p class="mit-cause">An engagement-optimisation prompt introduced in <code>#1842</code>.</p>
-      </div>
-      <div class="mit-row">
-        <span class="e-k">Interventions tested</span>
-        <ul class="bars">
-          <li><span class="bl">Prompt policy change</span><span class="bt"><span class="bf" style="width:26%"></span></span><span class="bv">+12%</span></li>
-          <li><span class="bl">Stopping-point in the UI</span><span class="bt"><span class="bf" style="width:67%"></span></span><span class="bv">+31%</span></li>
-          <li class="win"><span class="bl">Disengagement classifier</span><span class="bt"><span class="bf" style="width:100%"></span></span><span class="bv">+46%</span></li>
-        </ul>
-        <p class="bars-note">Each candidate scored against the same HumaneBench suite, so the numbers are comparable to each other and to the baseline.</p>
-      </div>
-      <div class="mit-row mit-out">
-        <span class="e-k">Shipped &middot; retested</span>
-        <p><b>Disengagement classifier and response policy.</b> Threshold restored, no regression on the other seven principles, holding after fourteen days in production.</p>
-      </div>
-    </div>
-    <p class="vnote" style="border:none;padding-top:16px">Over time this is the part that compounds. Not a library of findings, a library of <b>which interventions actually work, on which principle, under which conditions</b>.</p>
-  </div>
-</section>
-
-<section id="evidence">
-  <div class="wrap">
-    <div class="label">Stage 04 &middot; Evidence</div>
-    <h2 class="sec-title">Know what you knew,<br>and what you did about it</h2>
-    <p class="sec-intro">Every evaluation leaves a record. Not a certificate, and not a claim that a product is safe. A record of what was checked, what it found, and what happened next &mdash; written as the work happens, because the version reconstructed afterwards is worth very little.</p>
-
-    <p class="constructed">What a record looks like at the end of a release. <b>The contents stay with you.</b> We hold the method, not your results.</p>
-    <div class="rec">
-      <div class="rec-head">
-        <span class="rec-t">Release 8.42</span>
-        <span class="rec-d">14 days in production</span><span class="rec-x">Constructed example</span>
-      </div>
-      <dl class="rec-grid">
-        <div><dt>Evaluations run</dt><dd>1,842</dd></div>
-        <div><dt>Regressions found</dt><dd>7</dd></div>
-        <div><dt>Fixed before release</dt><dd>6</dd></div>
-        <div><dt>Accepted, with reasons on the record</dt><dd>1</dd></div>
-        <div><dt>Dignity and safety regressions</dt><dd>None</dd></div>
-        <div><dt>Production since release</dt><dd>Stable</dd></div>
-      </dl>
-      <p class="rec-foot">A green run means no check fired. It does not mean a product is lawful, safe, or certified humane. Nobody can tell you that yet, and a tool that pretends otherwise is worse than none, because people stop reading it.</p>
-    </div>
-
-    <p class="vnote" style="border:none;padding-top:18px">Who the record is for: <b>your board, an enterprise buyer running diligence, a regulator asking what you knew</b> &mdash; and, increasingly, an insurer deciding whether this category of risk is one you can demonstrate control over.</p>
-  </div>
-</section>
-
-<section id="proof">
-  <div class="wrap">
-    <div class="label">Stage 02 &middot; Measurement</div>
-    <h2 class="sec-title">The benchmark behind the gate</h2>
-
-    <div class="proof">
       <div>
-        <p class="sec-intro" style="margin-bottom:26px">HumaneBench evaluates whether AI systems protect human wellbeing by default and whether those protections survive pressure. Open source. Ensemble-judged. Validated against human scoring.</p>
-        <div class="stats">
-          <div class="stat"><b>15</b><span>leading models evaluated across <em>788 scenarios</em> and three test conditions</span></div>
-          <div class="stat"><b>67%</b><span>flipped to <em>actively harmful behavior</em> when simply told to disregard user wellbeing</span></div>
-          <div class="stat"><b>4</b><span>models held their integrity under that pressure</span></div>
+        <button class="acc" data-i="3" aria-expanded="false" style="width:100%;display:grid;grid-template-columns:56px minmax(0,1fr) 32px;align-items:baseline;gap:16px;text-align:left;background:none;border:none;padding:24px 26px;cursor:pointer;font:inherit;color:inherit">
+          <span style="font-family:Lora,Georgia,serif;font-size:.95rem;color:#8C6015;font-variant-numeric:tabular-nums">04</span>
+          <span>
+            <span style="display:block;font-family:Lora,Georgia,serif;font-size:1.45rem;letter-spacing:-.012em;color:#2D2D2D;margin-bottom:4px">Evidence</span>
+            <span style="display:block;font-size:.97rem;color:#6B6155">A record of what you checked, what it found, and what you did about it.</span>
+          </span>
+          <span class="ind" style="font-size:1.5rem;color:#5539EC;line-height:1;text-align:right">+</span>
+        </button>
+        <div class="panel" data-i="3" hidden>
+          <div style="padding:4px 26px 30px;max-width:860px">
+            <p style="font-size:1rem;color:#6B6155;margin:0 0 18px;max-width:64ch">Every evaluation leaves a record of what was checked, what it found, and what happened next, written as the work happens. Because reconstructing it later means combing logs and chat threads against a deadline — hope is not a strategy.</p>
+            <div style="border:1px solid #D8C39D;border-radius:8px;overflow:hidden;background:#fff">
+              <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;padding:15px 22px;background:#FFF4E0;border-bottom:1px solid #EBDCC0">
+                <span style="font-family:Lora,Georgia,serif;font-size:1.2rem;color:#2D2D2D">Release 8.42</span>
+                <span style="margin-left:auto;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;color:#6B6155">14 days in production · constructed example</span>
+              </div>
+              <dl style="margin:0;padding:6px 22px 18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))">
+                <div style="padding:16px 18px 0 0"><dt style="font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#6B6155;font-weight:700;margin-bottom:5px">Evaluations run</dt><dd style="margin:0;font-family:Lora,Georgia,serif;font-size:1.5rem;color:#2D2D2D;line-height:1.1">1,842</dd></div>
+                <div style="padding:16px 18px 0 0"><dt style="font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#6B6155;font-weight:700;margin-bottom:5px">Regressions found</dt><dd style="margin:0;font-family:Lora,Georgia,serif;font-size:1.5rem;color:#2D2D2D;line-height:1.1">7</dd></div>
+                <div style="padding:16px 18px 0 0"><dt style="font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#6B6155;font-weight:700;margin-bottom:5px">Fixed before release</dt><dd style="margin:0;font-family:Lora,Georgia,serif;font-size:1.5rem;color:#2D2D2D;line-height:1.1">6</dd></div>
+                <div style="padding:16px 18px 0 0"><dt style="font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#6B6155;font-weight:700;margin-bottom:5px">Accepted, with reasons on the record</dt><dd style="margin:0;font-family:Lora,Georgia,serif;font-size:1.5rem;color:#2D2D2D;line-height:1.1">1</dd></div>
+                <div style="padding:16px 18px 0 0"><dt style="font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#6B6155;font-weight:700;margin-bottom:5px">Dignity and safety regressions</dt><dd style="margin:0;font-family:Lora,Georgia,serif;font-size:1.5rem;color:#2D2D2D;line-height:1.1">None</dd></div>
+                <div style="padding:16px 18px 0 0"><dt style="font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#6B6155;font-weight:700;margin-bottom:5px">Production since release</dt><dd style="margin:0;font-family:Lora,Georgia,serif;font-size:1.5rem;color:#2D2D2D;line-height:1.1">Stable</dd></div>
+              </dl>
+              <p style="margin:0;padding:16px 22px;border-top:1px solid #EBDCC0;background:#FFF4E0;font-size:.89rem;color:#6B6155">A green run means no check fired. It does not mean a product is lawful, safe, or certified humane. Nobody can tell you that yet, and a tool that pretends otherwise is worse than none, because people stop reading it.</p>
+            </div>
+            <p style="font-size:.92rem;color:#6B6155;margin:18px 0 0">Who the record is for: <b style="color:#2D2D2D">your board, an enterprise buyer running diligence, a regulator asking what you knew</b> — and, increasingly, an insurer deciding whether this category of risk is one you can demonstrate control over.</p>
+          </div>
         </div>
-        <p style="margin-top:26px;font-size:.94rem;color:var(--muted)">Nearly every model failed to respect user attention when users showed signals of unhealthy engagement. Read the <a href="https://humanebench.ai/whitepaper" style="color:var(--gold)" target="_blank" rel="noopener noreferrer">whitepaper</a> or the <a href="https://github.com/buildinghumanetech/humanebench" style="color:var(--gold)" target="_blank" rel="noopener noreferrer">code</a>.</p>
       </div>
-      <div>
-        <p class="quote">Most benchmarks measure whether a model is capable. Ours measures how the model treats the user.</p>
-        <div class="press">
-          <span class="press-cap">Press</span>
-          <p><b>TechCrunch</b><br>&ldquo;A new AI benchmark tests whether chatbots protect human well-being&rdquo;<br>Rebecca Bellan &middot; November 24, 2025</p>
-          <p class="cite">HumaneBench v1 is free and open source under Building Humane Tech.</p>
-        </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="why" style="border-top:1px solid #EBDCC0">
+  <div style="max-width:1120px;margin:0 auto;padding:52px 32px">
+    <div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8C6015;font-weight:700">Why now</div>
+    <h2 style="font-family:Lora,Georgia,serif;font-weight:500;font-size:clamp(1.6rem,3.4vw,2.3rem);line-height:1.16;letter-spacing:-.015em;margin:10px 0 14px;max-width:26ch">The cost of not knowing just went up</h2>
+    <p style="font-size:1.05rem;color:#6B6155;max-width:64ch;margin:0">Humane design used to be a values argument. It’s a liability question now, and the people asking aren’t only your users.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0 52px;margin-top:26px">
+      <div style="padding:20px 0;border-top:1px solid #EBDCC0">
+        <h3 style="font-size:1rem;margin:0 0 5px;font-weight:700"><a href="https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB243" target="_blank" rel="noopener noreferrer">California SB 243</a></h3>
+        <p style="font-size:.92rem;color:#6B6155;margin:0">In effect since January 1, 2026. Private right of action at the greater of actual damages or $1,000 per violation plus fees.</p>
+      </div>
+      <div style="padding:20px 0;border-top:1px solid #EBDCC0">
+        <h3 style="font-size:1rem;margin:0 0 5px;font-weight:700"><a href="https://portal.ct.gov/ag/press-releases/2025-press-releases/letter-to-ai-software-companies" target="_blank" rel="noopener noreferrer">42 state attorneys general</a></h3>
+        <p style="font-size:.92rem;color:#6B6155;margin:0">Wrote to 13 companies on December 12, 2025 demanding safety testing, recall procedures and clear consumer warnings.</p>
+      </div>
+      <div style="padding:20px 0;border-top:1px solid #EBDCC0">
+        <h3 style="font-size:1rem;margin:0 0 5px;font-weight:700"><a href="https://nebraskalegislature.gov/FloorDocs/109/PDF/Slip/LB525.pdf" target="_blank" rel="noopener noreferrer">Nebraska LB 525</a></h3>
+        <p style="font-size:.92rem;color:#6B6155;margin:0">Explicitly prohibits variable-reward mechanics designed to increase minor engagement. Anti-engagement design written into statute.</p>
+      </div>
+      <div style="padding:20px 0;border-top:1px solid #EBDCC0">
+        <h3 style="font-size:1rem;margin:0 0 5px;font-weight:700"><a href="https://www.ftc.gov/news-events/news/press-releases/2025/09/ftc-launches-inquiry-ai-chatbots-acting-companions" target="_blank" rel="noopener noreferrer">The FTC 6(b) study</a></h3>
+        <p style="font-size:.92rem;color:#6B6155;margin:0">Opened September 11, 2025. Its orders ask seven companies specifically how they monetize engagement.</p>
+      </div>
+      <div style="padding:20px 0;border-top:1px solid #EBDCC0">
+        <h3 style="font-size:1rem;margin:0 0 5px;font-weight:700"><a href="https://www.nysenate.gov/legislation/laws/GBS/A47" target="_blank" rel="noopener noreferrer">New York GBL Article 47</a></h3>
+        <p style="font-size:.92rem;color:#6B6155;margin:0">Companion operators have had to detect suicidal ideation signals and disclose AI status every three hours since November 5, 2025.</p>
+      </div>
+      <div style="padding:20px 0;border-top:1px solid #EBDCC0">
+        <h3 style="font-size:1rem;margin:0 0 5px;font-weight:700"><a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline" target="_blank" rel="noopener noreferrer">EU AI Act Article 50</a></h3>
+        <p style="font-size:.92rem;color:#6B6155;margin:0">Transparency obligations became enforceable on August 2, 2026 for every system placed on the EU market.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="why">
-  <div class="wrap">
-    <div class="label">Why now</div>
-    <h2 class="sec-title">The cost of not knowing just went up</h2>
-    <p class="sec-intro">Humane design used to be a values argument. It's a liability question now, and the people asking aren't only your users.</p>
-
-    <div class="reasons">
-      <div class="reason">
-        <h3><a href="https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB243" rel="noopener" target="_blank" rel="noopener noreferrer">California SB 243</a></h3>
-        <p>In effect since January 1, 2026. Private right of action at the greater of actual damages or $1,000 per violation plus fees.</p>
-      </div>
-      <div class="reason">
-        <h3><a href="https://portal.ct.gov/ag/press-releases/2025-press-releases/letter-to-ai-software-companies" rel="noopener" target="_blank" rel="noopener noreferrer">42 state attorneys general</a></h3>
-        <p>Wrote to 13 companies on December 12, 2025 demanding safety testing, recall procedures and clear consumer warnings.</p>
-      </div>
-      <div class="reason">
-        <h3><a href="https://nebraskalegislature.gov/FloorDocs/109/PDF/Slip/LB525.pdf" rel="noopener" target="_blank" rel="noopener noreferrer">Nebraska LB 525</a></h3>
-        <p>Explicitly prohibits variable-reward mechanics designed to increase minor engagement. Anti-engagement design written into statute.</p>
-      </div>
-      <div class="reason">
-        <h3><a href="https://www.ftc.gov/news-events/news/press-releases/2025/09/ftc-launches-inquiry-ai-chatbots-acting-companions" rel="noopener" target="_blank" rel="noopener noreferrer">The FTC 6(b) study</a></h3>
-        <p>Opened September 11, 2025. Its orders ask seven companies specifically how they monetize engagement.</p>
-      </div>
-      <div class="reason">
-        <h3><a href="https://www.nysenate.gov/legislation/laws/GBS/A47" rel="noopener" target="_blank" rel="noopener noreferrer">New York GBL Article 47</a></h3>
-        <p>Companion operators have had to detect suicidal ideation signals and disclose AI status every three hours since November 5, 2025.</p>
-      </div>
-      <div class="reason">
-        <h3><a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline" rel="noopener" target="_blank" rel="noopener noreferrer">EU AI Act Article 50</a></h3>
-        <p>Transparency obligations became enforceable on August 2, 2026 for every system placed on the EU market.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="about">
-  <div class="wrap">
-    <div class="label">About</div>
-    <h2 class="sec-title">Most companies have principles or engineers. This takes both.</h2>
-    <p class="sec-intro">We run the public process that decides what humane means, and publish the research behind it. Then we build the code that enforces it inside your pipeline. Most of the field is one or the other. We do it all.</p>
-
-    <div class="founder">
+<section id="about" style="border-top:1px solid #EBDCC0">
+  <div style="max-width:1120px;margin:0 auto;padding:52px 32px">
+    <div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8C6015;font-weight:700">About</div>
+    <h2 style="font-family:Lora,Georgia,serif;font-weight:500;font-size:clamp(1.6rem,3.4vw,2.3rem);line-height:1.16;letter-spacing:-.015em;margin:10px 0 14px;max-width:30ch">Most companies have principles or engineers. This takes both.</h2>
+    <p style="font-size:1.05rem;color:#6B6155;max-width:66ch;margin:0">We run the public process that decides what humane means, and publish the research behind it. Then we build the code that enforces it inside your pipeline.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px 44px;margin-top:28px;padding-top:22px;border-top:2px solid #CA9239">
       <div>
-        <h3>Erika Anderson</h3>
-        <div class="role">Founder and CEO</div>
+        <h3 style="font-family:Lora,Georgia,serif;font-weight:500;font-size:1.4rem;margin:0;letter-spacing:-.015em">Erika Anderson</h3>
+        <div style="font-size:.8rem;letter-spacing:.11em;text-transform:uppercase;color:#8C6015;margin-top:8px;font-weight:700">Founder and CEO</div>
       </div>
-      <div>
-        <p>Erika founded Building Humane Tech, PBC and co-created HumaneBench. She co-chairs the IEEE Measurement Subcommittee on AI and Human Flourishing, and co-founded Chief.bot, where she was Chief Customer Officer.</p>
-        <p>Erika and Yaoli Mao presented HumaneBench at MIT Media Lab's AHA Symposium, on the Benchmarking AI Impact panel, alongside OpenAI, Google Jigsaw and the Psychology of Technology Institute.</p>
-        <p>The argument Erika made is the one this company is built on: <em>relationship generates obligation</em>. If your system interacts with people, it's already in a relationship with them, which means you're already in the obligation business, whether or not you decide to measure it.</p>
-        <p class="linkrow">
+      <div style="max-width:66ch">
+        <p style="font-size:.98rem;color:#6B6155;margin:0 0 1em">Erika founded Building Humane Tech, PBC and co-created HumaneBench. She co-chairs the IEEE Measurement Subcommittee on AI and Human Flourishing, and co-founded Chief.bot, where she was Chief Customer Officer.</p>
+        <p style="font-size:.98rem;color:#6B6155;margin:0 0 1em">Erika presented HumaneBench at MIT Media Lab’s AHA Symposium, on the Benchmarking AI Impact panel, alongside OpenAI, Google Jigsaw and the Psychology of Technology Institute.</p>
+        <p style="display:flex;flex-wrap:wrap;gap:8px 22px;margin:0;font-size:.9rem">
           <a href="https://www.youtube.com/watch?v=LgOE-uRs2IM" target="_blank" rel="noopener noreferrer">Watch the talk</a>
           <a href="https://humanetech.substack.com/p/everyone-building-ai-chatbots-is" target="_blank" rel="noopener noreferrer">Read the write-up</a>
         </p>
@@ -1079,48 +404,76 @@ html[data-theme="dark"] .creds img.cred-logo{filter:grayscale(1) invert(1);opaci
   </div>
 </section>
 
-<section id="contact" style="border-bottom:none;padding-bottom:24px">
-  <div class="wrap">
-    <div class="close">
-      <h2>Want to be sure you're writing humane code?</h2>
-      <p>If you want your LLM interactions evaluated for humaneness, whether you're a company or a person, tell us what you're building. We'll let you know how we can help.</p>
-      <div class="hero-cta">
-        <a class="btn" href="mailto:info@buildinghumanetech.com">info@buildinghumanetech.com</a>
-        <a class="btn ghost" href="#proof">Read the benchmark</a>
+<section style="border-top:1px solid #EBDCC0;background:#fff">
+  <div style="max-width:1120px;margin:0 auto;padding:56px 32px">
+    <span style="display:block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8C6015;font-weight:700;margin-bottom:18px">What product builders keep telling us</span>
+    <p style="font-family:Lora,Georgia,serif;font-size:clamp(1.25rem,2.6vw,1.65rem);line-height:1.44;color:#2D2D2D;margin:0;max-width:44ch">“I want to ship something engaging <em>and</em> good for my users. I don't want to find out two years from now that it caused an addiction or worse. But I also don't know what ‘good’ means in this case, and I don't want to be in the business of deciding it.”</p>
+    <p style="margin:18px 0 0;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:#6B6155">CEO of an AI company</p>
+    <p style="margin:22px 0 0;padding-top:20px;border-top:1px solid #EBDCC0;font-size:1rem;color:#6B6155;max-width:56ch">You don't have to define humane. That's our job. Yours is to merge or not merge.</p>
+  </div>
+</section>
+
+<section id="contact" style="border-top:1px solid #EBDCC0">
+  <div style="max-width:1120px;margin:0 auto;padding:52px 32px 40px">
+    <div style="background:#fff;border:1px solid #D8C39D;border-radius:8px;padding:38px 36px">
+      <div style="font-family:Lora,Georgia,serif;font-size:1.1rem;color:#8C6015;letter-spacing:.01em;margin-bottom:12px">It’s 12:03 am.</div>
+      <h2 style="font-family:Lora,Georgia,serif;font-weight:500;font-size:clamp(1.5rem,3.2vw,2.05rem);line-height:1.2;margin:0 0 18px;max-width:24ch;letter-spacing:-.015em">Do you know how your product is treating your users?</h2>
+      <p style="font-size:1.05rem;color:#6B6155;max-width:62ch;margin:0">Most teams can’t. We can tell you in a week, on your real traffic.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:28px">
+        <a href="mailto:info@buildinghumanetech.com?subject=Show%20me%20what%20you%27d%20find&body=Our%20product%3A%0A%0AWhere%20it%20talks%20to%20users%3A%0A%0AWhat%20I%27m%20worried%20about%3A%0A" style="background:#5539EC;color:#FFF4E0;padding:13px 26px;border-radius:8px;white-space:nowrap;font-size:15px;font-weight:700" class="btn-p">Show me what you’d find</a>
+        <a href="https://github.com/buildinghumanetech/humane-gate" target="_blank" rel="noopener noreferrer" style="padding:13px 26px;border-radius:8px;white-space:nowrap;font-size:15px;color:#2D2D2D;border:1px solid #D8C39D" class="btn-g">Install it yourself, free</a>
       </div>
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="wrap">
-    <div class="foot-rows">
-      <div class="foot-col">
-        <strong>Work</strong>
-        <a href="#gate">The gap</a>
-        <a href="#what">How it works</a>
-        <a href="/why-this-matters/">Why this matters</a>
-        <a href="#contact">Talk to us</a>
+<footer style="border-top:1px solid #EBDCC0">
+  <div style="max-width:1120px;margin:0 auto;padding:34px 32px 44px;font-size:.87rem;color:#6B6155">
+    <div style="display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap">
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <strong style="color:#2D2D2D;font-size:.8rem;letter-spacing:.11em;text-transform:uppercase">Work</strong>
+        <a href="#gap" style="color:#6B6155">The gap</a>
+        <a href="#system" style="color:#6B6155">The platform</a>
+        <a href="/why-this-matters/" style="color:#6B6155">Why this matters</a>
+        <a href="#contact" style="color:#6B6155">Talk to us</a>
       </div>
-      <div class="foot-col">
-        <strong>Open source</strong>
-        <a href="https://humanebench.ai" target="_blank" rel="noopener noreferrer">HumaneBench</a>
-        <a href="https://ai-for-people.org/" target="_blank" rel="noopener noreferrer">AI Bill of Rights</a>
-        <a href="https://github.com/buildinghumanetech" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <strong style="color:#2D2D2D;font-size:.8rem;letter-spacing:.11em;text-transform:uppercase">Open source</strong>
+        <a href="https://humanebench.ai" target="_blank" rel="noopener noreferrer" style="color:#6B6155">HumaneBench</a>
+        <a href="https://github.com/buildinghumanetech/humane-gate" target="_blank" rel="noopener noreferrer" style="color:#6B6155">HumaneGate</a>
+        <a href="https://ai-for-people.org/" target="_blank" rel="noopener noreferrer" style="color:#6B6155">AI Bill of Rights</a>
+        <a href="https://github.com/buildinghumanetech" target="_blank" rel="noopener noreferrer" style="color:#6B6155">GitHub</a>
       </div>
-      <div class="foot-col">
-        <strong>Comms</strong>
-        <a href="https://humanetech.substack.com" target="_blank" rel="noopener noreferrer">Substack</a>
-        <a href="https://humanebench.ai/#news" target="_blank" rel="noopener noreferrer">Talks &amp; podcasts</a>
-        <a href="https://humanebench.ai/#events" target="_blank" rel="noopener noreferrer">Events</a>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <strong style="color:#2D2D2D;font-size:.8rem;letter-spacing:.11em;text-transform:uppercase">Comms</strong>
+        <a href="https://humanetech.substack.com" target="_blank" rel="noopener noreferrer" style="color:#6B6155">Substack</a>
+        <a href="https://humanebench.ai/#news" target="_blank" rel="noopener noreferrer" style="color:#6B6155">Talks &amp; podcasts</a>
+        <a href="https://humanebench.ai/#events" target="_blank" rel="noopener noreferrer" style="color:#6B6155">Events</a>
       </div>
     </div>
-    <div class="colophon">
-      Building Humane Tech &middot; San Francisco &middot; <a href="mailto:info@buildinghumanetech.com">info@buildinghumanetech.com</a>
-    </div>
+    <div style="margin-top:38px;padding-top:20px;border-top:1px solid #EBDCC0;font-size:.8rem">Building Humane Tech · San Francisco · <a href="mailto:info@buildinghumanetech.com">info@buildinghumanetech.com</a></div>
   </div>
 </footer>
 
+</div>
 
+<script>
+document.querySelectorAll('.acc').forEach(function(b){
+  b.addEventListener('click', function(){
+    var open = b.getAttribute('aria-expanded') === 'true';
+    document.querySelectorAll('.acc').forEach(function(x){
+      x.setAttribute('aria-expanded','false');
+      var ind = x.querySelector('.ind'); if (ind) ind.textContent = '+';
+    });
+    document.querySelectorAll('.panel').forEach(function(p){ p.hidden = true; });
+    if (!open) {
+      b.setAttribute('aria-expanded','true');
+      var ind = b.querySelector('.ind'); if (ind) ind.textContent = '\u2212';
+      var p = document.querySelector('.panel[data-i="' + b.dataset.i + '"]');
+      if (p) p.hidden = false;
+    }
+  });
+});
+</script>
 </body>
 </html>
