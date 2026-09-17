@@ -659,6 +659,19 @@ footer{padding:30px 0 40px;font-size:.87rem;color:var(--muted)}
   margin-left:12px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;
   font-weight:700;color:var(--muted);
 }
+
+/* chain items are links */
+.chain li a{
+  display:flex;align-items:baseline;gap:8px;color:inherit;text-decoration:none;
+  border-bottom:1px solid transparent;padding-bottom:2px;
+}
+.chain li a:hover{color:var(--action);border-bottom-color:var(--action)}
+.chain li a:hover span{color:var(--action)}
+/* who said it */
+.builder p.builder-attr{
+  margin:14px 0 0;font-family:inherit;font-size:12.5px;font-style:normal;
+  letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--muted);
+}
 </style>
 </head>
 <body>
@@ -690,10 +703,10 @@ footer{padding:30px 0 40px;font-size:.87rem;color:var(--muted)}
 
 <div class="chain">
       <ol>
-        <li><span>01</span>Principles</li>
-        <li><span>02</span>Measurement</li>
-        <li><span>03</span>Mitigation</li>
-        <li><span>04</span>Evidence</li>
+        <li><a href="#values"><span>01</span>Principles</a></li>
+        <li><a href="#proof"><span>02</span>Measurement</a></li>
+        <li><a href="#mitigation"><span>03</span>Mitigation</a></li>
+        <li><a href="#evidence"><span>04</span>Evidence</a></li>
       </ol>
       <p>From what you believe to what your AI actually does.</p>
     </div>
@@ -735,7 +748,9 @@ footer{padding:30px 0 40px;font-size:.87rem;color:var(--muted)}
         <line x1="58" y1="223.9" x2="452" y2="223.9" stroke="var(--muted)" stroke-width="2.6" stroke-dasharray="8 6" stroke-linecap="round"/>
         <path d="M58.0 235.5 L64.2 235.4 L70.3 235.3 L76.5 235.2 L82.6 235.1 L88.8 235.0 L94.9 234.9 L101.1 234.8 L107.2 234.7 L113.4 234.5 L119.6 234.2 L125.7 234.0 L131.9 233.6 L138.0 233.3 L144.2 232.8 L150.3 232.3 L156.5 231.7 L162.7 231.0 L168.8 230.3 L175.0 229.5 L181.1 228.7 L187.3 227.8 L193.4 227.0 L199.6 226.3 L205.8 225.6 L211.9 224.7 L218.1 223.6 L224.2 222.3 L230.4 220.8 L236.5 219.0 L242.7 217.0 L248.8 214.8 L255.0 212.3 L261.2 209.5 L267.3 206.6 L273.5 203.4 L279.6 200.1 L285.8 196.7 L291.9 193.4 L298.1 190.2 L304.2 187.9 L310.4 185.4 L316.6 182.4 L322.7 178.9 L328.9 175.0 L335.0 170.5 L341.2 165.5 L347.3 160.1 L353.5 154.3 L359.7 148.2 L365.8 141.9 L372.0 135.5 L378.1 129.2 L384.3 123.2 L390.4 117.8 L396.6 113.2 L402.8 107.6 L408.9 100.7 L415.1 92.9 L421.2 84.1 L427.4 74.8 L433.5 65.3 L439.7 56.0 L445.8 47.3 L452.0 40.0" fill="none" stroke="var(--action)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
         <circle cx="86" cy="235.1" r="5" fill="var(--action)" stroke="var(--surface)" stroke-width="2"/><circle cx="196" cy="226.7" r="5" fill="var(--action)" stroke="var(--surface)" stroke-width="2"/><circle cx="300" cy="189.3" r="5" fill="var(--action)" stroke="var(--surface)" stroke-width="2"/><circle cx="392" cy="116.5" r="5" fill="var(--action)" stroke="var(--surface)" stroke-width="2"/>
-        <text class="v-q" x="463" y="46" font-size="36" fill="var(--gold)" font-family="Lora,Georgia,serif" text-anchor="middle">?</text>
+        <text class="v-lab" x="63" y="196" font-size="18" fill="var(--muted)" font-weight="700">Human review capacity</text>
+        <text class="v-lab" x="330" y="122" font-size="18" fill="var(--action)" font-weight="700" text-anchor="end">Code shipped</text>
+        <text class="v-gap" x="452" y="212" font-size="18" fill="var(--gold-ink)" font-weight="700" text-anchor="end">Nobody read this</text>
         </svg>
       </a>
     </div>
@@ -757,6 +772,7 @@ footer{padding:30px 0 40px;font-size:.87rem;color:var(--muted)}
     <div class="builder">
       <span class="builder-cap">What product builders keep telling us</span>
       <p>&ldquo;I want to ship something engaging <em>and</em> good for my users. I don't want to find out two years from now that it caused an addiction or worse. But I also don't know what &lsquo;good&rsquo; means in this case, and I don't want to be in the business of deciding it.&rdquo;</p>
+      <p class="builder-attr">CEO of an AI company</p>
       <p class="builder-a">You don't have to define humane. That's our job. Yours is to merge or not merge.</p>
     </div>
   </div>
@@ -851,7 +867,7 @@ footer{padding:30px 0 40px;font-size:.87rem;color:var(--muted)}
 
 <section id="values">
   <div class="wrap">
-    <div class="label">Values as code</div>
+    <div class="label">Stage 01 &middot; Principles</div>
     <h2 class="sec-title">Your values, in a file<br>your pipeline enforces</h2>
     <p class="sec-intro">Most companies have values on a wall and nothing that checks whether the code agrees. The eight principles say what humane means. They do not say what your number is. So you write your number down, in your repo, and the gate scores every change against it.</p>
 
@@ -904,7 +920,7 @@ footer{padding:30px 0 40px;font-size:.87rem;color:var(--muted)}
 
 <section id="mitigation">
   <div class="wrap">
-    <div class="label">Stage 03</div>
+    <div class="label">Stage 03 &middot; Mitigation</div>
     <h2 class="sec-title">A score is not a fix</h2>
     <p class="sec-intro">Finding the problem is the easy half. The part worth paying for is knowing which change actually repairs it, and being able to show that it did. Here is how one finding moves through the system, start to finish.</p>
 
@@ -939,7 +955,7 @@ footer{padding:30px 0 40px;font-size:.87rem;color:var(--muted)}
 
 <section id="evidence">
   <div class="wrap">
-    <div class="label">Stage 04</div>
+    <div class="label">Stage 04 &middot; Evidence</div>
     <h2 class="sec-title">Know what you knew,<br>and what you did about it</h2>
     <p class="sec-intro">Every evaluation leaves a record. Not a certificate, and not a claim that a product is safe. A record of what was checked, what it found, and what happened next &mdash; written as the work happens, because the version reconstructed afterwards is worth very little.</p>
 
@@ -966,7 +982,7 @@ footer{padding:30px 0 40px;font-size:.87rem;color:var(--muted)}
 
 <section id="proof">
   <div class="wrap">
-    <div class="label">The evidence</div>
+    <div class="label">Stage 02 &middot; Measurement</div>
     <h2 class="sec-title">The benchmark behind the gate</h2>
 
     <div class="proof">

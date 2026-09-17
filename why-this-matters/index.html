@@ -659,6 +659,19 @@ footer{padding:30px 0 40px;font-size:.87rem;color:var(--muted)}
   margin-left:12px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;
   font-weight:700;color:var(--muted);
 }
+
+/* chain items are links */
+.chain li a{
+  display:flex;align-items:baseline;gap:8px;color:inherit;text-decoration:none;
+  border-bottom:1px solid transparent;padding-bottom:2px;
+}
+.chain li a:hover{color:var(--action);border-bottom-color:var(--action)}
+.chain li a:hover span{color:var(--action)}
+/* who said it */
+.builder p.builder-attr{
+  margin:14px 0 0;font-family:inherit;font-size:12.5px;font-style:normal;
+  letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--muted);
+}
 </style>
 </head>
 <body>
