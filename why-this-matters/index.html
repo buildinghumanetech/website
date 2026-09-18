@@ -26,6 +26,42 @@ html{-webkit-text-size-adjust:100%}
 body{margin:0;overflow-x:hidden}
 img{max-width:100%}
 [hidden]{display:none!important}
+
+/* real telemetry figures */
+:root{--neg:#A8392A;--pos:#17658C;--track:#F6ECD9}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--neg:#E08A76;--pos:#7FBEDE;--track:#2E2618}}
+:root[data-theme="dark"]{--neg:#E08A76;--pos:#7FBEDE;--track:#2E2618}
+.rdata{margin:34px 0 0;background:var(--surface);border:1px solid var(--rule-strong);border-radius:8px;padding:clamp(20px,3vw,30px)}
+.rdata .label{margin-bottom:10px}
+.rdata h3{font-family:Lora,Georgia,serif;font-weight:500;font-size:clamp(1.25rem,2.6vw,1.75rem);line-height:1.18;letter-spacing:-.015em;margin:0 0 10px;color:var(--ink)}
+.rdata .rd-intro{font-size:.97rem;line-height:1.6;color:var(--muted);margin:0 0 22px;max-width:62ch}
+.rd-group{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;padding:0 0 10px;border-bottom:1px solid var(--rule);margin-bottom:12px}
+.rd-group.t{padding-top:22px}
+.rd-rows{border-top:1px solid var(--rule);padding-top:18px}
+.rd-row{display:grid;grid-template-columns:minmax(140px,1.1fr) minmax(90px,1.6fr) 74px;align-items:center;gap:10px 16px;padding:7px 0}
+.rd-row span.n{font-size:.93rem;color:var(--ink)}
+.rd-track{display:block;height:13px;background:var(--track);border-radius:2px}
+.rd-track i{display:block;height:13px;border-radius:2px}
+.rd-row b{font-size:.95rem;font-weight:700;text-align:right;font-variant-numeric:tabular-nums}
+.rd-axis{display:grid;grid-template-columns:minmax(140px,1.1fr) minmax(90px,1.6fr) 74px;gap:16px;margin-top:14px;padding-top:10px;border-top:1px solid var(--rule)}
+.rd-axis span.s{display:flex;justify-content:space-between;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;color:var(--muted)}
+.rd-kicker{margin:26px 0 0;max-width:none;padding-top:20px;border-top:1px solid var(--rule);font-size:1rem;line-height:1.62;color:var(--muted)}
+.rd-kicker>span{display:block;max-width:64ch}
+.rd-kicker b{color:var(--ink)}
+.rdata figcaption{margin-top:14px;font-size:.84rem;color:var(--muted)}
+.rd-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;border-top:1px solid var(--rule);padding-top:22px}
+.rd-big{display:flex;align-items:baseline;gap:8px}
+.rd-big b{font-family:Lora,Georgia,serif;font-size:clamp(2.2rem,5vw,2.9rem);font-weight:500;line-height:1;letter-spacing:-.02em;color:var(--ink)}
+.rd-big span{font-family:Lora,Georgia,serif;font-size:1.05rem;color:var(--gold-ink)}
+.rd-cols p{font-size:.92rem;line-height:1.55;color:var(--muted);margin:10px 0 16px}
+.rd-dots{display:grid;grid-template-columns:repeat(10,10px);gap:5px;width:145px}
+.rd-dots i{width:10px;height:10px;border-radius:50%;box-sizing:border-box}
+.rd-dots i.on{background:var(--ink)}
+.rd-dots i.off{border:1px solid var(--rule-strong)}
+@media (max-width:560px){.rd-row,.rd-axis{grid-template-columns:1fr 64px}.rd-row .rd-track{grid-column:1 / -1;order:3}}
+.vfig>.eras:first-child{margin-top:0;border-top:none}
+.nav-cta{white-space:nowrap;flex:none}
+.nav-links{flex-wrap:wrap;min-width:0}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -692,11 +728,9 @@ html[data-theme="dark"] .creds img.cred-logo{filter:grayscale(1) invert(1);opaci
   <div class="wrap nav-inner">
     <a class="brand" href="/" aria-label="Building Humane Tech home"><svg class="mark" viewBox="-14 -16 556 1330" role="img" aria-hidden="true" focusable="false" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M280.901,1296.645c-7.059,-1.606 -13.171,-5.134 -15.771,-9.104c-2.567,-3.916 -4.961,-11.887 -10.979,-36.547c-3.029,-12.41 -6.899,-27.398 -8.6,-33.306c-3.705,-12.868 -3.427,-15.303 1.916,-16.787c2.166,-0.603 14.985,-1.038 30.329,-1.032c14.617,0.005 37.858,-0.529 51.648,-1.188c13.789,-0.66 26.283,-0.89 27.762,-0.515c1.481,0.375 2.965,1.546 3.3,2.601c1.211,3.817 -20.037,74.156 -24.854,82.276c-3.737,6.299 -9.423,10.341 -17.84,12.683c-7.917,2.203 -28.963,2.726 -36.909,0.918l0,-0.001Zm-207.69,-3.518c-14.139,-1.055 -61.468,-10.566 -66.663,-13.395c-2.192,-1.194 -4.554,-3.296 -5.25,-4.673c-0.981,-1.939 -1.271,-17.237 -1.282,-67.84l-0.015,-65.337l1.99,-11.638c2.539,-14.848 6.024,-28.576 10.612,-41.792c4.741,-13.658 18.048,-42.924 26.509,-58.303c7.073,-12.856 27.454,-41.481 30.194,-42.407c0.887,-0.298 9.099,-8.996 18.251,-19.326c17.463,-19.71 25.184,-26.963 32.83,-30.838c6.51,-3.299 50.67,-20.852 75.674,-30.08c11.583,-4.275 26.476,-10.382 33.095,-13.571c6.619,-3.19 20.158,-8.611 30.086,-12.048c9.928,-3.437 24.982,-8.682 33.451,-11.655c16.671,-5.852 23.704,-7.57 37.97,-9.275c11.32,-1.353 33.399,-8.995 47.026,-16.276c11.327,-6.052 23.632,-10.079 28.227,-9.237c1.834,0.335 4.324,1.856 5.682,3.47c4.07,4.837 4.09,7.702 0.114,19.106c-3.62,10.418 -7.301,16.944 -11.046,19.582c-1.12,0.79 -11.752,8.522 -23.625,17.182c-29.333,21.396 -27.427,20.226 -46.853,28.766c-23.849,10.484 -33.151,16.391 -49.364,31.352c-7.428,6.854 -14.874,13.167 -16.547,14.028c-1.674,0.861 -6.202,3.691 -10.063,6.288c-3.861,2.598 -8.95,5.706 -11.31,6.907c-4.911,2.502 -9.549,6.528 -31.597,27.444c-8.706,8.259 -16.549,16.408 -17.429,18.11c-1.163,2.251 -1.572,5.706 -1.501,12.672c0.142,14.284 2.215,86.102 3.086,107.357c1.45,35.323 1.274,65.902 -0.441,75.717c-1.868,10.699 -7.474,27.998 -10.989,33.904c-1.376,2.314 -6.457,8.943 -11.291,14.735c-10.133,12.141 -15.318,15.368 -30.851,19.2l-9.026,2.226l-24.57,0.227c-13.514,0.114 -29.309,-0.142 -35.1,-0.569l0.015,-0.013Zm205.587,-415.7c0,-0.284 -0.227,-0.503 -0.503,-0.503c-0.284,0 -0.5,0.227 -0.5,0.503c0,0.284 0.227,0.503 0.5,0.503c0.284,0 0.503,-0.227 0.503,-0.503Zm-1.14,302.322c-52.213,-2.772 -51.481,-2.613 -56.372,-12.279c-5.547,-10.964 -4.133,-19.899 3.87,-24.444c4.535,-2.576 6.379,-2.863 31.077,-4.853c38.041,-3.064 64.328,-7.197 77.067,-12.116c4.92,-1.899 12.609,-4.385 17.086,-5.522c13.894,-3.528 55.073,-22.558 65.303,-30.178c3.309,-2.465 14.366,-11.406 24.57,-19.868c19.764,-16.39 25.128,-19.653 30.614,-18.624c4.543,0.853 9.066,6.279 11.119,13.339c2.436,8.384 1.37,26.517 -1.817,30.84c-10.52,14.28 -25.685,31.116 -35.806,39.754c-12.008,10.248 -20.142,14.977 -28.878,16.793c-2.866,0.594 -10.312,3.301 -16.547,6.012c-27.741,12.064 -27.189,11.896 -56.66,17.205c-15.336,2.763 -28.787,5.171 -29.89,5.351c-1.103,0.171 -16.735,-0.455 -34.736,-1.41l0.001,0.001Zm108.447,-17.508c0,-0.284 -0.227,-0.5 -0.503,-0.5c-0.284,0 -0.5,0.227 -0.5,0.5c0,0.284 0.227,0.503 0.5,0.503c0.284,0 0.503,-0.227 0.503,-0.503Zm93.935,-68.362c-0.367,-0.367 -0.969,-0.367 -1.336,0c-0.367,0.367 -0.057,0.668 0.668,0.668c0.736,0 1.038,-0.301 0.668,-0.668Zm-233.835,18.338c-7.82,-1.507 -21.12,-6.717 -25.065,-9.821c-3.645,-2.867 -6.7,-9.397 -6.777,-14.486c-0.114,-8.353 9.228,-18.789 19.148,-21.365c2.018,-0.523 11.585,-1.427 21.262,-2.004c18.565,-1.112 32.126,-3.127 51.102,-7.601c11.628,-2.74 25.372,-8.472 58.166,-24.254c18.274,-8.794 18.302,-8.81 28.582,-16.181c20.507,-14.705 36.871,-29.525 50.925,-46.123c6.484,-7.657 10.637,-10.847 16.468,-12.649c3.953,-1.222 10.307,1.328 15.562,6.242c9.741,9.111 12.617,19.61 9.268,33.831c-0.995,4.23 -2.442,8.322 -3.213,9.093c-0.77,0.77 -1.035,1.401 -0.588,1.401c0.446,0 -7.305,8.135 -17.228,18.077c-12.532,12.556 -20.81,18.33 -24.718,22.053c-5.519,5.257 -2.541,3.198 -13.282,13.524c-0.705,2.104 -24.224,19.118 -33.694,24.372c-7.593,4.214 -44.373,18.679 -55.535,21.842c-7.697,2.18 -12.335,2.726 -29.207,3.431c-46.048,1.925 -53.983,2.004 -61.175,0.617l0,0.001Zm197.063,-68.315c0,-0.284 -0.227,-0.503 -0.503,-0.503c-0.284,0 -0.503,0.227 -0.503,0.503c0,0.284 0.227,0.5 0.503,0.5c0.284,0 0.503,-0.227 0.503,-0.5Zm36.103,-36.103c0,-0.284 -0.227,-0.5 -0.503,-0.5c-0.284,0 -0.503,0.227 -0.503,0.5c0,0.284 0.227,0.503 0.503,0.503c0.284,0 0.503,-0.227 0.503,-0.503Zm-230.217,31.126c-8.481,-1.541 -10.957,-2.942 -13.071,-7.396c-2.357,-4.967 -1.106,-9.521 5.146,-18.716c7.715,-11.349 7.985,-11.624 18.12,-18.452c10.031,-6.759 18.044,-10.016 38.48,-15.643c17.117,-4.713 28.125,-10.212 49.262,-24.608c18.63,-12.688 30.663,-22.543 38.888,-31.846c15.152,-17.139 22.815,-32.434 26.653,-53.2c1.68,-9.087 1.873,-9.601 4.886,-12.948c2.76,-3.065 8.728,-2.971 18.445,0.29c18.216,6.115 28.675,18.827 28.691,34.87c0.008,10.358 -1.899,27.105 -3.413,29.918c-0.785,1.458 -13.835,15.808 -29.004,31.888c-35.078,37.187 -47.185,47.188 -71.691,59.22c-27.917,13.707 -38.779,17.97 -59.111,23.204l-18.983,4.886l-13.109,-0.085c-7.21,-0.057 -16.295,-0.671 -20.189,-1.376l-0,-0.005Zm-17.065,-183.287c-3.211,-6.069 -3.866,-8.306 -3.898,-13.312c-0.028,-5.186 -0.756,-7.472 -5.239,-16.547c-5.507,-11.15 -15.473,-24.449 -24.01,-32.04c-2.686,-2.388 -7.818,-5.662 -11.404,-7.273c-3.585,-1.612 -11.821,-5.482 -18.301,-8.601l-11.783,-5.672l0.566,-2.041c0.407,-1.464 0.301,-1.657 -0.372,-0.685c-0.731,1.055 -1.51,0.608 -3.507,-2.01c-2.669,-3.498 -4.71,-8.002 -4.71,-10.386c0,-2.755 4.518,-6.617 8.885,-7.595c3.06,-0.685 16.152,-0.387 43.625,1.001c21.589,1.089 47.376,2.26 57.304,2.604c9.928,0.344 23.995,1.026 31.26,1.518c7.905,0.534 18.777,0.52 27.077,-0.028c34.063,-2.283 47.064,-3.031 79.055,-4.55c36.286,-1.723 43.615,-1.467 46.716,1.635c3.033,3.033 2.49,7.935 -1.336,12.088c-5.434,5.897 -31.153,24.259 -42.681,30.472c-9.493,5.116 -17.379,14.824 -23.807,29.308c-0.057,0.142 -5.264,1.296 -11.564,2.581c-8.259,1.683 -15.791,4.174 -26.999,8.928c-24.879,10.552 -46.242,17.018 -73.711,22.307c-13.238,2.55 -24.797,4.852 -25.687,5.117c-1.185,0.353 -2.652,-1.473 -5.478,-6.812l-0.001,-0.005Zm-52.574,-75.49c0,-0.284 -0.227,-0.503 -0.503,-0.503c-0.284,0 -0.503,0.227 -0.503,0.503c0,0.284 0.227,0.5 0.503,0.5c0.284,0 0.503,-0.227 0.503,-0.5Zm79.728,-53.341c-16.457,-3.754 -41.01,-10.016 -50.228,-12.811c-6.436,-1.95 -11.946,-3.195 -13.941,-3.547c-1.211,-0.227 -4.745,-1.265 -7.809,-2.809c-16.58,-10.202 -30.198,-20.965 -32.189,-24.252c-0.841,-1.387 -6.132,-7.262 -11.759,-13.053c-12.441,-12.805 -23.715,-27.677 -32.608,-40.232c-8.28,-11.69 -11.918,-20.13 -16.337,-31.273c-15.823,-37.331 -22.444,-75.045 -20.106,-114.526c2.516,-42.502 8.12,-61.86 36.242,-125.218c14.57,-32.824 19.553,-38.612 25.974,-48.128c0,0 2.964,-5.201 4.718,-7.575c1.637,-2.217 3.401,-4.33 5.424,-6.202c1.72,-1.592 4.403,-1.569 3.237,3.868c-1.524,7.103 -0.887,19.393 -0.887,19.393c3.761,23.186 10.947,36.988 22.643,60.336c10.625,21.21 15.882,30.191 31.023,52.998c13.228,19.925 16.753,26.719 19.093,36.803c1.467,6.318 1.413,27.028 -0.114,47.802c-0.694,9.366 -0.981,21.1 -0.64,26.074c0.824,12.067 6.236,49.033 8.737,59.69c7.049,30.044 24.927,74.53 41.178,102.467c4.647,7.988 5.386,15.381 1.888,18.879c-1.964,1.964 -8.083,2.561 -13.539,1.316l0,-0.001Zm54.964,-2.786c-4.289,-1.865 -6.92,-7.299 -9.904,-20.454c-8.015,-35.333 -7.76,-70.92 0.694,-96.788c8.584,-26.269 23.525,-45.97 73.108,-96.401c13.015,-13.238 26.488,-27.805 29.941,-32.372c16.599,-21.958 27.58,-44.302 39.044,-79.447c6.5,-19.928 7.929,-28.392 8.633,-51.146c1.134,-36.661 4.095,-66.189 6.636,-66.189c1.492,0 7.82,9.821 16.995,26.378c11.054,19.948 16.662,32.327 25.534,56.358c3.665,9.928 10.03,27.081 14.144,38.117l5.851,20.472l2.817,21.147c1.211,21.923 0.227,60.197 -2.223,86.883c-3.484,37.882 -17.373,73.029 -41.891,106.01c-8.841,11.892 -27.368,31.205 -38.81,40.454c-20.52,16.824 -44.469,28.717 -67.927,40.594c-5.255,1.91 -29.86,7.781 -46.4,7.779c-8.915,-0.001 -14.05,-0.441 -16.239,-1.393l-0.002,-0.001Zm-55.263,-108.092c-1.754,-2.907 -4.048,-11.808 -5.621,-21.812c-1.319,-8.384 -3.819,-67.144 -4.545,-106.805c-0.887,-48.402 -0.972,-49.018 -8.398,-60.674c-2.283,-3.585 -10.076,-15.093 -17.314,-25.573c-27.444,-39.735 -37.616,-60.209 -41.103,-82.737c-1.618,-10.443 -1.222,-38.616 0.719,-51.648c1.382,-9.26 15.069,-42.424 27.112,-65.688c35.144,-67.893 42.67,-83.664 51.488,-107.913c7.926,-21.796 11.492,-39.831 12.967,-65.583c0.696,-12.128 2.394,-25.213 3.508,-27.015c0.574,-0.93 2.112,-0.563 6.169,1.475c5.951,2.988 22.483,18.742 48.523,46.237c17.557,18.538 24.824,27.441 35.086,42.986c35.553,53.854 52.812,107.654 52.922,164.972c0.028,15.174 -0.469,20.944 -3.682,42.622c-4.255,28.717 -6.808,40.348 -12.65,57.637c-8.986,26.594 -21.778,52.696 -40.435,82.507c-6.302,10.07 -15.408,25.304 -20.234,33.854c-8.292,14.688 -21.033,36.714 -24.318,42.039c-0.824,1.333 -4.044,5.17 -7.157,8.524c-6.994,7.536 -12.556,17.109 -23.717,40.827c-12.232,25.993 -15.96,35.147 -18.632,45.751l-2.337,9.277l-3.193,0c-2.53,0 -3.601,-0.677 -5.16,-3.259l0.001,-0.001Z"></path></svg><span class="brandname">Building<br>Humane<br>Tech</span></a>
     <div class="nav-links">
-      <a href="/#gate">The gap</a>
-      <a href="/#what">How it works</a>
-      <a href="/#values">Values as code</a>
-      <a href="/#proof">HumaneBench</a>
-      
+      <a href="/#gap">The gap</a>
+      <a href="/#system">The platform</a>
+      <a href="/#why">Why now</a>
       <a href="/#about">About</a>
     </div>
     <a class="btn nav-cta" href="/#contact">Talk to us</a>
@@ -718,36 +752,59 @@ html[data-theme="dark"] .creds img.cred-logo{filter:grayscale(1) invert(1);opaci
     <p class="body-p"><b>Software crossed that same threshold in the last two years, and almost nobody has named it.</b></p>
 
           <figure class="vfig">
-        <svg class="vchart" viewBox="0 0 480 272" role="img" aria-labelledby="vc-t vc-d" preserveAspectRatio="xMidYMid meet">
-          <title id="vc-t">Shipped code volume against human review capacity, across four eras</title>
-          <desc id="vc-d">Volume of shipped software rises gently through the first two eras, then steeply. Human review capacity stays flat throughout. The two lines cross partway through the second era and the gap between them widens from there. The curve runs off the top of the chart into a question mark.</desc>
-          <path d="M218.1 223.6 L224.2 222.3 L230.4 220.8 L236.5 219.0 L242.7 217.0 L248.8 214.8 L255.0 212.3 L261.2 209.5 L267.3 206.6 L273.5 203.4 L279.6 200.1 L285.8 196.7 L291.9 193.4 L298.1 190.2 L304.2 187.9 L310.4 185.4 L316.6 182.4 L322.7 178.9 L328.9 175.0 L335.0 170.5 L341.2 165.5 L347.3 160.1 L353.5 154.3 L359.7 148.2 L365.8 141.9 L372.0 135.5 L378.1 129.2 L384.3 123.2 L390.4 117.8 L396.6 113.2 L402.8 107.6 L408.9 100.7 L415.1 92.9 L421.2 84.1 L427.4 74.8 L433.5 65.3 L439.7 56.0 L445.8 47.3 L452.0 40.0 L452.0 223.9 L218.1 223.9 Z" fill="var(--gold-soft)"/>
-          <line x1="58" y1="236" x2="452" y2="236" stroke="var(--rule-strong)" stroke-width="1"/>
-          <line x1="58" y1="44" x2="58" y2="236" stroke="var(--rule)" stroke-width="1"/>
-          <line x1="58" y1="223.9" x2="452" y2="223.9" stroke="var(--muted)" stroke-width="2" stroke-dasharray="7 5" stroke-linecap="round"/>
-          <path d="M58.0 235.5 L64.2 235.4 L70.3 235.3 L76.5 235.2 L82.6 235.1 L88.8 235.0 L94.9 234.9 L101.1 234.8 L107.2 234.7 L113.4 234.5 L119.6 234.2 L125.7 234.0 L131.9 233.6 L138.0 233.3 L144.2 232.8 L150.3 232.3 L156.5 231.7 L162.7 231.0 L168.8 230.3 L175.0 229.5 L181.1 228.7 L187.3 227.8 L193.4 227.0 L199.6 226.3 L205.8 225.6 L211.9 224.7 L218.1 223.6 L224.2 222.3 L230.4 220.8 L236.5 219.0 L242.7 217.0 L248.8 214.8 L255.0 212.3 L261.2 209.5 L267.3 206.6 L273.5 203.4 L279.6 200.1 L285.8 196.7 L291.9 193.4 L298.1 190.2 L304.2 187.9 L310.4 185.4 L316.6 182.4 L322.7 178.9 L328.9 175.0 L335.0 170.5 L341.2 165.5 L347.3 160.1 L353.5 154.3 L359.7 148.2 L365.8 141.9 L372.0 135.5 L378.1 129.2 L384.3 123.2 L390.4 117.8 L396.6 113.2 L402.8 107.6 L408.9 100.7 L415.1 92.9 L421.2 84.1 L427.4 74.8 L433.5 65.3 L439.7 56.0 L445.8 47.3 L452.0 40.0" fill="none" stroke="var(--action)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="86" cy="235.1" r="4.2" fill="var(--action)" stroke="var(--surface)" stroke-width="2"/><circle cx="196" cy="226.7" r="4.2" fill="var(--action)" stroke="var(--surface)" stroke-width="2"/><circle cx="300" cy="189.3" r="4.2" fill="var(--action)" stroke="var(--surface)" stroke-width="2"/><circle cx="392" cy="116.5" r="4.2" fill="var(--action)" stroke="var(--surface)" stroke-width="2"/>
-          <text class="v-lab" x="63" y="210" font-size="13" fill="var(--muted)" font-weight="700">Human review capacity</text>
-          <text class="v-lab" x="318" y="128" font-size="13" fill="var(--action)" font-weight="700" text-anchor="end">Code shipped</text>
-          <text class="v-q" x="463" y="46" font-size="30" fill="var(--gold)" font-family="Lora,Georgia,serif" text-anchor="middle">?</text>
-          <text class="v-tick" x="86" y="258" font-size="12" fill="var(--muted)" text-anchor="middle">walked</text>
-          <text class="v-tick" x="196" y="258" font-size="12" fill="var(--muted)" text-anchor="middle">rode</text>
-          <text class="v-tick" x="300" y="258" font-size="12" fill="var(--muted)" text-anchor="middle">drove</text>
-          <text class="v-tick" x="392" y="258" font-size="12" fill="var(--action)" text-anchor="middle" font-weight="700">fleets</text>
-        </svg>
-        <ol class="eras">
+                <ol class="eras">
               <li><span class="e-k">Era one</span><b>We walked</b><p>A person wrote it. Another person read it. Both saw, at some point, the actual decision.</p><span class="e-c">1 feature &middot; 2 humans</span></li>
               <li><span class="e-k">Era two</span><b>We rode</b><p>Output rose. Review held, barely, because a human still read the diff.</p><span class="e-c">10 features &middot; 1 human</span></li>
               <li><span class="e-k">Era three</span><b>We drove</b><p>The human describes, the model drafts, the human skims. The skim starts to be the review.</p><span class="e-c">50 features &middot; 1 skim</span></li>
               <li class="now"><span class="e-k">Era four &middot; now</span><b>The fleet drives itself</b><p>A founder describes an outcome. A fleet produces it. Nobody read it.</p><span class="e-c">128 agents &middot; 0 humans</span></li>
             </ol>
-        <figcaption class="vnote">Illustrative. The shape is the claim, not the scale. The curve is not the problem &mdash; <b>the gap between the two lines is the problem</b>, and it is widening faster than any process change can close it.</figcaption>
+      
       </figure>
 
 
-    <div class="pace" style="margin-top:30px">
-      <p>Nobody is going back to hand-writing features, any more than anyone went back to horses. <b>The trajectory is inevitable. What happens along it is not.</b> That question mark is the opportunity. The choices under it are being made right now, at volume, by systems that have never been asked whether the way they answered was good for anyone.</p>
-    </div>
+
+    <figure class="rdata">
+      <div class="label">Where the code comes from</div>
+      <h3>AI is the author now, not the experiment</h3>
+      <p class="rd-intro">Adoption stopped being the question two years ago. The code reaching your users is increasingly written, and increasingly reviewed, by a model.</p>
+      <div class="rd-cols">
+        <div>
+          <div class="rd-big"><b>60%</b><span>of developers</span></div>
+          <p>use at least one AI tool every week, up from 40%</p>
+          <div class="rd-dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i></div>
+        </div>
+        <div>
+          <div class="rd-big"><b>80%</b><span>of teams</span></div>
+          <p>are past the 50% weekly active threshold, up from 50%</p>
+          <div class="rd-dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i></div>
+        </div>
+        <div>
+          <div class="rd-big"><b>25%</b><span>of pull requests</span></div>
+          <p>are reviewed by an AI agent, up from none a year ago</p>
+          <div class="rd-dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i></div>
+        </div>
+      </div>
+      <p class="rd-kicker"><span>Each dot is one percent. <b>A quarter of all review is now a model reading another model&rsquo;s work</b>, and under one percent of pull requests are opened by an agent, so the volume is still human-requested and machine-written.</span></p>
+      <figcaption>Source: <a href="https://www.faros.ai/research/ai-acceleration-whiplash" target="_blank" rel="noopener noreferrer">Faros AI Engineering Report 2026: The Acceleration Whiplash</a>, comparing each organization&rsquo;s lowest and highest AI-adoption periods.</figcaption>
+    </figure>
+
+    <figure class="rdata">
+      <div class="label">Production code quality</div>
+      <h3>Poor quality code is reaching production</h3>
+      <p class="rd-intro">Change in production code quality between each organization&rsquo;s lowest and highest AI-adoption period. 22,000 developers across 4,000+ teams. Every metric moved the wrong way.</p>
+      <div class="rd-rows">
+        <div class="rd-row"><span class="n">Production incidents per pull request</span><span class="rd-track"><i style="width:97.1%;background:var(--neg)"></i></span><b style="color:var(--neg)">+242.7%</b></div>
+        <div class="rd-row"><span class="n">Monthly production incidents</span><span class="rd-track"><i style="width:23.2%;background:var(--neg)"></i></span><b style="color:var(--neg)">+57.9%</b></div>
+        <div class="rd-row"><span class="n">Bugs per developer</span><span class="rd-track"><i style="width:21.6%;background:var(--neg)"></i></span><b style="color:var(--neg)">+54%</b></div>
+        <div class="rd-row"><span class="n">Bugs per pull request</span><span class="rd-track"><i style="width:11.5%;background:var(--neg)"></i></span><b style="color:var(--neg)">+28.7%</b></div>
+        <div class="rd-row"><span class="n">Reopened tickets</span><span class="rd-track"><i style="width:5%;background:var(--neg)"></i></span><b style="color:var(--neg)">+12.6%</b></div>
+        <div class="rd-axis"><span></span><span class="s"><span>0%</span><span>+250%</span></span><span></span></div>
+      </div>
+      <p class="rd-kicker"><span>Speed was the promise, and the speed is real. <b>Incidents per pull request more than tripled</b> alongside it. None of these metrics say anything about how the code treats the person using it, which is the failure nobody is counting.</span></p>
+      <figcaption>Source: <a href="https://www.faros.ai/research/ai-acceleration-whiplash" target="_blank" rel="noopener noreferrer">Faros AI Engineering Report 2026: The Acceleration Whiplash</a>, comparing each organization&rsquo;s lowest and highest AI-adoption periods.</figcaption>
+    </figure>
+
+    <p class="body-p" style="margin-top:30px">Nobody is going back to hand-writing features, any more than anyone went back to horses. <b>The trajectory is inevitable. What happens along it is not.</b></p>
   </div>
 </section>
 
@@ -789,7 +846,7 @@ html[data-theme="dark"] .creds img.cred-logo{filter:grayscale(1) invert(1);opaci
         </tbody>
       </table>
     </div>
-    <p class="vnote" style="border:none;padding-top:12px">Every one of these is already illegal in at least one jurisdiction. None of them were requested.</p>
+    <p class="vnote" style="border:none;padding-top:12px">Every one of these is already illegal in at least one jurisdiction.</p>
   </div>
 </section>
 
@@ -882,17 +939,6 @@ html[data-theme="dark"] .creds img.cred-logo{filter:grayscale(1) invert(1);opaci
   </div>
 </section>
 
-<section id="honest">
-  <div class="wrap">
-    <div class="label">The honest part</div>
-    <h2 class="sec-title">What we can say, and what we can&rsquo;t</h2>
-    <div class="promises promises-3">
-      <div><h3>What is measured</h3><p>The chat instrument is validated against human raters on a golden set, with inter-rater agreement measured. 788 prompts, 15 models. Published, open, and reproducible.</p></div>
-      <div><h3>What is not yet</h3><p>The code instrument needs its own golden set: real pull requests, human-rated against the same eight principles, agreement measured the same way. Until that exists it is a well-reasoned rubric, which is not the same thing as science.</p></div>
-      <div><h3>What we will never claim</h3><p>A green run means no check fired. It does not mean a product is lawful or that its output is certified humane. Nobody knows that yet, because nobody has measured it before. A confidently wrong compliance tool is worse than none, because people stop reading it.</p></div>
-    </div>
-  </div>
-</section>
 
 <section id="contact-why" style="border-bottom:none">
   <div class="wrap">
@@ -910,8 +956,8 @@ html[data-theme="dark"] .creds img.cred-logo{filter:grayscale(1) invert(1);opaci
     <div class="foot-rows">
       <div class="foot-col">
         <strong>Work</strong>
-        <a href="/#gate">The gap</a>
-        <a href="/#what">How it works</a>
+        <a href="/#gap">The gap</a>
+        <a href="/#system">The platform</a>
         <a href="/why-this-matters/">Why this matters</a>
         <a href="/#contact">Talk to us</a>
       </div>
