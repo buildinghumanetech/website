@@ -14,5 +14,11 @@
 /why-this-matters/index.html
   Cache-Control: public, max-age=0, must-revalidate
 
+/run-the-eval/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/run-the-eval/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+
 /og.png
   Cache-Control: public, max-age=3600
