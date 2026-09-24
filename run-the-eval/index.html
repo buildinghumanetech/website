@@ -731,17 +731,72 @@ body{--action:#5539EC;--action-ink:#FFF4E0;--action-edge:#5539EC}
   <div class="wrap">
     <div class="label">Run the eval</div>
     <h1>Score it yourself.<br>Fifteen minutes.</h1>
-    <p class="sub">HumaneBench is open source. Run it on your own product&rsquo;s conversations, or on any model. <b>Or book fifteen minutes and we run it with you.</b></p>
+    <p class="sub">HumaneBench is open source. Put it on your pull requests, run it on your product&rsquo;s conversations, or benchmark any model.</p>
     <div class="hero-cta">
-      <a class="btn" href="#product">Score my product</a>
+      <a class="btn" href="#gate">Gate my pull requests</a>
       <a class="btn ghost" href="#model">Benchmark a model</a>
     </div>
   </div>
 </header>
 
-<section id="product">
+<section id="gate">
   <div class="wrap">
     <div class="label">Path one</div>
+    <h2 class="sec-title">Gate your pull requests</h2>
+    <p class="sec-intro">The Humane Gate reads every pull request against the eight principles and posts one advisory verdict. It blocks nothing. It runs in your CI on your own Anthropic key, and nothing is sent to us.</p>
+    <ol class="steps">
+      <li>
+        <h3>Add your key</h3>
+        <p>Add <code>ANTHROPIC_API_KEY</code> as a repository secret, under Settings &rarr; Secrets and variables &rarr; Actions. The judge runs on your key, in your runner.</p>
+      </li>
+      <li>
+        <h3>Add the workflow</h3>
+        <p>Save this as <code>.github/workflows/humane-gate.yml</code>. That is the whole install.</p>
+        <pre><code>name: humane-gate
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  <span class="c"># A person replying "/humane accept" is the only conversation CI can have.</span>
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: read
+  pull-requests: write
+  checks: write
+
+jobs:
+  advisory:
+    runs-on: ubuntu-latest
+    if: &gt;-
+      github.event_name != 'issue_comment' ||
+      (github.event.issue.pull_request != null &amp;&amp;
+       contains(github.event.comment.body, '/humane accept'))
+    steps:
+      <span class="c"># Check out the DEFAULT branch, never the pull request. This is what</span>
+      <span class="c"># keeps a pull request from supplying the policy it is scored against.</span>
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0
+
+      - uses: buildinghumanetech/humane-gate-action@v1
+        with:
+          anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}</code></pre>
+      </li>
+      <li>
+        <h3>Open a pull request</h3>
+        <p>The verdict appears as a comment, plus a neutral check named <code>humanebench / advisory</code>. Disagree with a finding? Reply <code>/humane accept &lt;id&gt; &lt;reason&gt;</code> and the decision goes on the record under your name.</p>
+      </li>
+    </ol>
+    <p class="note"><b>About $0.07 per pull request</b> on your key, measured across our nine demo PRs. Verdicts can vary between runs on the same diff. Full documentation is in the <a href="https://github.com/buildinghumanetech/humane-gate-action" target="_blank" rel="noopener noreferrer">humane-gate-action README</a>.</p>
+  </div>
+</section>
+
+<section id="product">
+  <div class="wrap">
+    <div class="label">Path two</div>
     <h2 class="sec-title">Score your product on real conversations</h2>
     <p class="sec-intro">The HumaneBench CLI judges real transcripts against the eight principles and writes a local HTML report. One binary. Your transcripts stay on your machine until you say otherwise.</p>
     <ol class="steps">
@@ -791,7 +846,7 @@ humanebench report --share --out share.html</code></pre>
 
 <section id="model">
   <div class="wrap">
-    <div class="label">Path two</div>
+    <div class="label">Path three</div>
     <h2 class="sec-title">Benchmark a model</h2>
     <p class="sec-intro">The research harness runs the benchmark prompts against any model on OpenRouter, in three conditions: no system prompt, a humane persona, and an adversarial one. It runs on <a href="https://inspect.aisi.org.uk/" target="_blank" rel="noopener noreferrer">Inspect</a>.</p>
     <ol class="steps">
