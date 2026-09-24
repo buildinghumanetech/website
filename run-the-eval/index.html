@@ -731,7 +731,7 @@ body{--action:#5539EC;--action-ink:#FFF4E0;--action-edge:#5539EC}
   <div class="wrap">
     <div class="label">Run the eval</div>
     <h1>Score it yourself.<br>Fifteen minutes.</h1>
-    <p class="sub">HumaneBench is open source. Put it on your pull requests, run it on your product&rsquo;s conversations, or benchmark any model.</p>
+    <p class="sub">HumaneBench is open source. Check every change before it ships, and score the conversations your product is actually having.</p>
     <div class="hero-cta">
       <a class="btn" href="#gate">Gate my pull requests</a>
       <a class="btn ghost" href="#product">Score my transcripts</a>
@@ -802,9 +802,8 @@ jobs:
     <ol class="steps">
       <li>
         <h3>Install the skill</h3>
-        <p>A Claude Code skill is a directory. From a clone of the <a href="https://github.com/buildinghumanetech/humanebench" target="_blank" rel="noopener noreferrer">humanebench repo</a>, copy it in:</p>
-        <pre><code>cp -r skills/humanebench-transcript-score ~/.claude/skills/                # personal
-cp -r skills/humanebench-transcript-score /path/to/repo/.claude/skills/    # per project</code></pre>
+        <pre><code>git clone https://github.com/buildinghumanetech/humanebench.git
+cp -r humanebench/skills/humanebench-transcript-score ~/.claude/skills/</code></pre>
       </li>
       <li>
         <h3>Score a transcript</h3>
@@ -862,7 +861,7 @@ humanebench report --share --out share.html</code></pre>
 <section id="model">
   <div class="wrap">
     <h2 class="sec-title">Changing models?</h2>
-    <p class="sec-intro">The research harness runs the benchmark prompts against any model on OpenRouter, in three conditions: no system prompt, a humane persona, and an adversarial one. It runs on <a href="https://inspect.aisi.org.uk/" target="_blank" rel="noopener noreferrer">Inspect</a>.</p>
+    <p class="sec-intro">Swapping models or upgrading a version can quietly change how your product treats people. Run the benchmark on the model you have and the one you&rsquo;re moving to, and compare.</p>
     <ol class="steps">
       <li>
         <h3>Set up</h3>
@@ -893,7 +892,7 @@ pip install -r requirements.txt</code></pre>
         <pre><code>inspect view</code></pre>
       </li>
     </ol>
-    <p class="note">Full docs, rubrics and the dataset live in the <a href="https://github.com/buildinghumanetech/humanebench" target="_blank" rel="noopener noreferrer">repo</a>.</p>
+    <p class="note">These are the published HumaneBench v1 conditions, scored under rubric v3, so results are comparable to the humanebench.ai leaderboard. Want to test your own system prompt instead? That needs a custom run. <a href="https://calendar.app.google/nCgYhQJZo4aXpG896" target="_blank" rel="noopener noreferrer">Book 15 minutes</a>.</p>
   </div>
 </section>
 
