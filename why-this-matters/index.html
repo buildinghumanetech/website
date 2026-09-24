@@ -331,6 +331,14 @@ html[data-theme="dark"] table.gates tr.ours td{background:#20262B}
   .eras li,.eras li:nth-child(odd){padding:13px 0 0;margin-top:13px;border-left:none;border-top:1px solid var(--rule)}
   .eras li:first-child{padding-top:0;margin-top:0;border-top:none}
 }
+.e-art{display:block;width:100%;height:100px;margin:0 0 14px}
+.e-art .ink,.e-art use{fill:var(--ink)}
+.e-art .gl{stroke:var(--ink);stroke-width:1.5}
+.eras li{position:relative}
+.eras li+li::before{content:"";position:absolute;left:-11px;top:52px;width:22px;height:22px;border-radius:50%;background:var(--surface);border:1px solid var(--rule);
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cpath d='M6 11h9M11.5 7.5 15 11l-3.5 3.5' fill='none' stroke='%236B6155' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+@media(max-width:820px){.eras li:nth-child(odd)::before{display:none}}
+@media(max-width:440px){.eras li+li::before{display:none}}
 .vchart text{font-family:inherit}
 @media(max-width:620px){
   .vchart .v-lab,.vchart .v-tick{font-size:17px}
@@ -738,6 +746,8 @@ body{--action:#5539EC;--action-ink:#FFF4E0;--action-edge:#5539EC}
 </style>
 </head>
 <body>
+<!-- Icons: walk + horse-human from Material Design Icons (Apache 2.0); car-profile-fill from Phosphor Icons (MIT). -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="walk" viewBox="0 0 24 24"><path d="M14.12,10H19V8.2H15.38L13.38,4.87C13.08,4.37 12.54,4.03 11.92,4.03C11.74,4.03 11.58,4.06 11.42,4.11L6,5.8V11H7.8V7.33L9.91,6.67L6,22H7.8L10.67,13.89L13,17V22H14.8V15.59L12.31,11.05L13.04,8.18M14,3.8C15,3.8 15.8,3 15.8,2C15.8,1 15,0.2 14,0.2C13,0.2 12.2,1 12.2,2C12.2,3 13,3.8 14,3.8Z"/></symbol><symbol id="horse" viewBox="0 0 24 24"><path d="M10 3.5C10 2.67 10.67 2 11.5 2S13 2.67 13 3.5 12.33 5 11.5 5 10 4.33 10 3.5M22 8V11.5L20.97 11.85C20.8 13.06 19.76 14 18.5 14H18.42C18.28 14.68 17.95 15.29 17.5 15.78V22H15V17C14.92 17 14.84 17 14.75 17C14.54 17 14.33 16.97 14.13 16.94L9.69 16.2L8.57 18.21L9.32 22H6.78L6 18.25C5.97 17.95 6 17.65 6.16 17.39L7.18 15.58C6.2 15.03 5.53 14 5.5 12.81C5.46 12.96 5.44 13.18 5.47 13.5C5.5 13.94 5.61 14.59 5.54 15.31C5.5 16.03 5.17 16.77 4.75 17.26C4.32 17.75 3.85 18.09 3.35 18.35L2.65 17.65C2.84 17.18 3.03 16.76 3.07 16.37C3.13 16 3.06 15.7 2.95 15.43L2.42 14.3C2.21 13.79 1.95 13.05 2 12.18C2.03 11.33 2.5 10.22 3.39 9.61C4.29 9 5.26 8.91 6.05 9.08C6.55 9.18 7.06 9.42 7.5 9.76C7.87 9.59 8.3 9.5 8.75 9.5H9V8.11C9 7.11 9.68 6.19 10.66 6.03C11.92 5.82 13 6.79 13 8V9.5H14.5V9C14.5 6.79 16.29 5 18.5 5H22L21.11 6.34C21.65 6.7 22 7.31 22 8M20 11.2L18.96 9.54C18.83 9.33 18.5 9.42 18.5 9.67V13C19.33 13 20 12.33 20 11.5V11.2Z"/></symbol><symbol id="carE" viewBox="0 0 256 256"><g class="ink"><path d="M240,112H211.31L168,68.69A15.86,15.86,0,0,0,156.69,64H44.28A16,16,0,0,0,31,71.12L1.34,115.56A8.07,8.07,0,0,0,0,120v58a16,16,0,0,0,16,16H33a32,32,0,0,0,62,0h66a32,32,0,0,0,62,0h17a16,16,0,0,0,16-16V128A16,16,0,0,0,240,112ZM44.28,80H156.69l32,32H23ZM64,192a16,16,0,1,1,16-16A16,16,0,0,1,64,192Zm128,0a16,16,0,1,1,16-16A16,16,0,0,1,192,192Z"/></g></symbol></defs></svg>
 <nav style="border-bottom:1px solid #EBDCC0">
   <div style="max-width:1120px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;gap:14px 24px;flex-wrap:wrap">
     <a href="/" style="display:flex;align-items:center;gap:10px;color:#2D2D2D;text-decoration:none;flex:none">
@@ -769,10 +779,10 @@ body{--action:#5539EC;--action-ink:#FFF4E0;--action-edge:#5539EC}
 
           <figure class="vfig">
                 <ol class="eras">
-              <li><span class="e-k">Era one</span><b>We walked</b><p>A person wrote it. Another person read it. Both saw, at some point, the actual decision.</p><span class="e-c">1 feature &middot; 2 humans</span></li>
-              <li><span class="e-k">Era two</span><b>We rode</b><p>Output rose. Review held, barely, because a human still read the diff.</p><span class="e-c">10 features &middot; 1 human</span></li>
-              <li><span class="e-k">Era three</span><b>We drove</b><p>The human describes, the model drafts, the human skims. The skim starts to be the review.</p><span class="e-c">50 features &middot; 1 skim</span></li>
-              <li class="now"><span class="e-k">Era four &middot; now</span><b>The fleet drives itself</b><p>A founder describes an outcome. A fleet produces it. Nobody read it.</p><span class="e-c">128 agents &middot; 0 humans</span></li>
+              <li><svg class="e-art" viewBox="0 0 200 130" aria-hidden="true"><use href="#walk" x="45" y="19" width="110" height="110"/><line class="gl" x1="4" y1="120" x2="196" y2="120"/></svg><span class="e-k">Era one</span><b>We walked</b><p>A person wrote it. Another person read it. Both saw, at some point, the actual decision.</p><span class="e-c">1 feature &middot; 2 humans</span></li>
+              <li><svg class="e-art" viewBox="0 0 200 130" aria-hidden="true"><use href="#horse" x="40" y="5" width="120" height="120"/><line class="gl" x1="4" y1="120" x2="196" y2="120"/></svg><span class="e-k">Era two</span><b>We rode</b><p>Output rose. Review held, barely, because a human still read the diff.</p><span class="e-c">10 features &middot; 1 human</span></li>
+              <li><svg class="e-art" viewBox="0 0 200 130" aria-hidden="true"><use href="#carE" x="20" y="-12" width="160" height="160"/><line class="gl" x1="4" y1="120" x2="196" y2="120"/></svg><span class="e-k">Era three</span><b>We drove</b><p>The human describes, the model drafts, the human skims. The skim starts to be the review.</p><span class="e-c">50 features &middot; 1 skim</span></li>
+              <li class="now"><svg class="e-art" viewBox="0 0 200 130" aria-hidden="true"><g opacity="0.35"><use href="#carE" x="14" y="39.2" width="30" height="30"/><use href="#carE" x="50" y="39.2" width="30" height="30"/><use href="#carE" x="86" y="39.2" width="30" height="30"/><use href="#carE" x="122" y="39.2" width="30" height="30"/><use href="#carE" x="158" y="39.2" width="30" height="30"/></g><g opacity="0.6"><use href="#carE" x="6" y="57.4" width="42" height="42"/><use href="#carE" x="54" y="57.4" width="42" height="42"/><use href="#carE" x="102" y="57.4" width="42" height="42"/><use href="#carE" x="150" y="57.4" width="42" height="42"/></g><g opacity="1"><use href="#carE" x="4" y="73.8" width="56" height="56"/><use href="#carE" x="72" y="73.8" width="56" height="56"/><use href="#carE" x="140" y="73.8" width="56" height="56"/></g><line class="gl" x1="4" y1="120" x2="196" y2="120"/></svg><span class="e-k">Era four &middot; now</span><b>The fleet drives itself</b><p>A founder describes an outcome. A fleet produces it. Nobody read it.</p><span class="e-c">128 agents &middot; 0 humans</span></li>
             </ol>
       
       </figure>
@@ -820,7 +830,7 @@ body{--action:#5539EC;--action-ink:#FFF4E0;--action-edge:#5539EC}
       <figcaption>Source: <a href="https://www.faros.ai/research/ai-acceleration-whiplash" target="_blank" rel="noopener noreferrer">Faros AI Engineering Report 2026: The Acceleration Whiplash</a>, comparing each organization&rsquo;s lowest and highest AI-adoption periods.</figcaption>
     </figure>
 
-    <p class="body-p" style="margin-top:30px">Nobody is going back to hand-writing features, any more than anyone went back to horses.<br><b>The trajectory is inevitable.<br>What happens along it is not.</b></p>
+    <p class="body-p" style="margin-top:30px"><span style="display:block;text-wrap:balance">No one is going back to hand-writing features, any more than anyone went back to horses.</span><b>The trajectory is inevitable.<br>What happens along it is not.</b></p>
   </div>
 </section>
 
