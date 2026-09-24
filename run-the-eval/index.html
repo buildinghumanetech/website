@@ -734,7 +734,7 @@ body{--action:#5539EC;--action-ink:#FFF4E0;--action-edge:#5539EC}
     <p class="sub">HumaneBench is open source. Put it on your pull requests, run it on your product&rsquo;s conversations, or benchmark any model.</p>
     <div class="hero-cta">
       <a class="btn" href="#gate">Gate my pull requests</a>
-      <a class="btn ghost" href="#model">Benchmark a model</a>
+      <a class="btn ghost" href="#product">Score my transcripts</a>
     </div>
   </div>
 </header>
@@ -798,7 +798,21 @@ jobs:
   <div class="wrap">
     <div class="label">Path two</div>
     <h2 class="sec-title">Score your product on real conversations</h2>
-    <p class="sec-intro">The HumaneBench CLI judges real transcripts against the eight principles and writes a local HTML report. One binary. Your transcripts stay on your machine until you say otherwise.</p>
+    <p class="sec-intro">Already using Claude Code? Score a transcript with the HumaneBench skill, no install beyond the skill itself.</p>
+    <ol class="steps">
+      <li>
+        <h3>Install the skill</h3>
+        <p>A Claude Code skill is a directory. From a clone of the <a href="https://github.com/buildinghumanetech/humanebench" target="_blank" rel="noopener noreferrer">humanebench repo</a>, copy it in:</p>
+        <pre><code>cp -r skills/humanebench-transcript-score ~/.claude/skills/                # personal
+cp -r skills/humanebench-transcript-score /path/to/repo/.claude/skills/    # per project</code></pre>
+      </li>
+      <li>
+        <h3>Score a transcript</h3>
+        <p>Ask Claude Code to &ldquo;score this transcript with HumaneBench&rdquo;, or run <code>/humanebench-transcript-score</code>.</p>
+      </li>
+    </ol>
+    <p class="note">For large volumes or scheduled runs, use the CLI below.</p>
+    <p class="sec-intro" style="margin-top:40px">The HumaneBench CLI judges real transcripts against the eight principles and writes a local HTML report. One binary. Your transcripts stay on your machine until you say otherwise.</p>
     <p class="sec-intro">The CLI scores against HumaneBench rubric v4.</p>
     <ol class="steps">
       <li>
@@ -847,8 +861,7 @@ humanebench report --share --out share.html</code></pre>
 
 <section id="model">
   <div class="wrap">
-    <div class="label">Path three</div>
-    <h2 class="sec-title">Benchmark a model</h2>
+    <h2 class="sec-title">Changing models?</h2>
     <p class="sec-intro">The research harness runs the benchmark prompts against any model on OpenRouter, in three conditions: no system prompt, a humane persona, and an adversarial one. It runs on <a href="https://inspect.aisi.org.uk/" target="_blank" rel="noopener noreferrer">Inspect</a>.</p>
     <ol class="steps">
       <li>
