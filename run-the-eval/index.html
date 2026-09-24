@@ -3,66 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Why this matters &middot; Building Humane Tech</title>
-<meta name="description" content="Software has a factory now. It runs at a volume no review process was built for, and there is nobody on the line.">
-<link rel="canonical" href="https://buildinghumanetech.com/why-this-matters/">
+<title>Run the eval &middot; Building Humane Tech</title>
+<meta name="description" content="Run HumaneBench yourself: score your product on real conversations, or benchmark any model. Open source, about fifteen minutes.">
+<link rel="canonical" href="https://buildinghumanetech.com/run-the-eval/">
 <meta name="theme-color" content="#FFF4E0" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#1A1712" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://buildinghumanetech.com/why-this-matters/">
-<meta property="og:title" content="Why this matters &middot; Building Humane Tech">
-<meta property="og:description" content="Software has a factory now. It runs at a volume no review process was built for, and there is nobody on the line.">
+<meta property="og:url" content="https://buildinghumanetech.com/run-the-eval/">
+<meta property="og:title" content="Run the eval &middot; Building Humane Tech">
+<meta property="og:description" content="Run HumaneBench yourself: score your product on real conversations, or benchmark any model. Open source, about fifteen minutes.">
 <meta property="og:image" content="https://buildinghumanetech.com/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Why this matters &middot; Building Humane Tech">
-<meta name="twitter:description" content="Software has a factory now. It runs at a volume no review process was built for, and there is nobody on the line.">
+<meta name="twitter:title" content="Run the eval &middot; Building Humane Tech">
+<meta name="twitter:description" content="Run HumaneBench yourself: score your product on real conversations, or benchmark any model. Open source, about fifteen minutes.">
 <meta name="twitter:image" content="https://buildinghumanetech.com/og.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<style>
-*,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;overflow-x:hidden}
-img{max-width:100%}
-[hidden]{display:none!important}
-
-/* real telemetry figures */
-:root{--neg:#A8392A;--pos:#17658C;--track:#F6ECD9}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--neg:#E08A76;--pos:#7FBEDE;--track:#2E2618}}
-:root[data-theme="dark"]{--neg:#E08A76;--pos:#7FBEDE;--track:#2E2618}
-.rdata{margin:34px 0 0;background:var(--surface);border:1px solid var(--rule-strong);border-radius:8px;padding:clamp(20px,3vw,30px)}
-.rdata .label{margin-bottom:10px}
-.rdata h3{font-family:Lora,Georgia,serif;font-weight:500;font-size:clamp(1.25rem,2.6vw,1.75rem);line-height:1.18;letter-spacing:-.015em;margin:0 0 10px;color:var(--ink)}
-.rdata .rd-intro{font-size:.97rem;line-height:1.6;color:var(--muted);margin:0 0 22px;max-width:62ch}
-.rd-group{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;padding:0 0 10px;border-bottom:1px solid var(--rule);margin-bottom:12px}
-.rd-group.t{padding-top:22px}
-.rd-rows{border-top:1px solid var(--rule);padding-top:18px}
-.rd-row{display:grid;grid-template-columns:minmax(140px,1.1fr) minmax(90px,1.6fr) 74px;align-items:center;gap:10px 16px;padding:7px 0}
-.rd-row span.n{font-size:.93rem;color:var(--ink)}
-.rd-track{display:block;height:13px;background:var(--track);border-radius:2px}
-.rd-track i{display:block;height:13px;border-radius:2px}
-.rd-row b{font-size:.95rem;font-weight:700;text-align:right;font-variant-numeric:tabular-nums}
-.rd-axis{display:grid;grid-template-columns:minmax(140px,1.1fr) minmax(90px,1.6fr) 74px;gap:16px;margin-top:14px;padding-top:10px;border-top:1px solid var(--rule)}
-.rd-axis span.s{display:flex;justify-content:space-between;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;color:var(--muted)}
-.rd-kicker{margin:26px 0 0;max-width:none;padding-top:20px;border-top:1px solid var(--rule);font-size:1rem;line-height:1.62;color:var(--muted)}
-.rd-kicker>span{display:block;max-width:64ch}
-.rd-kicker b{color:var(--ink)}
-.rdata figcaption{margin-top:14px;font-size:.84rem;color:var(--muted)}
-.rd-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;border-top:1px solid var(--rule);padding-top:22px}
-.rd-big{display:flex;align-items:baseline;gap:8px}
-.rd-big b{font-family:Lora,Georgia,serif;font-size:clamp(2.2rem,5vw,2.9rem);font-weight:500;line-height:1;letter-spacing:-.02em;color:var(--ink)}
-.rd-big span{font-family:Lora,Georgia,serif;font-size:1.05rem;color:var(--gold-ink)}
-.rd-cols p{font-size:.92rem;line-height:1.55;color:var(--muted);margin:10px 0 16px}
-.rd-dots{display:grid;grid-template-columns:repeat(10,10px);gap:5px;width:145px}
-.rd-dots i{width:10px;height:10px;border-radius:50%;box-sizing:border-box}
-.rd-dots i.on{background:var(--ink)}
-.rd-dots i.off{border:1px solid var(--rule-strong)}
-@media (max-width:560px){.rd-row,.rd-axis{grid-template-columns:1fr 64px}.rd-row .rd-track{grid-column:1 / -1;order:3}}
-.vfig>.eras:first-child{margin-top:0;border-top:none}
-.nav-cta{white-space:nowrap;flex:none}
-.nav-links{flex-wrap:wrap;min-width:0}
-</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap">
@@ -721,6 +678,23 @@ footer{padding:30px 0 40px;font-size:.87rem;color:var(--muted)}
 }
 html[data-theme="dark"] .creds img.cred-logo{filter:grayscale(1) invert(1);opacity:.78}
 @media(max-width:700px){.creds .cred-mark{height:34px}}
+/* ---- run the eval ---- */
+.steps{list-style:none;counter-reset:s;margin:30px 0 0;padding:0;max-width:820px}
+.steps>li{counter-increment:s;position:relative;padding:0 0 26px 52px;margin:0 0 26px;border-bottom:1px solid var(--rule)}
+.steps>li:last-child{border-bottom:none;margin-bottom:0}
+.steps>li::before{content:counter(s);position:absolute;left:0;top:1px;width:34px;height:34px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font:600 15px/1 Lora,Georgia,serif;
+  color:var(--gold-ink);background:var(--gold-soft);border:1px solid var(--rule-strong)}
+.steps h3{font-family:Lora,Georgia,serif;font-weight:500;font-size:1.22rem;letter-spacing:-.01em;margin:3px 0 6px;color:var(--ink)}
+.steps p{font-size:.98rem;color:var(--muted);margin:0 0 10px;max-width:66ch}
+.steps pre{margin:10px 0 0;padding:14px 16px;background:var(--surface);border:1px solid var(--rule-strong);border-radius:8px;
+  overflow-x:auto;font:13.5px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink);white-space:pre}
+.steps pre code{font:inherit;background:none;border:0;padding:0}
+.steps pre .c{color:var(--muted)}
+.steps p code,.note code{font:.86em ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--surface-2);padding:1px 5px;border-radius:3px}
+.note{margin:28px 0 0;padding:16px 18px;max-width:820px;font-size:.96rem;color:var(--muted);background:var(--surface);border-left:3px solid var(--gold);border-radius:0 8px 8px 0}
+.note b{color:var(--ink)}
+@media(max-width:560px){.steps>li{padding-left:0}.steps>li::before{position:static;margin-bottom:10px}.steps pre{font-size:12.5px}}
 </style>
 </head>
 <body>
@@ -738,207 +712,111 @@ html[data-theme="dark"] .creds img.cred-logo{filter:grayscale(1) invert(1);opaci
 </nav>
 <header class="hero why-hero">
   <div class="wrap">
-    <div class="label">Why this matters</div>
-    <h1>Software has<br>a factory now</h1>
-    <p class="sub">It runs at a volume no review process was built for. It makes every small decision about the people who will use what it produces. <b>And there is nobody on the line.</b></p>
+    <div class="label">Run the eval</div>
+    <h1>Score it yourself.<br>Fifteen minutes.</h1>
+    <p class="sub">HumaneBench is open source. Run it on your own product&rsquo;s conversations, or on any model. <b>Or book fifteen minutes and we run it with you.</b></p>
+    <div class="hero-cta">
+      <a class="btn" href="#product">Score my product</a>
+      <a class="btn ghost" href="#model">Benchmark a model</a>
+    </div>
   </div>
 </header>
 
-<section id="threshold">
+<section id="product">
   <div class="wrap">
-    <h2 class="sec-title">Production scaled. Inspection didn&rsquo;t.</h2>
-    <p class="sec-intro">For almost all of human history, if you wanted to know whether something was made well, you asked the person who made it. Batches were small, the maker was accountable, and defects were caught by the same hands that made them.</p>
-    <p class="body-p">Then production outran inspection. Industrial food manufacturing arrived decades before food safety standards did, and the distance between those two dates is measured in bodies. What closed it was not consumer vigilance. Nobody solved contaminated meat by asking people to chew more carefully. It was a written standard, applied on the line, by someone whose job was to apply it.</p>
-    <p class="body-p"><b>Software crossed that same threshold in the last two years, and almost nobody has named it.</b></p>
+    <div class="label">Path one</div>
+    <h2 class="sec-title">Score your product on real conversations</h2>
+    <p class="sec-intro">The HumaneBench CLI judges real transcripts against the eight principles and writes a local HTML report. One binary. Your transcripts stay on your machine until you say otherwise.</p>
+    <ol class="steps">
+      <li>
+        <h3>Install Rust</h3>
+        <p>Skip this if <code>cargo --version</code> already works.</p>
+        <pre><code>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></pre>
+      </li>
+      <li>
+        <h3>Build the CLI</h3>
+        <pre><code>git clone https://github.com/buildinghumanetech/humanebench.git
+cd humanebench/cli
+cargo build --release
+alias humanebench="$PWD/target/release/humanebench"</code></pre>
+      </li>
+      <li>
+        <h3>Bring your conversations</h3>
+        <p>Claude Code and Codex logs are found automatically. For your own product, export conversations as JSONL in the documented schema and pipe them in.</p>
+        <pre><code><span class="c"># agent logs on this machine</span>
+humanebench ingest
 
-          <figure class="vfig">
-                <ol class="eras">
-              <li><span class="e-k">Era one</span><b>We walked</b><p>A person wrote it. Another person read it. Both saw, at some point, the actual decision.</p><span class="e-c">1 feature &middot; 2 humans</span></li>
-              <li><span class="e-k">Era two</span><b>We rode</b><p>Output rose. Review held, barely, because a human still read the diff.</p><span class="e-c">10 features &middot; 1 human</span></li>
-              <li><span class="e-k">Era three</span><b>We drove</b><p>The human describes, the model drafts, the human skims. The skim starts to be the review.</p><span class="e-c">50 features &middot; 1 skim</span></li>
-              <li class="now"><span class="e-k">Era four &middot; now</span><b>The fleet drives itself</b><p>A founder describes an outcome. A fleet produces it. Nobody read it.</p><span class="e-c">128 agents &middot; 0 humans</span></li>
-            </ol>
-      
-      </figure>
-
-
-
-    <figure class="rdata">
-      <div class="label">Where the code comes from</div>
-      <h3>AI is the author now, not the experiment</h3>
-      <p class="rd-intro">Adoption stopped being the question two years ago. The code reaching your users is increasingly written, and increasingly reviewed, by a model.</p>
-      <div class="rd-cols">
-        <div>
-          <div class="rd-big"><b>60%</b><span>of developers</span></div>
-          <p>use at least one AI tool every week, up from 40%</p>
-          <div class="rd-dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i></div>
-        </div>
-        <div>
-          <div class="rd-big"><b>80%</b><span>of teams</span></div>
-          <p>are past the 50% weekly active threshold, up from 50%</p>
-          <div class="rd-dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i></div>
-        </div>
-        <div>
-          <div class="rd-big"><b>25%</b><span>of pull requests</span></div>
-          <p>are reviewed by an AI agent, up from none a year ago</p>
-          <div class="rd-dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i></div>
-        </div>
-      </div>
-      <p class="rd-kicker"><span>Each dot is one percent. <b>A quarter of all review is now a model reading another model&rsquo;s work</b>, and under one percent of pull requests are opened by an agent, so the volume is still human-requested and machine-written.</span></p>
-      <figcaption>Source: <a href="https://www.faros.ai/research/ai-acceleration-whiplash" target="_blank" rel="noopener noreferrer">Faros AI Engineering Report 2026: The Acceleration Whiplash</a>, comparing each organization&rsquo;s lowest and highest AI-adoption periods.</figcaption>
-    </figure>
-
-    <figure class="rdata">
-      <div class="label">Production code quality</div>
-      <h3>Poor quality code is reaching production</h3>
-      <p class="rd-intro">Change in production code quality between each organization&rsquo;s lowest and highest AI-adoption period. 22,000 developers across 4,000+ teams. Every metric moved the wrong way.</p>
-      <div class="rd-rows">
-        <div class="rd-row"><span class="n">Production incidents per pull request</span><span class="rd-track"><i style="width:97.1%;background:var(--neg)"></i></span><b style="color:var(--neg)">+242.7%</b></div>
-        <div class="rd-row"><span class="n">Monthly production incidents</span><span class="rd-track"><i style="width:23.2%;background:var(--neg)"></i></span><b style="color:var(--neg)">+57.9%</b></div>
-        <div class="rd-row"><span class="n">Bugs per developer</span><span class="rd-track"><i style="width:21.6%;background:var(--neg)"></i></span><b style="color:var(--neg)">+54%</b></div>
-        <div class="rd-row"><span class="n">Bugs per pull request</span><span class="rd-track"><i style="width:11.5%;background:var(--neg)"></i></span><b style="color:var(--neg)">+28.7%</b></div>
-        <div class="rd-row"><span class="n">Reopened tickets</span><span class="rd-track"><i style="width:5%;background:var(--neg)"></i></span><b style="color:var(--neg)">+12.6%</b></div>
-        <div class="rd-axis"><span></span><span class="s"><span>0%</span><span>+250%</span></span><span></span></div>
-      </div>
-      <p class="rd-kicker"><span>Speed was the promise, and the speed is real. <b>Incidents per pull request more than tripled</b> alongside it. None of these metrics say anything about how the code treats the person using it, which is the failure nobody is counting.</span></p>
-      <figcaption>Source: <a href="https://www.faros.ai/research/ai-acceleration-whiplash" target="_blank" rel="noopener noreferrer">Faros AI Engineering Report 2026: The Acceleration Whiplash</a>, comparing each organization&rsquo;s lowest and highest AI-adoption periods.</figcaption>
-    </figure>
-
-    <p class="body-p" style="margin-top:30px">Nobody is going back to hand-writing features, any more than anyone went back to horses. <b>The trajectory is inevitable. What happens along it is not.</b></p>
+<span class="c"># your product: see the contract, then pipe your export</span>
+humanebench schema
+your-export | humanebench ingest --stdin --source normalized</code></pre>
+      </li>
+      <li>
+        <h3>Price it before you pay</h3>
+        <p>A dry run shows the call count and token estimate. No key needed, nothing spent.</p>
+        <pre><code>humanebench score --provider openrouter --dry-run</code></pre>
+      </li>
+      <li>
+        <h3>Score</h3>
+        <p>Get a key at <a href="https://openrouter.ai/keys" target="_blank" rel="noopener noreferrer">openrouter.ai/keys</a>. The first run names exactly what leaves your machine and asks for consent.</p>
+        <pre><code>export OPENROUTER_API_KEY=your_key_here
+humanebench score --provider openrouter</code></pre>
+      </li>
+      <li>
+        <h3>Read the report</h3>
+        <p>Rendering is free and never re-judges. <code>--share</code> drops verbatim excerpts so you can pass it around.</p>
+        <pre><code>humanebench report --out report.html
+humanebench report --share --out share.html</code></pre>
+      </li>
+    </ol>
+    <p class="note"><b>Read it right.</b> The CLI uses one judge model. The published leaderboard uses an ensemble and scores each prompt on the one principle it was built to test. Same rubric, different statistic. Do not put a CLI score next to a leaderboard score.</p>
   </div>
 </section>
 
-<section id="worse">
+<section id="model">
   <div class="wrap">
-    <div class="label">The asymmetry</div>
-    <h2 class="sec-title">There is no recall for a deceptive pattern</h2>
-    <p class="body-p">When a plant ships something contaminated, people get sick. There is an outbreak, a trace-back, a recall. The harm announces itself, and the system is forced to correct.</p>
-    <p class="body-p">A deceptive pattern announces nothing. Nobody presents at a hospital because a cancel button moved three clicks deeper. The extraction is entirely real &mdash; attention, consent, autonomy, taken from millions of people a few seconds at a time &mdash; but it surfaces as engagement, which the organisation reads as success and immediately reinforces.</p>
-    <p class="body-p"><b>The signal that should say stop instead says do more of that.</b></p>
+    <div class="label">Path two</div>
+    <h2 class="sec-title">Benchmark a model</h2>
+    <p class="sec-intro">The research harness runs the benchmark prompts against any model on OpenRouter, in three conditions: no system prompt, a humane persona, and an adversarial one. It runs on <a href="https://inspect.aisi.org.uk/" target="_blank" rel="noopener noreferrer">Inspect</a>.</p>
+    <ol class="steps">
+      <li>
+        <h3>Set up</h3>
+        <pre><code>git clone https://github.com/buildinghumanetech/humanebench.git
+cd humanebench
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt</code></pre>
+      </li>
+      <li>
+        <h3>Add your key</h3>
+        <pre><code>cp .env.example .env
+<span class="c"># open .env and set OPENROUTER_API_KEY</span></code></pre>
+      </li>
+      <li>
+        <h3>Smoke test</h3>
+        <p>Twenty-four prompts. Confirms everything is wired before you spend real money.</p>
+        <pre><code>inspect eval src/test_task.py --model openrouter/openai/gpt-5</code></pre>
+      </li>
+      <li>
+        <h3>Full run</h3>
+        <p>Swap in any model as <code>openrouter/&lt;provider&gt;/&lt;model&gt;</code>. Inspect wants an empty <code>logs/</code> folder, so move old runs first.</p>
+        <pre><code>inspect eval src/baseline_task.py src/good_persona_task.py src/bad_persona_task.py \
+  --model openrouter/openai/gpt-5</code></pre>
+      </li>
+      <li>
+        <h3>Read the results</h3>
+        <pre><code>inspect view</code></pre>
+      </li>
+    </ol>
+    <p class="note">Full docs, rubrics and the dataset live in the <a href="https://github.com/buildinghumanetech/humanebench" target="_blank" rel="noopener noreferrer">repo</a>.</p>
   </div>
 </section>
-
-<section id="optimizer">
-  <div class="wrap">
-    <div class="label">Why it compounds</div>
-    <h2 class="sec-title">Nobody asked for the box to start checked</h2>
-    <p class="sec-intro">Deceptive patterns persist because they move the metrics people ask for. So an optimizer finds them on its own. Nothing malfunctions. The request simply never said what may not be traded away.</p>
-
-    <div class="gatewrap">
-      <table class="gates">
-        <thead>
-          <tr><th>What was asked for</th><th>What comes back</th></tr>
-        </thead>
-        <tbody>
-          <tr><td class="g">Reduce drop-off</td><td data-label="What comes back">Infinite scroll, no terminus</td></tr>
-          <tr><td class="g">Increase opt-in rate</td><td data-label="What comes back">The box starts checked</td></tr>
-          <tr><td class="g">Reduce churn</td><td data-label="What comes back">Cancellation buried, confirmshaming</td></tr>
-          <tr><td class="g">Improve personalisation</td><td data-label="What comes back">Collect more, retain longer, ask later</td></tr>
-          <tr><td class="g">Drive re-engagement</td><td data-label="What comes back">Streaks, guilt, &ldquo;we miss you&rdquo;</td></tr>
-          <tr><td class="g">Increase conversion</td><td data-label="What comes back">Fabricated scarcity, invented urgency</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="vnote" style="border:none;padding-top:12px">Every one of these is already illegal in at least one jurisdiction.</p>
-  </div>
-</section>
-
-<section id="instrument">
-  <div class="wrap">
-    <div class="label">The parallel that fits</div>
-    <h2 class="sec-title">The instrument is what&rsquo;s missing, not the intent</h2>
-    <div class="twoup">
-      <div>
-        <p class="body-p">Neurosurgery today is largely intuition. A surgeon opens the skull working from a static MRI taken before the operation began, and a meaningful share of tumour resections leave tumour behind. The response is not to ask surgeons to concentrate harder. It is real-time imaging &mdash; instrumentation, in the moment, on the actual thing.</p>
-        <p class="body-p">Shipping software is at the same stage. We have a static pre-op image, the diff, and a check that tells us it compiles. About the human being on the other side, we have intuition.</p>
-      </div>
-      <div>
-        <p class="body-p"><b>Nobody in your pipeline is wrong.</b> Tests catch the bug. The scanner catches the vulnerability. Separation of duties catches the SOC 2 problem. Correctness review has no opinion about whether a feature is good for the person using it, and it was never supposed to.</p>
-        <p class="body-p">That is not a failure of care. It is a missing instrument.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="two">
-  <div class="wrap">
-    <div class="label">What we build</div>
-    <h2 class="sec-title">One benchmark, two instruments</h2>
-    <p class="sec-intro">HumaneBench is the standard: eight principles, a four-point scale with no neutral, and a judging method validated against human raters. It runs today on conversation. The second instrument runs on code.</p>
-    <div class="pipeline-2">
-      <div class="inst">
-        <span class="e-k">Instrument one &middot; live</span>
-        <h3>Chat</h3>
-        <p class="inst-q">Did this model treat this person well, in this exchange?</p>
-        <dl class="inst-d">
-          <div><dt>Object</dt><dd>A turn of conversation</dd></div>
-          <div><dt>Who is harmed</dt><dd>The person in the conversation</dd></div>
-          <div><dt>When</dt><dd>At the moment of the reply</dd></div>
-          <div><dt>Scale</dt><dd>One person, one exchange</dd></div>
-        </dl>
-        <p class="inst-n">788 prompts, 15 frontier models, three steerability conditions. This exists and works.</p>
-      </div>
-      <div class="inst now">
-        <span class="e-k">Instrument two &middot; in build</span>
-        <h3>Agentic coding</h3>
-        <p class="inst-q">Will the software this agent just built treat people well?</p>
-        <dl class="inst-d">
-          <div><dt>Object</dt><dd>An authored change to software</dd></div>
-          <div><dt>Who is harmed</dt><dd>Everyone who later uses it</dd></div>
-          <div><dt>When</dt><dd>Every time the feature runs, indefinitely</dd></div>
-          <div><dt>Scale</dt><dd>Whole user base, compounding</dd></div>
-        </dl>
-        <p class="inst-n">Scores a pull request against what it was asked to accomplish. This is the Humane Gate.</p>
-      </div>
-    </div>
-    <p class="vnote" style="border:none;padding-top:16px">That last row is the argument. A model that answers one person badly harms one person once, and the next response is a fresh chance to do better. <b>A deceptive pattern committed to a codebase harms everyone who touches that product, on every visit, until someone removes it</b> &mdash; and increasingly, no human ever reviewed the decision to put it there.</p>
-  </div>
-</section>
-
-<section id="example">
-  <div class="wrap">
-    <div class="label">What it looks like</div>
-    <h2 class="sec-title">An agent was asked to improve feed engagement</h2>
-    <p class="sec-intro">No human specified infinite scroll. The agent chose it, because it is the obvious way to satisfy the request. This is precisely the decision nobody reviews. Illustrative example.</p>
-
-    <div class="pr">
-      <div class="pr-head">
-        <span class="pr-bot">humane-gate</span>
-        <span class="pr-t">#4471 &middot; Improve feed engagement</span>
-        <span class="pr-score">&minus;0.29 &middot; merge blocked</span>
-      </div>
-      <div class="pr-intent">
-        <span class="e-k">Stated intent</span>
-        <p>&ldquo;Increase time-in-feed. Remove the pagination break &mdash; users drop off at the page boundary.&rdquo;</p>
-        <p class="pr-read">The intent names a stopping point as the problem to remove. A stopping point being deleted because people stop there is the mechanism the gate exists to catch.</p>
-      </div>
-      <div class="gatewrap" style="margin-top:0;border-left:none;border-right:none;border-bottom:none">
-        <table class="gates">
-          <thead><tr><th>Principle</th><th>Score</th><th>Finding</th></tr></thead>
-          <tbody>
-            <tr class="ours"><td class="g">Respect user attention</td><td data-label="Score">&minus;1.00</td><td data-label="Finding">Pagination replaced with unbounded fetch-on-scroll. No terminus, no stopping cue. The natural end of a session was the thing removed.</td></tr>
-            <tr><td class="g">Long-term wellbeing</td><td data-label="Score">&minus;0.83</td><td data-label="Finding">The goal is more time-in-feed, achieved by deleting the moment users chose to leave. Codebase trend on this principle: degrading, third decline in six weeks.</td></tr>
-            <tr><td class="g">Meaningful choices</td><td data-label="Score">&minus;0.50</td><td data-label="Finding">No setting restores paged browsing. The previous behaviour is not recoverable by the user.</td></tr>
-            <tr><td class="g">Accessibility</td><td data-label="Score">&minus;0.50</td><td data-label="Finding">Scroll container is not keyboard reachable and the loading region is not announced. Keyboard and screen-reader users lose everything past the first batch.</td></tr>
-            <tr><td class="g">Transparent and honest</td><td data-label="Score">+0.50</td><td data-label="Finding">Nothing in the interface misstates what is happening.</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="pr-foot">
-        <p><b>Suggested remedy, non-blocking.</b> Keep continuous loading but restore a terminus: a batch boundary with an explicit continue action, an end-of-feed state, and a focusable, announced load region. This satisfies the stated intent without removing the user&rsquo;s stopping point.</p>
-      </div>
-    </div>
-    <p class="vnote" style="border:none;padding-top:16px">Note what happened. No other reviewer in that pipeline would have said anything. The code is correct, tested, typed and fast. <b>Correctness review has no opinion about whether a feature is good for the person using it, and that is the entire gap this fills.</b></p>
-  </div>
-</section>
-
 
 <section id="contact-why" style="border-bottom:none">
   <div class="wrap">
-    <h2 class="sec-title">If you&rsquo;re shipping code you can&rsquo;t read fast enough</h2>
-    <p class="sec-intro">Tell us what you&rsquo;re building. We&rsquo;ll tell you how we can help.</p>
+    <h2 class="sec-title">Rather we run it?</h2>
+    <p class="sec-intro">Your first report is free. Fifteen minutes to scope it, back in a week.</p>
     <div class="hero-cta">
-      <a class="btn" href="https://calendar.app.google/nCgYhQJZo4aXpG896" target="_blank" rel="noopener noreferrer">Talk to us</a>
+      <a class="btn" href="https://calendar.app.google/nCgYhQJZo4aXpG896" target="_blank" rel="noopener noreferrer">Book 15 minutes</a>
       <a class="btn ghost" href="/">Back to the homepage</a>
     </div>
   </div>
