@@ -11,7 +11,7 @@ the only external request is Google Fonts (Lora).
 | `index.html` | The site |
 | `CNAME` | Custom domain for GitHub Pages. Must contain exactly `buildinghumanetech.com` |
 | `favicon.svg` / `favicon.png` / `apple-touch-icon.png` | Icons |
-| `og.png` | 1200x630 social preview card |
+| `og.jpg` | 1200x630 JPG social preview card (under 200 KB for WhatsApp) |
 | `robots.txt`, `sitemap.xml` | Crawling |
 
 ## Editing

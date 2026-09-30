@@ -22,3 +22,6 @@
 
 /og.png
   Cache-Control: public, max-age=3600
+
+/og.jpg
+  Cache-Control: public, max-age=3600
