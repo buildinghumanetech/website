@@ -28,3 +28,6 @@
 
 /og-v2.jpg
   Cache-Control: public, max-age=3600
+
+/og-v3.jpg
+  Cache-Control: public, max-age=3600
